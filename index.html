@@ -1016,6 +1016,11 @@
                 ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
             }
 
+            // 4. Eased animation loop variables (Linear Interpolation)
+            let targetFrameIndex = 0;
+            let interpolatedFrame = 0;
+            let isLoopRunning = false;
+
             // 3. Resize canvas element to fill full device screen resolution
             function resizeCanvas() {
                 heroCanvas.width = window.innerWidth;
@@ -1025,11 +1030,6 @@
 
             window.addEventListener('resize', resizeCanvas, { passive: true });
             resizeCanvas();
-
-            // 4. Eased animation loop using Linear Interpolation (Lerp)
-            let targetFrameIndex = 0;
-            let interpolatedFrame = 0;
-            let isLoopRunning = false;
 
             function animationLoop() {
                 const diff = targetFrameIndex - interpolatedFrame;
