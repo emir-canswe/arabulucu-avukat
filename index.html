@@ -894,8 +894,17 @@
 
         function handleScroll() {
             if (!navbarCapsule) return;
-            const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-            const isScrolled = scrollPos > 40;
+            
+            const aboutSection = document.getElementById('about');
+            let isScrolled = false;
+            
+            if (aboutSection) {
+                const rect = aboutSection.getBoundingClientRect();
+                isScrolled = rect.top <= 80;
+            } else {
+                const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                isScrolled = scrollPos > window.innerHeight * 2;
+            }
             
             if (isScrolled) {
                 // OUTSIDE HERO (Scrolled to light sections) -> BLACK / DARK NAVBAR
