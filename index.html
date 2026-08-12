@@ -293,37 +293,80 @@
                     </div>
                 </div>
 
-                <!-- OVERLAY HERO TEXT CONTENT (Parallax & Fade on Scroll) -->
-                <div id="hero-text-overlay" class="relative z-20 w-full max-w-5xl mx-auto px-6 text-center space-y-6 transition-all duration-300 pointer-events-auto">
-                    <div class="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-xl">
-                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-                        <span class="text-sky-300 text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık & Arabuluculuk</span>
-                    </div>
+                <!-- HERO INTERACTIVE SCROLL TEXT STEPS -->
+                <div id="hero-text-container" class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
                     
-                    <h1 class="font-brand text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-2xl">
-                        Arabulucu Avukat <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500">Zülfükar CAN</span>
-                    </h1>
-
-                    <p class="text-slate-200 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-md">
-                        Diyarbakır merkezli ofisimizden Türkiye genelinde güvenilir, gizlilik esaslı ve çözüm odaklı hukuki destek ve lisanslı arabuluculuk hizmetleri.
-                    </p>
-
-                    <div class="flex flex-wrap gap-4 justify-center pt-2">
-                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all duration-300 shadow-xl shadow-blue-500/30 active:scale-95 text-base sm:text-lg" href="https://wa.me/905070161813" target="_blank" id="hero-cta-whatsapp">
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
-                            <span>WhatsApp İletişim</span>
-                        </a>
-                        <a class="border border-white/25 hover:border-blue-400 text-white hover:text-blue-300 bg-white/10 backdrop-blur-md px-8 py-4 rounded-2xl font-semibold transition-all duration-300 text-base sm:text-lg shadow-lg" href="#about" id="hero-secondary-cta">
-                            <span>Kurumsal Profil</span>
-                        </a>
+                    <!-- STEP 1: Branding (0.0 - 0.20) -->
+                    <div id="hero-step-1" class="absolute w-full max-w-4xl px-6 text-center space-y-6 transition-all duration-300 pointer-events-auto">
+                        <div class="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-xl">
+                            <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                            <span class="text-sky-300 text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık & Arabuluculuk</span>
+                        </div>
+                        <h1 class="font-brand text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-2xl">
+                            Arabulucu Avukat <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500">Zülfükar CAN</span>
+                        </h1>
+                        <p class="text-slate-200 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-md">
+                            Diyarbakır merkezli ofisimizden Türkiye genelinde güvenilir, gizlilik esaslı ve çözüm odaklı hukuki destek.
+                        </p>
+                        <!-- Scroll Hint -->
+                        <div class="pt-6 flex flex-col items-center gap-1.5 opacity-80 animate-bounce">
+                            <span class="text-xs text-slate-300 font-semibold uppercase tracking-widest">3D Animasyon İçin Aşağı Kaydırın</span>
+                            <span class="material-symbols-outlined text-blue-400">expand_more</span>
+                        </div>
                     </div>
 
-                    <!-- Scroll Hint -->
-                    <div class="pt-6 flex flex-col items-center gap-1.5 opacity-80 animate-bounce">
-                        <span class="text-xs text-slate-300 font-semibold uppercase tracking-widest">3D Animasyon İçin Aşağı Kaydırın</span>
-                        <span class="material-symbols-outlined text-blue-400">expand_more</span>
+                    <!-- STEP 2: Trust & Law (0.30 - 0.50) -->
+                    <div id="hero-step-2" class="absolute w-full max-w-4xl px-6 text-center space-y-6 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-10">
+                        <div class="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-xl">
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                            <span class="text-amber-300 text-xs font-semibold uppercase tracking-wider">Hukukun Üstünlüğü & Gizlilik</span>
+                        </div>
+                        <h2 class="font-serif-custom text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight drop-shadow-2xl">
+                            Güvenilirlik ve Mutlak Gizlilik
+                        </h2>
+                        <p class="text-slate-200 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-md">
+                            Müvekkillerimizin tüm haklarını ve ticari sırlarını tam bir gizlilik, dürüstlük ve yasal güvenceler altında koruyoruz.
+                        </p>
                     </div>
+
+                    <!-- STEP 3: Mediation (0.55 - 0.75) -->
+                    <div id="hero-step-3" class="absolute w-full max-w-4xl px-6 text-center space-y-6 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-10">
+                        <div class="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-xl">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-emerald-300 text-xs font-semibold uppercase tracking-wider">Lisanslı Arabuluculuk</span>
+                        </div>
+                        <h2 class="font-serif-custom text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight drop-shadow-2xl">
+                            Hızlı ve Dostane Çözümler
+                        </h2>
+                        <p class="text-slate-200 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-md">
+                            Uyuşmazlıkları mahkeme masrafları ve yıllar süren yıpratıcı davalar olmaksızın, yasal olarak bağlayıcı anlaşmalarla hızlıca çözümlüyoruz.
+                        </p>
+                    </div>
+
+                    <!-- STEP 4: Call to Action (0.80 - 1.0) -->
+                    <div id="hero-step-4" class="absolute w-full max-w-4xl px-6 text-center space-y-6 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-10">
+                        <div class="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-xl">
+                            <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                            <span class="text-sky-300 text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık</span>
+                        </div>
+                        <h2 class="font-serif-custom text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight drop-shadow-2xl">
+                            Profesyonel Destek Alın
+                        </h2>
+                        <p class="text-slate-200 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-md mb-4">
+                            Uyuşmazlıklarınızı en kısa sürede çözmek ve yasal haklarınızı korumak için bizimle iletişime geçin.
+                        </p>
+                        <div class="flex flex-wrap gap-4 justify-center pt-2">
+                            <a class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all duration-300 shadow-xl shadow-blue-500/30 active:scale-95 text-base sm:text-lg" href="https://wa.me/905070161813" target="_blank" id="hero-cta-whatsapp">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
+                                <span>WhatsApp İletişim</span>
+                            </a>
+                            <a class="border border-white/25 hover:border-blue-400 text-white hover:text-blue-300 bg-white/10 backdrop-blur-md px-8 py-4 rounded-2xl font-semibold transition-all duration-300 text-base sm:text-lg shadow-lg" href="#about" id="hero-secondary-cta">
+                                <span>Kurumsal Profil</span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -913,7 +956,10 @@
         const heroCanvas = document.getElementById('hero-canvas');
         const heroPreloader = document.getElementById('hero-preloader');
         const preloadProgressText = document.getElementById('preload-progress');
-        const heroTextOverlay = document.getElementById('hero-text-overlay');
+        const step1 = document.getElementById('hero-step-1');
+        const step2 = document.getElementById('hero-step-2');
+        const step3 = document.getElementById('hero-step-3');
+        const step4 = document.getElementById('hero-step-4');
 
         if (heroCanvas && heroWrapper) {
             const ctx = heroCanvas.getContext('2d');
@@ -1042,14 +1088,14 @@
                     return;
                 }
 
-                // Smoothly ease 10% of distance on each frame tick
-                interpolatedFrame += diff * 0.10;
+                // Smoothly ease 7% of distance on each frame tick (highly cinematic & professional)
+                interpolatedFrame += diff * 0.07;
                 renderFrame(Math.round(interpolatedFrame));
 
                 animationFrameId = requestAnimationFrame(animationLoop);
             }
 
-            // 5. Scroll progress calculation & parallax text fade effect
+            // 5. Scroll progress calculation & multi-step text fade animations
             function updateHeroScroll() {
                 const wrapperRect = heroWrapper.getBoundingClientRect();
                 const totalScrollableHeight = wrapperRect.height - window.innerHeight;
@@ -1069,12 +1115,85 @@
                     animationFrameId = requestAnimationFrame(animationLoop);
                 }
 
-                // Parallax translateY & Opacity fade out on text overlay
-                if (heroTextOverlay) {
-                    const textOpacity = 1 - Math.pow(progress * 1.6, 1.2);
-                    const textTranslateY = progress * -140;
-                    heroTextOverlay.style.opacity = Math.max(0, textOpacity).toFixed(2);
-                    heroTextOverlay.style.transform = `translateY(${textTranslateY}px)`;
+                // Dynamic text animations for each step based on progress
+                
+                // STEP 1: Active 0.0 to 0.20. Fades out between 0.18 and 0.28
+                if (step1) {
+                    let op1 = 1;
+                    let y1 = 0;
+                    if (progress > 0.18) {
+                        const t = (progress - 0.18) / 0.10; // 0 to 1
+                        op1 = Math.max(0, 1 - t);
+                        y1 = t * -50;
+                    }
+                    step1.style.opacity = op1.toFixed(2);
+                    step1.style.transform = `translateY(${y1}px)`;
+                    step1.style.pointerEvents = op1 > 0.1 ? 'auto' : 'none';
+                }
+
+                // STEP 2: Active 0.30 to 0.50. Fades in 0.24-0.34, fades out 0.44-0.54
+                if (step2) {
+                    let op2 = 0;
+                    let y2 = 40;
+                    if (progress >= 0.24 && progress <= 0.54) {
+                        if (progress < 0.34) {
+                            // Fade in
+                            const t = (progress - 0.24) / 0.10;
+                            op2 = Math.min(1, t);
+                            y2 = 40 - (op2 * 40);
+                        } else if (progress > 0.44) {
+                            // Fade out
+                            const t = (progress - 0.44) / 0.10;
+                            op2 = Math.max(0, 1 - t);
+                            y2 = t * -40;
+                        } else {
+                            // Fully visible
+                            op2 = 1;
+                            y2 = 0;
+                        }
+                    }
+                    step2.style.opacity = op2.toFixed(2);
+                    step2.style.transform = `translateY(${y2}px)`;
+                    step2.style.pointerEvents = op2 > 0.1 ? 'auto' : 'none';
+                }
+
+                // STEP 3: Active 0.58 to 0.76. Fades in 0.52-0.62, fades out 0.70-0.80
+                if (step3) {
+                    let op3 = 0;
+                    let y3 = 40;
+                    if (progress >= 0.52 && progress <= 0.80) {
+                        if (progress < 0.62) {
+                            // Fade in
+                            const t = (progress - 0.52) / 0.10;
+                            op3 = Math.min(1, t);
+                            y3 = 40 - (op3 * 40);
+                        } else if (progress > 0.70) {
+                            // Fade out
+                            const t = (progress - 0.70) / 0.10;
+                            op3 = Math.max(0, 1 - t);
+                            y3 = t * -40;
+                        } else {
+                            op3 = 1;
+                            y3 = 0;
+                        }
+                    }
+                    step3.style.opacity = op3.toFixed(2);
+                    step3.style.transform = `translateY(${y3}px)`;
+                    step3.style.pointerEvents = op3 > 0.1 ? 'auto' : 'none';
+                }
+
+                // STEP 4: Active 0.82 to 1.0. Fades in 0.76-0.88
+                if (step4) {
+                    let op4 = 0;
+                    let y4 = 40;
+                    if (progress >= 0.76) {
+                        const t = (progress - 0.76) / 0.12;
+                        op4 = Math.min(1, t);
+                        y4 = 40 - (op4 * 40);
+                    }
+                    step4.style.opacity = op4.toFixed(2);
+                    step4.style.transform = `translateY(${y4}px)`;
+                    step4.style.pointerEvents = op4 > 0.1 ? 'auto' : 'none';
                 }
             }
 
