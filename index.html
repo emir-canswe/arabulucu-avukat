@@ -1179,123 +1179,129 @@
             </div>
         </section>
 
-        <!-- ══════════ İLETİŞİM ══════════ -->
-        <section class="py-20 lg:py-28 bg-white" id="contact">
-            <div class="max-w-content mx-auto px-6 lg:px-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <!-- ══════════ İLETİŞİM & RANDEVU TALEBİ (INTERACTIVE CARD FORM) ══════════ -->
+        <section class="py-20 lg:py-28 bg-[#FAF6F0] relative overflow-hidden" id="contact">
+            <!-- Subtle background aura -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
-                    <div class="lg:col-span-5">
-                        <h2 class="reveal h-section text-[2rem] sm:text-[2.8rem] text-ink balance">
-                            Bize ulaşın
+            <div class="max-w-4xl mx-auto px-6 lg:px-10 relative z-10">
+
+                <!-- Interactive White Card Container (36px border radius) -->
+                <div class="reveal-scale bg-white rounded-[36px] border border-[#E2DACB] p-8 sm:p-12 shadow-[0_25px_60px_rgba(28,30,35,0.08)]">
+                    
+                    <!-- Card Header -->
+                    <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] mb-3">
+                            Randevu &amp; Danışma
+                        </span>
+                        <h2 class="font-display font-bold text-[2rem] sm:text-[2.6rem] text-ink leading-tight tracking-tight">
+                            Hukuki Danışmanlık &amp; Randevu Talebi
                         </h2>
-                        <p class="reveal text-ink-500 text-[14.5px] leading-[1.85] mt-6 max-w-md" style="transition-delay:.06s">
-                            Hukuki danışmanlık almak, dava süreçlerinizle ilgili bilgi edinmek veya arabuluculuk
-                            talebinde bulunmak için doğrudan bizimle iletişime geçebilirsiniz.
+                        <p class="text-ink-500 text-[14px] mt-3">
+                            Hukuki durumunuzu iletin, en kısa sürede doğrudan WhatsApp üzerinden dönüş yapalım.
                         </p>
+                    </div>
 
-                        <div class="mt-9 space-y-3">
-                            <a href="tel:05070161813" class="reveal card-flat bg-card p-6 flex items-center gap-5" style="transition-delay:.1s">
-                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">call</span></span>
-                                <span>
-                                    <span class="block label text-[9.5px] text-ink-400">Telefon</span>
-                                    <span class="block font-display font-bold text-[17px] text-ink mt-1 tabular-nums">0507 016 18 13</span>
-                                </span>
-                            </a>
+                    <!-- Meeting Mode Toggle Pill -->
+                    <div class="flex items-center justify-center gap-3 p-1.5 bg-[#F4EEE3] rounded-full max-w-sm mx-auto mb-8 border border-[#E2DACB]">
+                        <button type="button" id="mode-office" class="meeting-mode-btn active flex-1 py-2.5 px-4 rounded-full font-bold label text-[10px] text-white bg-ink transition-all">
+                            Yüz Yüze Görüşme
+                        </button>
+                        <button type="button" id="mode-online" class="meeting-mode-btn flex-1 py-2.5 px-4 rounded-full font-bold label text-[10px] text-ink-500 hover:text-ink transition-all">
+                            Online / WhatsApp
+                        </button>
+                    </div>
 
-                            <a href="mailto:av.zulfukarcan@hotmail.com" class="reveal card-flat bg-card p-6 flex items-center gap-5" style="transition-delay:.14s">
-                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">mail</span></span>
-                                <span class="min-w-0">
-                                    <span class="block label text-[9.5px] text-ink-400">E-Posta</span>
-                                    <span class="block font-display font-bold text-[14px] text-ink mt-1 break-all">av.zulfukarcan@hotmail.com</span>
-                                </span>
-                            </a>
+                    <!-- Quick Topic Chips Selection -->
+                    <div class="mb-8 text-center">
+                        <p class="label text-[10px] text-ink-400 uppercase tracking-wider mb-3">Hızlı Konu Seçimi</p>
+                        <div class="flex flex-wrap items-center justify-center gap-2" id="topic-chips">
+                            <button type="button" class="chip-btn active px-4 py-2 rounded-full border border-ink bg-ink text-white label text-[10px] transition-all" data-topic="Genel Danışmanlık">
+                                Genel Danışmanlık
+                            </button>
+                            <button type="button" class="chip-btn px-4 py-2 rounded-full border border-ink/20 bg-[#FAF6F0] hover:border-ink text-ink label text-[10px] transition-all" data-topic="Ceza Hukuku">
+                                Ceza Hukuku
+                            </button>
+                            <button type="button" class="chip-btn px-4 py-2 rounded-full border border-ink/20 bg-[#FAF6F0] hover:border-ink text-ink label text-[10px] transition-all" data-topic="Aile ve Boşanma">
+                                Aile ve Boşanma
+                            </button>
+                            <button type="button" class="chip-btn px-4 py-2 rounded-full border border-ink/20 bg-[#FAF6F0] hover:border-ink text-ink label text-[10px] transition-all" data-topic="Arabuluculuk">
+                                Arabuluculuk
+                            </button>
+                            <button type="button" class="chip-btn px-4 py-2 rounded-full border border-ink/20 bg-[#FAF6F0] hover:border-ink text-ink label text-[10px] transition-all" data-topic="İcra &amp; İş Hukuku">
+                                İcra &amp; İş Hukuku
+                            </button>
+                        </div>
+                    </div>
 
-                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener" class="reveal card-flat bg-card p-6 flex items-center gap-5" style="transition-delay:.18s">
-                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">chat</span></span>
-                                <span>
-                                    <span class="block label text-[9.5px] text-ink-400">WhatsApp</span>
-                                    <span class="block font-display font-bold text-[14px] text-ink mt-1">wa.me/905070161813</span>
-                                </span>
-                            </a>
+                    <!-- Appointment Form -->
+                    <form id="appointment-form" class="space-y-5" novalidate>
+                        <input type="hidden" id="selected-mode" name="meeting_mode" value="Yüz Yüze Görüşme"/>
+                        <input type="hidden" id="client-topic" name="topic" value="Genel Danışmanlık"/>
 
-                            <div class="reveal bg-card p-6 flex items-start gap-5" style="transition-delay:.22s">
-                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">location_on</span></span>
-                                <span>
-                                    <span class="block label text-[9.5px] text-ink-400">Ofis Adresi</span>
-                                    <span class="block text-[13.5px] text-ink leading-relaxed mt-1.5">
-                                        Prof. Selahattin Yazıcıoğlu Cad. Karakoç Plaza No:59,<br/>21100 Yenişehir / Diyarbakır
-                                    </span>
-                                </span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block label text-[10px] text-ink-500 mb-2" for="client-name">Adınız Soyadınız</label>
+                                <input id="client-name" name="name" type="text" required autocomplete="name"
+                                       placeholder="Örn: Ahmet Yılmaz"
+                                       class="w-full bg-[#FAF6F0] border border-[#E2DACB] rounded-2xl px-5 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:outline-none focus:ring-2 focus:ring-[#10B981] transition-all"/>
+                            </div>
+                            <div>
+                                <label class="block label text-[10px] text-ink-500 mb-2" for="client-phone">Telefon Numaranız</label>
+                                <input id="client-phone" name="phone" type="tel" autocomplete="tel"
+                                       placeholder="05xx xxx xx xx"
+                                       class="w-full bg-[#FAF6F0] border border-[#E2DACB] rounded-2xl px-5 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:outline-none focus:ring-2 focus:ring-[#10B981] transition-all"/>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Form -->
-                    <div class="lg:col-span-7 reveal" style="transition-delay:.1s">
-                        <div class="bg-band p-8 sm:p-11">
-                            <h3 class="h-section text-[1.5rem] sm:text-[1.9rem] text-ink">
-                                Randevu &amp; müvekkil talebi
-                            </h3>
-                            <p class="text-ink-500 text-[13.5px] leading-relaxed mt-3">
-                                Hukuki konunuzu iletin, en kısa sürede dönüş sağlayalım. Form gönderildiğinde bilgileriniz
-                                WhatsApp üzerinden tarafımıza iletilir.
-                            </p>
-
-                            <form id="appointment-form" class="mt-8 space-y-5" novalidate>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div>
-                                        <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-name">Adınız Soyadınız</label>
-                                        <input id="client-name" name="name" type="text" required autocomplete="name"
-                                               placeholder="Örn: Ahmet Yılmaz"
-                                               class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:ring-2 focus:ring-ink transition-shadow"/>
-                                    </div>
-                                    <div>
-                                        <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-phone">Telefon Numaranız</label>
-                                        <input id="client-phone" name="phone" type="tel" autocomplete="tel"
-                                               placeholder="05xx xxx xx xx"
-                                               class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:ring-2 focus:ring-ink transition-shadow"/>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-topic">Hukuki Konu</label>
-                                    <select id="client-topic" name="topic"
-                                            class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] focus:ring-2 focus:ring-ink transition-shadow">
-                                        <option value="Genel Danışmanlık">Genel Danışmanlık</option>
-                                        <option value="Ceza Hukuku">Ceza Hukuku</option>
-                                        <option value="Aile ve Boşanma Hukuku">Aile ve Boşanma Hukuku</option>
-                                        <option value="Arabuluculuk">Arabuluculuk</option>
-                                        <option value="İcra ve Alacak Takibi">İcra ve Alacak Takibi</option>
-                                        <option value="İş Hukuku">İş Hukuku</option>
-                                        <option value="Miras ve Ticaret Hukuku">Miras ve Ticaret Hukuku</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-msg">Mesajınız</label>
-                                    <textarea id="client-msg" name="message" rows="5" required
-                                              placeholder="Lütfen hukuki uyuşmazlığınız veya randevu talebiniz hakkında kısa bilgi veriniz..."
-                                              class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:ring-2 focus:ring-ink transition-shadow resize-none"></textarea>
-                                </div>
-
-                                <p id="form-error" class="hidden text-[13px] text-red-600 font-medium">
-                                    Lütfen adınızı ve mesajınızı doldurun.
-                                </p>
-
-                                <button type="submit" class="btn-solid w-full flex items-center justify-center gap-2.5 py-4 label text-[11.5px]">
-                                    <span class="material-symbols-outlined text-[18px]">send</span>
-                                    <span>WhatsApp ile Gönder</span>
-                                </button>
-
-                                <p class="text-[11px] text-ink-400 leading-relaxed text-center">
-                                    Formu göndererek iletişim bilgilerinizin randevu amacıyla kullanılmasını kabul
-                                    edersiniz. Bilgileriniz üçüncü kişilerle paylaşılmaz.
-                                </p>
-                            </form>
+                        <div>
+                            <label class="block label text-[10px] text-ink-500 mb-2" for="client-msg">Mesajınız / Notunuz</label>
+                            <textarea id="client-msg" name="message" rows="4" required
+                                      placeholder="Lütfen randevu talebiniz veya hukuki uyuşmazlığınız hakkında kısa bilgi veriniz..."
+                                      class="w-full bg-[#FAF6F0] border border-[#E2DACB] rounded-2xl px-5 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:outline-none focus:ring-2 focus:ring-[#10B981] transition-all resize-none"></textarea>
                         </div>
-                    </div>
+
+                        <!-- Custom Checkbox -->
+                        <div class="flex items-center gap-3 pt-2">
+                            <input id="terms-agree" type="checkbox" checked class="w-5 h-5 rounded text-[#10B981] focus:ring-[#10B981] border-[#E2DACB] cursor-pointer"/>
+                            <label for="terms-agree" class="text-[13px] text-ink-500 font-medium cursor-pointer">
+                                Gizlilik ve Mesleki Sır Saklama Şartlarını Kabul Ediyorum
+                            </label>
+                        </div>
+
+                        <p id="form-error" class="hidden text-[13px] text-red-600 font-medium">
+                            Lütfen adınızı ve mesajınızı doldurun.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <!-- Primary Emerald Pill Button -->
+                            <button type="submit" class="btn-solid flex items-center justify-center gap-3 py-4 px-6 rounded-full bg-[#10B981] hover:bg-[#059669] text-white label text-[11.5px] font-bold shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02] active:scale-100">
+                                <span class="material-symbols-outlined text-[20px]">send</span>
+                                <span>WhatsApp ile Randevu Al</span>
+                            </button>
+
+                            <!-- Secondary Light Emerald Button -->
+                            <a href="tel:05070161813" class="flex items-center justify-center gap-3 py-4 px-6 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-800 label text-[11.5px] font-bold transition-all">
+                                <span class="material-symbols-outlined text-[20px]">call</span>
+                                <span>Bizi Anında Arayın</span>
+                            </a>
+                        </div>
+                    </form>
 
                 </div>
+
+                <!-- Bottom Helper Link Below Card -->
+                <div class="text-center mt-10">
+                    <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-3 text-ink-500 hover:text-ink label text-[11px] uppercase tracking-widest transition-colors group">
+                        <span>Sorunuz Mu Var? Doğrudan Ulaşın</span>
+                        <span class="w-8 h-8 rounded-full border border-ink/20 flex items-center justify-center group-hover:bg-ink group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined text-[16px]">north_east</span>
+                        </span>
+                    </a>
+                </div>
+
             </div>
         </section>
 
@@ -1800,6 +1806,42 @@
             todayRow.firstElementChild.appendChild(badge);
         }
 
+        /* Contact Form Interactive Chips & Mode Toggle */
+        (function () {
+            var modeOffice = document.getElementById('mode-office');
+            var modeOnline = document.getElementById('mode-online');
+            var selectedModeInput = document.getElementById('selected-mode');
+
+            if (modeOffice && modeOnline && selectedModeInput) {
+                modeOffice.addEventListener('click', function () {
+                    modeOffice.className = 'meeting-mode-btn active flex-1 py-2.5 px-4 rounded-full font-bold label text-[10px] text-white bg-ink transition-all';
+                    modeOnline.className = 'meeting-mode-btn flex-1 py-2.5 px-4 rounded-full font-bold label text-[10px] text-ink-500 hover:text-ink transition-all';
+                    selectedModeInput.value = 'Yüz Yüze Görüşme';
+                });
+
+                modeOnline.addEventListener('click', function () {
+                    modeOnline.className = 'meeting-mode-btn active flex-1 py-2.5 px-4 rounded-full font-bold label text-[10px] text-white bg-ink transition-all';
+                    modeOffice.className = 'meeting-mode-btn flex-1 py-2.5 px-4 rounded-full font-bold label text-[10px] text-ink-500 hover:text-ink transition-all';
+                    selectedModeInput.value = 'Online / WhatsApp';
+                });
+            }
+
+            var chipBtns = document.querySelectorAll('#topic-chips .chip-btn');
+            var clientTopicInput = document.getElementById('client-topic');
+
+            chipBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    chipBtns.forEach(function (b) {
+                        b.className = 'chip-btn px-4 py-2 rounded-full border border-ink/20 bg-[#FAF6F0] hover:border-ink text-ink label text-[10px] transition-all';
+                    });
+                    btn.className = 'chip-btn active px-4 py-2 rounded-full border border-ink bg-ink text-white label text-[10px] transition-all';
+                    if (clientTopicInput) {
+                        clientTopicInput.value = btn.getAttribute('data-topic');
+                    }
+                });
+            });
+        })();
+
         /* Randevu formu → WhatsApp */
         var form = document.getElementById('appointment-form');
         if (form) {
@@ -1808,6 +1850,7 @@
 
                 var name = document.getElementById('client-name').value.trim();
                 var phone = document.getElementById('client-phone').value.trim();
+                var mode = document.getElementById('selected-mode').value;
                 var topic = document.getElementById('client-topic').value;
                 var msg = document.getElementById('client-msg').value.trim();
                 var errorEl = document.getElementById('form-error');
@@ -1823,6 +1866,7 @@
                     '',
                     'Ad Soyad: ' + name,
                     phone ? 'Telefon: ' + phone : '',
+                    'Görüşme Türü: ' + mode,
                     'Konu: ' + topic,
                     '',
                     'Mesaj: ' + msg
