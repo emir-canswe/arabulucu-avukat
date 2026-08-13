@@ -239,63 +239,118 @@
         }
         #mobile-menu:not(.is-closed) .mm-item { opacity: 1; transform: none; }
 
-        /* ---------- Açılış Animasyonu (Intro Loader) ---------- */
+        /* ---------- Luxury Split Curtain Intro Loader ---------- */
         #intro-loader {
             position: fixed;
             inset: 0;
             z-index: 99999;
-            background: #0D0F12;
-            color: #ffffff;
+            pointer-events: auto;
+            user-select: none;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.85s ease, visibility 0.85s;
-            will-change: transform, opacity;
         }
 
+        .intro-curtain {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 50.5%;
+            background: #0B0D10;
+            z-index: 10;
+            transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+            will-change: transform;
+        }
+
+        .intro-curtain-top {
+            top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .intro-curtain-bottom {
+            bottom: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .intro-center-content {
+            position: relative;
+            z-index: 30;
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        /* Çıkış Durumu (.is-loaded) */
         #intro-loader.is-loaded {
-            transform: translateY(-100%);
-            opacity: 0.95;
             pointer-events: none;
         }
 
-        .intro-spin-ring {
-            animation: introSpin 9s linear infinite;
+        #intro-loader.is-loaded .intro-center-content {
+            opacity: 0;
+            transform: scale(0.92);
         }
 
-        @keyframes introSpin {
+        #intro-loader.is-loaded .intro-curtain-top {
+            transform: translateY(-100%);
+        }
+
+        #intro-loader.is-loaded .intro-curtain-bottom {
+            transform: translateY(100%);
+        }
+
+        #intro-loader.is-loaded .intro-bg-glow {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* İkon & Metin Animasyonları */
+        .intro-spin-dash {
+            animation: introSpinDash 12s linear infinite;
+        }
+        @keyframes introSpinDash {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
-        .intro-glow-box {
-            animation: introPulseGlow 3s ease-in-out infinite alternate;
+        .intro-pulse-ring {
+            animation: introPulseRing 2.6s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes introPulseRing {
+            0% { transform: scale(0.85); opacity: 0.8; }
+            50% { transform: scale(1.18); opacity: 0.15; }
+            100% { transform: scale(0.85); opacity: 0.8; }
         }
 
-        @keyframes introPulseGlow {
-            from { box-shadow: 0 0 25px rgba(255, 255, 255, 0.08), inset 0 0 15px rgba(255, 255, 255, 0.05); }
-            to { box-shadow: 0 0 50px rgba(255, 255, 255, 0.25), inset 0 0 25px rgba(255, 255, 255, 0.15); }
+        .intro-emblem {
+            animation: introEmblemIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes introEmblemIn {
+            from { opacity: 0; transform: scale(0.82); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        .intro-content-in {
-            animation: introFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .intro-text-sub {
+            animation: introSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+            opacity: 0;
+        }
+        .intro-text-title {
+            animation: introSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
+            opacity: 0;
+        }
+        @keyframes introSlideUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes introFadeUp {
-            from { opacity: 0; transform: translateY(24px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+        .intro-line-fill {
+            animation: introLineExpand 1.2s cubic-bezier(0.65, 0, 0.35, 1) 0.32s forwards;
+            transform: scaleX(0);
+            transform-origin: center;
         }
-
-        .intro-progress-bar {
-            width: 0%;
-            animation: introProgress 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-        }
-
-        @keyframes introProgress {
-            0% { width: 0%; }
-            50% { width: 68%; }
-            100% { width: 100%; }
+        @keyframes introLineExpand {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -307,35 +362,43 @@
 </head>
 <body class="overflow-x-hidden antialiased bg-white text-ink">
 
-    <!-- ══════════ İNTRO / AÇILIŞ ANİMASYONU ══════════ -->
+    <!-- ══════════ İNTRO / AÇILIŞ ANİMASYONU (LUXURY CINEMATIC SPLASH) ══════════ -->
     <div id="intro-loader" aria-hidden="true">
-        <!-- Arka Plan Parıltısı & Grid dokusu -->
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(255,255,255,0.08)_0%,transparent_65%)] pointer-events-none"></div>
-        <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+        <!-- Çift Kanatlı Perde Katmanları -->
+        <div class="intro-curtain intro-curtain-top"></div>
+        <div class="intro-curtain intro-curtain-bottom"></div>
+
+        <!-- Arka Plan Parıltısı -->
+        <div class="intro-bg-glow absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.08)_0%,transparent_60%)] pointer-events-none z-20"></div>
 
         <!-- Merkez İçerik Kapsayıcısı -->
-        <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-md mx-auto intro-content-in">
-            <!-- Terazi Logosu & Dönen Halka -->
-            <div class="relative mb-7 flex items-center justify-center">
-                <div class="intro-spin-ring absolute -inset-4 sm:-inset-5 rounded-full border border-dashed border-white/30"></div>
-                <div class="intro-glow-box w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center shadow-2xl transition-all">
-                    <span class="material-symbols-outlined text-3xl sm:text-4xl text-white tracking-normal">balance</span>
+        <div class="intro-center-content flex flex-col items-center text-center px-6 max-w-lg mx-auto">
+            <!-- Emblemli Terazi Logosu -->
+            <div class="intro-emblem relative mb-8 flex items-center justify-center">
+                <div class="intro-pulse-ring absolute -inset-6 rounded-full border border-white/20"></div>
+                <div class="intro-spin-dash absolute -inset-3 rounded-full border border-dashed border-white/30"></div>
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/[0.08] backdrop-blur-2xl border border-white/20 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.15)]">
+                    <span class="material-symbols-outlined text-4xl sm:text-5xl text-white">balance</span>
                 </div>
             </div>
 
-            <!-- Büro Unvanı -->
-            <span class="label text-[10px] sm:text-[11px] tracking-[0.24em] text-gray-400 uppercase mb-2.5 block">
-                Diyarbakır Hukuk & Arabuluculuk
-            </span>
+            <!-- Alt Başlık / Eyebrow -->
+            <div class="overflow-hidden mb-2.5">
+                <span class="intro-text-sub label text-[10.5px] sm:text-[11.5px] tracking-[0.28em] text-gray-400 uppercase block">
+                    Diyarbakır Hukuk & Arabuluculuk
+                </span>
+            </div>
 
             <!-- Avukat İsmi -->
-            <h1 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white mb-6 whitespace-nowrap">
-                Av. Arb. Zülfükar CAN
-            </h1>
+            <div class="overflow-hidden mb-7">
+                <h1 class="intro-text-title font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white whitespace-nowrap">
+                    Av. Arb. Zülfükar CAN
+                </h1>
+            </div>
 
-            <!-- İnce Çizgi İlerleme Çubuğu -->
-            <div class="w-48 sm:w-60 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
-                <div class="intro-progress-bar absolute inset-y-0 left-0 bg-white rounded-full"></div>
+            <!-- İki Yana Genişleyen İnce Işık Çizgisi -->
+            <div class="w-48 sm:w-64 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+                <div class="intro-line-fill absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"></div>
             </div>
         </div>
     </div>
