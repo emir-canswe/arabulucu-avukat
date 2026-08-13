@@ -1974,9 +1974,14 @@
                 var topic = document.getElementById('client-topic').value;
                 var msg = document.getElementById('client-msg').value.trim();
                 var errorEl = document.getElementById('form-error');
-
-                if (!name || !msg) {
-                    if (errorEl) errorEl.classList.remove('hidden');
+                var termsAgree = document.getElementById('terms-agree');
+                if (!name || !msg || (termsAgree && !termsAgree.checked)) {
+                    if (errorEl) {
+                        errorEl.textContent = (termsAgree && !termsAgree.checked)
+                            ? 'Lütfen devam etmek için gizlilik şartlarını kabul edin.'
+                            : 'Lütfen adınızı ve mesajınızı doldurun.';
+                        errorEl.classList.remove('hidden');
+                    }
                     return;
                 }
                 if (errorEl) errorEl.classList.add('hidden');
