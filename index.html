@@ -814,6 +814,57 @@
             </div>
         </section>
 
+        <!-- ══════════ CANLI ANİMASYONLU SAYAÇ (IMPACT STATS) ══════════ -->
+        <section class="py-20 lg:py-28 bg-[#FAF6F0]" id="impact-stats">
+            <div class="max-w-content mx-auto px-6 lg:px-10 text-center">
+
+                <!-- Eyebrow Badge -->
+                <span class="reveal-scale inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] mb-5">
+                    Başarı &amp; Etkimiz
+                </span>
+
+                <!-- Centered Display Title -->
+                <h2 class="reveal-up font-display font-bold text-[2.2rem] sm:text-[3.2rem] lg:text-[3.8rem] text-ink leading-tight tracking-tight max-w-3xl mx-auto balance mb-12 sm:mb-16">
+                    Birlikte Güçlü Sonuçlar Elde Ediyoruz
+                </h2>
+
+                <!-- Dynamic Animated Number Display Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 max-w-5xl mx-auto">
+                    
+                    <!-- Stat 1 -->
+                    <div class="reveal-card flex flex-col items-center">
+                        <span class="count-up font-display font-bold text-[3.8rem] sm:text-[5rem] lg:text-[6.2rem] leading-none text-[#10B981] tracking-tight"
+                              data-target="1500" data-prefix="" data-suffix="+">0</span>
+                        <p class="font-display font-bold text-[16px] sm:text-[17px] text-ink mt-3 sm:mt-4">Çözülen Hukuki Uyuşmazlık</p>
+                        <p class="text-ink-500 text-[13.5px] mt-1">Diyarbakır ve Türkiye genelinde</p>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="reveal-card flex flex-col items-center" style="transition-delay:.08s">
+                        <span class="count-up font-display font-bold text-[3.8rem] sm:text-[5rem] lg:text-[6.2rem] leading-none text-[#10B981] tracking-tight"
+                              data-target="2019" data-prefix="" data-suffix="">0</span>
+                        <p class="font-display font-bold text-[16px] sm:text-[17px] text-ink mt-3 sm:mt-4">Hizmet Başlangıç Yılı</p>
+                        <p class="text-ink-500 text-[13.5px] mt-1">Kesintisiz mesleki tecrübe</p>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="reveal-card flex flex-col items-center" style="transition-delay:.16s">
+                        <span class="count-up font-display font-bold text-[3.8rem] sm:text-[5rem] lg:text-[6.2rem] leading-none text-[#10B981] tracking-tight"
+                              data-target="100" data-prefix="%" data-suffix="">0</span>
+                        <p class="font-display font-bold text-[16px] sm:text-[17px] text-ink mt-3 sm:mt-4">Gizlilik ve Şeffaflık</p>
+                        <p class="text-ink-500 text-[13.5px] mt-1">Yasal sır saklama garantisi</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════ KAVİSLİ DOME GEÇİŞİ (CURVED DOME ARCH TRANSITION) ══════════ -->
+        <div class="relative bg-[#FAF6F0] -mb-1 pointer-events-none">
+            <div class="w-full h-16 sm:h-28 lg:h-36 bg-[#F4EEE3] rounded-t-[50%_100%] border-t border-[#E2DACB] shadow-inner"></div>
+        </div>
+
         <!-- ══════════ HAKKIMDA ══════════ -->
         <section class="py-20 lg:py-24 bg-band" id="about">
             <div class="max-w-content mx-auto px-6 lg:px-10">
@@ -1602,6 +1653,57 @@
             }
 
             setTimeout(dismissIntro, 2500);
+        })();
+
+        /* Canlı Sayı Sayacı (Count-Up Animation) */
+        (function () {
+            var counterEls = document.querySelectorAll('.count-up');
+            if (!counterEls.length) return;
+
+            function animateCounter(el) {
+                var target = parseInt(el.getAttribute('data-target'), 10);
+                var prefix = el.getAttribute('data-prefix') || '';
+                var suffix = el.getAttribute('data-suffix') || '';
+                var duration = 1800;
+                var startTime = null;
+
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var progress = Math.min((timestamp - startTime) / duration, 1);
+                    var easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                    var current = Math.floor(easeProgress * target);
+
+                    el.textContent = prefix + current.toLocaleString('tr-TR') + suffix;
+
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        el.textContent = prefix + target.toLocaleString('tr-TR') + suffix;
+                    }
+                }
+
+                window.requestAnimationFrame(step);
+            }
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            animateCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                counterEls.forEach(function (el) { observer.observe(el); });
+            } else {
+                counterEls.forEach(function (el) {
+                    var target = el.getAttribute('data-target');
+                    var prefix = el.getAttribute('data-prefix') || '';
+                    var suffix = el.getAttribute('data-suffix') || '';
+                    el.textContent = prefix + target + suffix;
+                });
+            }
         })();
 
         /* Scroll reveal observer (60-120 FPS zero-lag configuration) */
