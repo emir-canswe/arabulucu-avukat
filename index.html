@@ -40,10 +40,10 @@
             theme: {
                 extend: {
                     colors: {
-                        ink:  { DEFAULT: "#0D0F12", 800: "#1A1D22", 500: "#5A606C", 400: "#8C93A0" },
-                        band: { DEFAULT: "#F0F1F7", deep: "#E9EBF3" },
-                        card: { DEFAULT: "#F4F5F8", hover: "#ECEEF2" },
-                        line: { DEFAULT: "#E2E5EC", soft: "#EEF0F5" }
+                        ink:  { DEFAULT: "#1C1E23", 800: "#2B2E36", 500: "#5E6472", 400: "#8C92A0" },
+                        band: { DEFAULT: "#F4EEE3", deep: "#EBE3D3" },
+                        card: { DEFAULT: "#FFFDF9", hover: "#F7F2E8" },
+                        line: { DEFAULT: "#E2DACB", soft: "#EFE8DC" }
                     },
                     fontFamily: {
                         sans: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
@@ -60,8 +60,8 @@
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            color: #0D0F12;
-            background: #fff;
+            color: #1C1E23;
+            background: #FAF6F0;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             letter-spacing: -0.011em;
@@ -520,9 +520,9 @@
                     İletişim
                 </a>
 
-                <a class="hidden sm:inline-flex btn-pill items-center gap-2.5 pl-5 pr-1.5 py-1.5" href="https://wa.me/905070161813" target="_blank" rel="noopener">
-                    <span class="text-[13.5px] font-semibold whitespace-nowrap">Randevu Al</span>
-                    <span class="pill-arrow w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+                <a class="hidden sm:inline-flex items-center gap-2.5 pl-6 pr-2 py-2 rounded-full bg-[#10B981] hover:bg-[#059669] text-white shadow-md transition-all hover:scale-105" href="https://wa.me/905070161813" target="_blank" rel="noopener">
+                    <span class="text-[13.5px] font-bold whitespace-nowrap">Randevu Al</span>
+                    <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
                         <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                     </span>
                 </a>
@@ -573,90 +573,82 @@
     <main id="main">
 
         <!-- ══════════ HERO ══════════ -->
-        <section id="home" class="relative bg-white">
-            <div class="max-w-content mx-auto px-6 lg:px-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <section id="home" class="relative bg-[#FAF6F0] pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
+            <div class="max-w-5xl mx-auto px-6 sm:px-8 text-center">
 
-                    <!-- Metin -->
-                    <div class="lg:col-span-6 pt-12 pb-10 lg:py-24 reveal-left">
-                        <h1 class="h-display text-[2.35rem] sm:text-[3.1rem] lg:text-[3.5rem] xl:text-[3.85rem] text-ink">
-                            Hukuki sorularınız mı var?
-                            <span class="block mt-3">Buradan sonrasını ben hallederim.</span>
-                        </h1>
-
-                        <p class="text-ink-500 text-[15px] sm:text-base leading-[1.75] max-w-md mt-8">
-                            Günümüz danışanları pratik, şeffaf ve sonuç odaklı çözümler bekler. Avukatlık ve lisanslı
-                            arabuluculuk hizmetlerimizle tüm süreç boyunca yanınızdayız.
-                        </p>
-
-                        <div class="flex flex-wrap items-center gap-8 mt-10">
-                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-                               class="btn-solid inline-flex items-center label text-[11.5px] px-9 py-4">
-                                Randevu Al
-                            </a>
-                            <a href="#about" class="btn-link label text-[11.5px] text-ink">
-                                Özgeçmişi İncele
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Portre -->
-                    <div class="lg:col-span-6 -mx-6 lg:mx-0 reveal-right">
-                        <div class="hero-stage relative overflow-hidden h-[420px] sm:h-[540px] lg:h-[640px]">
-                            <img src="./hero_mockup.jpg"
-                                 alt="Arabulucu Avukat Zülfükar CAN"
-                                 class="relative z-10 w-full h-full object-cover object-top"
-                                 width="900" height="1100" loading="eager" decoding="async"/>
-                        </div>
-                    </div>
-
+                <!-- Eyebrow Badge -->
+                <div class="reveal-scale inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] sm:text-[11.5px] mb-8 sm:mb-10">
+                    <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                    <span>Diyarbakır Hukuk &amp; Arabuluculuk Bürosu</span>
                 </div>
+
+                <!-- Giant Headline with Inline Capsule Image -->
+                <h1 class="reveal-up font-display font-bold text-[2.6rem] sm:text-[4.2rem] md:text-[5.4rem] lg:text-[6.4rem] leading-[1.06] text-ink tracking-tight balance">
+                    Hukuki
+                    <span class="inline-flex align-middle mx-1.5 sm:mx-3.5 my-1 overflow-hidden rounded-full w-24 h-12 sm:w-40 sm:h-20 lg:w-56 lg:h-26 border-2 sm:border-4 border-white shadow-2xl transition-transform hover:scale-105">
+                        <img src="./hero_mockup.jpg"
+                             alt="Arabulucu Avukat Zülfükar CAN"
+                             class="w-full h-full object-cover object-top"
+                             width="400" height="220" loading="eager" decoding="async"/>
+                    </span>
+                    Sorularınız
+                    <span class="block mt-2 sm:mt-4 text-[2.1rem] sm:text-[3.6rem] md:text-[4.6rem] lg:text-[5.6rem] text-ink/90">
+                        Buradan Sonrasını Ben Hallederim
+                    </span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="reveal-up text-ink-500 text-[15px] sm:text-[17px] leading-[1.8] max-w-xl mx-auto mt-8 sm:mt-10">
+                    Günümüz danışanları pratik, şeffaf ve sonuç odaklı çözümler bekler. Avukatlık ve lisanslı arabuluculuk hizmetlerimizle tüm süreç boyunca yanınızdayız.
+                </p>
+
+                <!-- CTA Cluster -->
+                <div class="reveal-up flex flex-wrap items-center justify-center gap-4 sm:gap-5 mt-10 sm:mt-12">
+                    <!-- Primary Emerald Pill Button -->
+                    <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-3 text-white font-bold label text-[12px] sm:text-[12.5px] px-9 sm:px-10 py-4 rounded-full bg-[#10B981] hover:bg-[#059669] shadow-xl shadow-emerald-500/20 transition-all hover:scale-105 active:scale-100">
+                        <span>Randevu Al</span>
+                    </a>
+
+                    <!-- Secondary Outline Pill Button -->
+                    <a href="#contact"
+                       class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-ink/20 hover:border-ink bg-white/60 hover:bg-white text-ink font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-md">
+                        <span>İletişime Geç</span>
+                        <span class="w-6 h-6 rounded-full bg-ink/5 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[15px]">north_east</span>
+                        </span>
+                    </a>
+                </div>
+
             </div>
         </section>
 
-        <!-- ══════════ GÜVEN ŞERİDİ ══════════ -->
-        <section class="bg-band">
-            <div class="max-w-content mx-auto px-6 lg:px-10 py-14 lg:py-16">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
-                    <div class="reveal lg:col-span-4">
-                        <h2 class="h-section text-[22px] sm:text-[26px] text-ink balance">
-                            Tecrübe ve uzmanlıkla<br/>güçlü çözümler
-                        </h2>
-                        <p class="text-ink-500 text-[14px] leading-[1.75] mt-4 max-w-sm">
-                            Hukuki uyuşmazlıklarda yetkin bir uzmanla çalışmak hem zaman hem de hak kaybını önler.
-                            Resmî sicil ve üyeliklerimizle her aşamada güvendesiniz.
-                        </p>
-                    </div>
-
-                    <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-9 items-center">
-                        <div class="reveal text-center sm:text-left" style="transition-delay:.04s">
-                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">T.C. Adalet Bakanlığı</p>
-                            <p class="text-[10.5px] text-ink-400 mt-1.5">Resmî Arabuluculuk</p>
-                        </div>
-                        <div class="reveal text-center sm:text-left" style="transition-delay:.08s">
-                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Diyarbakır Barosu</p>
-                            <p class="text-[10.5px] text-ink-400 mt-1.5">Baro Levha Sicili</p>
-                        </div>
-                        <div class="reveal text-center sm:text-left" style="transition-delay:.12s">
-                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Arabulucular Sicili</p>
-                            <p class="text-[10.5px] text-ink-400 mt-1.5">Daire Başkanlığı</p>
-                        </div>
-                        <div class="reveal text-center sm:text-left" style="transition-delay:.16s">
-                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Türkiye Barolar Birliği</p>
-                            <p class="text-[10.5px] text-ink-400 mt-1.5">TBB Üyeliği</p>
-                        </div>
-                        <div class="reveal text-center sm:text-left" style="transition-delay:.2s">
-                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Ticaret &amp; İş Hukuku</p>
-                            <p class="text-[10.5px] text-ink-400 mt-1.5">Uzman Danışmanlık</p>
-                        </div>
-                        <div class="reveal text-center sm:text-left" style="transition-delay:.24s">
-                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Gizlilik &amp; Güven</p>
-                            <p class="text-[10.5px] text-ink-400 mt-1.5">Etik Kurallar</p>
-                        </div>
-                    </div>
-
+        <!-- ══════════ GÜVEN ŞERİDİ (TRUST RIBBON) ══════════ -->
+        <section class="border-y border-[#E2DACB] bg-[#F4EEE3] py-6 sm:py-8">
+            <div class="max-w-content mx-auto px-6 lg:px-10 flex flex-wrap items-center justify-between gap-6 sm:gap-8">
+                <!-- Quick Badge -->
+                <div class="flex items-center gap-3 text-ink font-bold label text-[11px] uppercase tracking-wider">
+                    <span class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-800 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-[18px]">verified</span>
+                    </span>
+                    <span>Resmî Kayıtlı Bünyeler</span>
                 </div>
+
+                <!-- Trust Items -->
+                <div class="flex flex-wrap items-center gap-6 sm:gap-10 text-[13px] sm:text-[14px] font-semibold text-ink-500">
+                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span>T.C. Adalet Bakanlığı</span>
+                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span>Diyarbakır Barosu</span>
+                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span>Arabulucular Sicili</span>
+                    <span class="hidden md:flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span>TBB Üyeliği</span>
+                </div>
+
+                <!-- Scroll Down -->
+                <a href="#about" class="hidden sm:flex items-center gap-2 text-ink-500 hover:text-ink label text-[11px] uppercase tracking-wider transition-colors group">
+                    <span>Aşağı Kaydır</span>
+                    <span class="w-7 h-7 rounded-full border border-ink/20 flex items-center justify-center group-hover:border-ink transition-colors">
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-y-0.5 transition-transform">arrow_downward</span>
+                    </span>
+                </a>
             </div>
         </section>
 
