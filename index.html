@@ -152,20 +152,28 @@
             position: relative;
         }
 
+        /* Mobilde (1024px altı) içerikler tam okunsun diye doğal akış + yuvarlatılmış kart şıklığı */
         .stack-card {
-            position: sticky;
-            top: 0;
-            border-top-left-radius: 36px;
-            border-top-right-radius: 36px;
-            box-shadow: 0 -22px 50px rgba(28, 30, 35, 0.08);
+            position: relative;
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+            box-shadow: 0 -16px 40px rgba(28, 30, 35, 0.06);
             border-top: 1px solid #E2DACB;
-            will-change: transform;
         }
 
-        @media (min-width: 640px) {
+        /* Masaüstünde (1024px ve üzeri) 100vh tam ekran okuma mesafeli sticky katmanlı kart efekti */
+        @media (min-width: 1024px) {
             .stack-card {
+                position: sticky;
+                top: 0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 border-top-left-radius: 52px;
                 border-top-right-radius: 52px;
+                box-shadow: 0 -25px 60px rgba(28, 30, 35, 0.08);
+                will-change: transform;
             }
         }
 
