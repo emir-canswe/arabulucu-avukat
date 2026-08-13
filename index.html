@@ -621,54 +621,89 @@
 
     <main id="main">
 
-        <!-- ══════════ HERO ══════════ -->
-        <section id="home" class="stack-section stack-card relative bg-[#FAF6F0] z-10 pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
-            <div class="max-w-5xl mx-auto px-6 sm:px-8 text-center">
+        <!-- ══════════ HERO (EXECUTIVE 2-COLUMN SPLIT HERO) ══════════ -->
+        <section id="home" class="stack-section stack-card relative bg-[#FAF6F0] z-10 pt-28 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 overflow-hidden border-b border-[#E2DACB]">
+            <div class="max-w-content mx-auto px-6 lg:px-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-                <!-- Eyebrow Badge -->
-                <div class="reveal-scale inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] sm:text-[11.5px] mb-8 sm:mb-10">
-                    <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
-                    <span>Diyarbakır Hukuk &amp; Arabuluculuk Bürosu</span>
+                    <!-- Left Column: Serious Executive Typography & CTAs -->
+                    <div class="lg:col-span-7 reveal-left">
+                        <!-- Eyebrow Badge -->
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] sm:text-[11px] mb-6 sm:mb-8">
+                            <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                            <span>T.C. Adalet Bakanlığı Sicilli Arabulucu &amp; Avukat</span>
+                        </div>
+
+                        <!-- Serious Authoritative Headline -->
+                        <h1 class="font-display font-bold text-[2.4rem] sm:text-[3.6rem] lg:text-[4.4rem] leading-[1.08] text-ink tracking-tight balance">
+                            Haklarınız Güven Altında,<br/>
+                            <span class="text-[#0284C7]">Çözüm Yanınızda.</span>
+                        </h1>
+
+                        <!-- Dignified Subtitle -->
+                        <p class="text-ink-500 text-[15px] sm:text-[16.5px] leading-[1.85] max-w-xl mt-6">
+                            Diyarbakır merkezli hukuk büromuzda; ceza hukuku, aile ve boşanma davaları, iş uyuşmazlıkları ve ilam niteliğinde lisanslı arabuluculuk süreçlerinde haklarınızı yasal güvenceyle savunuyoruz.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-4 sm:gap-5 mt-9">
+                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                               class="inline-flex items-center gap-3 text-white font-bold label text-[12px] px-8 sm:px-9 py-4 rounded-full bg-[#10B981] hover:bg-[#059669] shadow-xl shadow-emerald-500/20 transition-all hover:scale-105 active:scale-100">
+                                <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                                <span>Randevu Oluştur</span>
+                            </a>
+
+                            <a href="#contact"
+                               class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-ink/20 hover:border-ink bg-white hover:bg-white text-ink font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-md">
+                                <span>İletişime Geç</span>
+                                <span class="w-6 h-6 rounded-full bg-ink/5 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[15px]">north_east</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Trust Metrics Bar -->
+                        <div class="grid grid-cols-3 gap-6 pt-8 mt-10 border-t border-[#E2DACB] max-w-lg">
+                            <div>
+                                <p class="font-display font-bold text-[24px] sm:text-[28px] text-ink leading-none">1.500+</p>
+                                <p class="text-[11px] text-ink-500 font-semibold mt-2">Çözülen Dosya</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-[24px] sm:text-[28px] text-ink leading-none">2019</p>
+                                <p class="text-[11px] text-ink-500 font-semibold mt-2">Mesleki Deneyim</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-[24px] sm:text-[28px] text-[#10B981] leading-none">%100</p>
+                                <p class="text-[11px] text-ink-500 font-semibold mt-2">Yasal Gizlilik</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Executive Portrait Card with Glass Badge -->
+                    <div class="lg:col-span-5 reveal-right relative">
+                        <div class="relative rounded-[36px] sm:rounded-[44px] overflow-hidden border-4 border-white shadow-[0_25px_60px_rgba(15,23,42,0.12)] bg-white aspect-[4/5] sm:aspect-[4/4.6]">
+                            <img src="./hero_mockup.jpg"
+                                 alt="Arabulucu Avukat Zülfükar CAN"
+                                 class="w-full h-full object-cover object-top"
+                                 width="750" height="900" loading="eager" decoding="async"/>
+
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                            <!-- Glassmorphism Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-display font-bold text-[15px] sm:text-[16px] text-ink">Av. Arb. Zülfükar CAN</h3>
+                                    <p class="text-[11.5px] text-ink-500 font-semibold mt-0.5">Diyarbakır Barosu Sicil No: 2019</p>
+                                </div>
+                                <span class="w-9 h-9 rounded-full bg-[#10B981] text-white flex items-center justify-center shrink-0 shadow-md">
+                                    <span class="material-symbols-outlined text-[18px]">verified_user</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- Giant Headline with Inline Capsule Image -->
-                <h1 class="reveal-up font-display font-bold text-[2.6rem] sm:text-[4.2rem] md:text-[5.4rem] lg:text-[6.4rem] leading-[1.06] text-ink tracking-tight balance">
-                    Hukuki
-                    <span class="inline-flex align-middle mx-1.5 sm:mx-3.5 my-1 overflow-hidden rounded-full w-24 h-12 sm:w-40 sm:h-20 lg:w-56 lg:h-26 border-2 sm:border-4 border-white shadow-2xl transition-transform hover:scale-105">
-                        <img src="./hero_mockup.jpg"
-                             alt="Arabulucu Avukat Zülfükar CAN"
-                             class="w-full h-full object-cover object-top"
-                             width="400" height="220" loading="eager" decoding="async"/>
-                    </span>
-                    Sorularınız
-                    <span class="block mt-2 sm:mt-4 text-[2.1rem] sm:text-[3.6rem] md:text-[4.6rem] lg:text-[5.6rem] text-ink/90">
-                        Buradan Sonrasını Ben Hallederim
-                    </span>
-                </h1>
-
-                <!-- Subtitle -->
-                <p class="reveal-up text-ink-500 text-[15px] sm:text-[17px] leading-[1.8] max-w-xl mx-auto mt-8 sm:mt-10">
-                    Günümüz danışanları pratik, şeffaf ve sonuç odaklı çözümler bekler. Avukatlık ve lisanslı arabuluculuk hizmetlerimizle tüm süreç boyunca yanınızdayız.
-                </p>
-
-                <!-- CTA Cluster -->
-                <div class="reveal-up flex flex-wrap items-center justify-center gap-4 sm:gap-5 mt-10 sm:mt-12">
-                    <!-- Primary Emerald Pill Button -->
-                    <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-3 text-white font-bold label text-[12px] sm:text-[12.5px] px-9 sm:px-10 py-4 rounded-full bg-[#10B981] hover:bg-[#059669] shadow-xl shadow-emerald-500/20 transition-all hover:scale-105 active:scale-100">
-                        <span>Randevu Al</span>
-                    </a>
-
-                    <!-- Secondary Outline Pill Button -->
-                    <a href="#contact"
-                       class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-ink/20 hover:border-ink bg-white/60 hover:bg-white text-ink font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-md">
-                        <span>İletişime Geç</span>
-                        <span class="w-6 h-6 rounded-full bg-ink/5 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-[15px]">north_east</span>
-                        </span>
-                    </a>
-                </div>
-
             </div>
         </section>
 
