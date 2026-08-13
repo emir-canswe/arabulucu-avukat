@@ -9,7 +9,7 @@
     <meta name="author" content="Av. Arb. Zülfükar CAN"/>
     <meta name="robots" content="index, follow"/>
 
-    <!-- Open Graph / Social -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="tr_TR"/>
     <meta property="og:site_name" content="Arabulucu Avukat Zülfükar CAN"/>
@@ -18,197 +18,196 @@
     <meta property="og:image" content="./hero_mockup.jpg"/>
     <meta name="twitter:card" content="summary_large_image"/>
 
-    <!-- Favicon & Icons -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"/>
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
 
-    <!-- Resource Preconnects -->
+    <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
 
-    <!-- Typography: Playfair Display (serif başlıklar) + Inter (gövde) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+    <!-- Archivo (kalın grotesk başlıklar) + Inter (gövde) -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        /* Beyaz ağırlıklı açık palet */
-                        paper: { DEFAULT: "#FFFFFF", soft: "#F8F9FB", dim: "#F2F4F7" },
-                        line:  { DEFAULT: "#E6E9EF", soft: "#EEF1F5" },
-                        ink:   { DEFAULT: "#151A23", 700: "#2A313D", 500: "#5C6675", 400: "#8B94A3" },
-                        navy:  { DEFAULT: "#1E3A5F", dark: "#16304F", light: "#356291", pale: "#EDF2F8", mist: "#F6F9FC" }
+                        ink:  { DEFAULT: "#0D0F12", 800: "#1A1D22", 500: "#6E7481", 400: "#9CA3AF" },
+                        band: { DEFAULT: "#F0F1F7", deep: "#E9EBF3" },
+                        card: { DEFAULT: "#F3F4F6", hover: "#ECEEF1" },
+                        line: { DEFAULT: "#E5E7EB", soft: "#EEF0F3" }
                     },
                     fontFamily: {
                         sans: ["Inter", "system-ui", "sans-serif"],
-                        serif: ["'Playfair Display'", "Georgia", "serif"]
+                        display: ["Archivo", "Inter", "system-ui", "sans-serif"]
                     },
-                    maxWidth: { content: "1200px" },
-                    boxShadow: {
-                        soft: "0 1px 2px rgba(21,26,35,.04), 0 8px 24px rgba(21,26,35,.05)",
-                        lift: "0 2px 6px rgba(21,26,35,.05), 0 20px 48px rgba(21,26,35,.09)",
-                        navy: "0 12px 32px rgba(30,58,95,.20)"
-                    }
+                    maxWidth: { content: "1240px" }
                 }
             }
         }
     </script>
 
     <style>
-        :root { --navy: #1E3A5F; --ink: #151A23; }
-
-        html { scroll-padding-top: 96px; }
+        html { scroll-padding-top: 88px; }
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            color: #151A23;
-            background-color: #ffffff;
+            color: #0D0F12;
+            background: #fff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ---------- Tipografi yardımcıları ---------- */
-        .font-display { font-family: 'Playfair Display', Georgia, serif; }
-        .tracking-label { letter-spacing: .2em; }
-        .balance { text-wrap: balance; }
+        /* ---------- Başlık tipografisi ---------- */
+        .font-display { font-family: 'Archivo', Inter, sans-serif; }
 
-        .eyebrow {
-            display: inline-flex; align-items: center; gap: .75rem;
-            font-size: .6875rem; font-weight: 600; letter-spacing: .2em;
-            text-transform: uppercase; color: var(--navy);
+        .h-display {
+            font-family: 'Archivo', Inter, sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.022em;
+            line-height: 1.02;
         }
-        .eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--navy); opacity: .45; }
-        .eyebrow.is-centered::after { content: ""; width: 2rem; height: 1px; background: var(--navy); opacity: .45; }
-
-        .rule-navy { width: 56px; height: 2px; background: var(--navy); }
+        .h-section {
+            font-family: 'Archivo', Inter, sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.018em;
+            line-height: 1.08;
+        }
+        .h-card {
+            font-family: 'Archivo', Inter, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.005em;
+        }
+        .label {
+            font-family: 'Archivo', Inter, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+        }
+        .balance { text-wrap: balance; }
 
         /* ---------- Scroll reveal ---------- */
         .reveal {
-            opacity: 0; transform: translateY(24px);
-            transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+            opacity: 0; transform: translateY(22px);
+            transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
             will-change: opacity, transform;
         }
         .reveal.is-visible { opacity: 1; transform: none; }
 
         /* ---------- Header ---------- */
         #site-header {
-            background-color: rgba(255,255,255,.72);
+            background: rgba(255,255,255,.82);
             backdrop-filter: saturate(180%) blur(12px);
             -webkit-backdrop-filter: saturate(180%) blur(12px);
-            transition: background-color .4s ease, box-shadow .4s ease, border-color .4s ease;
+            transition: box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
         }
         #site-header.is-scrolled {
-            background-color: rgba(255,255,255,.94);
-            border-bottom-color: #E6E9EF;
-            box-shadow: 0 1px 20px rgba(21,26,35,.06);
+            background: rgba(255,255,255,.96);
+            border-bottom-color: #E5E7EB;
+            box-shadow: 0 1px 18px rgba(13,15,18,.06);
         }
 
         .nav-link { position: relative; }
         .nav-link::after {
-            content: ""; position: absolute; left: 0; bottom: -6px;
-            width: 100%; height: 1px; background: var(--navy);
+            content: ""; position: absolute; left: 0; bottom: -7px;
+            width: 100%; height: 2px; background: #0D0F12;
             transform: scaleX(0); transform-origin: right;
-            transition: transform .35s cubic-bezier(.16,1,.3,1);
+            transition: transform .32s cubic-bezier(.16,1,.3,1);
         }
-        .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+        .nav-link:hover::after, .nav-link.is-active::after { transform: scaleX(1); transform-origin: left; }
 
-        /* ---------- Hero: yumuşak beyaz zemin ---------- */
-        .hero-wash {
+        /* ---------- Butonlar ---------- */
+        .btn-solid {
+            background: #0D0F12; color: #fff;
+            transition: background-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);
+        }
+        .btn-solid:hover { background: #2C3039; transform: translateY(-2px); }
+        .btn-solid:active { transform: translateY(0); }
+
+        .btn-link {
+            position: relative; display: inline-block; padding-bottom: 6px;
+        }
+        .btn-link::after {
+            content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px;
+            background: #0D0F12; transition: transform .32s cubic-bezier(.16,1,.3,1);
+            transform-origin: left;
+        }
+        .btn-link:hover::after { transform: scaleX(.35); }
+
+        /* ---------- Hero arka plan (mimari katmanlar) ---------- */
+        .hero-stage { background: linear-gradient(140deg, #F7F8FA 0%, #EDEFF4 55%, #E4E7EE 100%); }
+        .hero-stage::before,
+        .hero-stage::after {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+        }
+        .hero-stage::before {
             background:
-                radial-gradient(90% 70% at 82% 8%, rgba(30,58,95,.07) 0%, transparent 60%),
-                radial-gradient(70% 60% at 4% 95%, rgba(30,58,95,.05) 0%, transparent 58%),
-                linear-gradient(180deg, #FBFCFE 0%, #FFFFFF 55%);
+                linear-gradient(115deg, transparent 30%, rgba(255,255,255,.95) 30.4%, rgba(255,255,255,.95) 44%, transparent 44.4%),
+                linear-gradient(115deg, transparent 52%, rgba(255,255,255,.6) 52.4%, rgba(255,255,255,.6) 62%, transparent 62.4%),
+                linear-gradient(115deg, transparent 70%, rgba(215,219,228,.65) 70.4%, rgba(215,219,228,.65) 78%, transparent 78.4%);
         }
-        .hero-grid-lines {
-            background-image:
-                linear-gradient(to right, rgba(30,58,95,.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(30,58,95,.05) 1px, transparent 1px);
-            background-size: 72px 72px;
-            mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 30%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 30%, transparent 100%);
-        }
-
-        /* Portre: ince ofset çerçeve */
-        .portrait-frame { position: relative; }
-        .portrait-frame::before {
-            content: ""; position: absolute; inset: 0;
-            transform: translate(18px, 18px);
-            border: 1px solid rgba(30,58,95,.28);
-            pointer-events: none;
+        .hero-stage::after {
+            background: radial-gradient(70% 60% at 50% 0%, rgba(255,255,255,.75) 0%, transparent 65%);
         }
 
         /* ---------- Kartlar ---------- */
-        .card-service {
-            position: relative; overflow: hidden;
-            transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s cubic-bezier(.16,1,.3,1), border-color .4s ease;
+        .card-flat {
+            transition: background-color .35s ease, transform .45s cubic-bezier(.16,1,.3,1);
         }
-        .card-service::after {
-            content: ""; position: absolute; left: 0; top: 0; height: 2px; width: 100%;
-            background: linear-gradient(90deg, var(--navy), #356291);
-            transform: scaleX(0); transform-origin: left;
-            transition: transform .5s cubic-bezier(.16,1,.3,1);
+        .card-flat:hover { background: #ECEEF1; transform: translateY(-4px); }
+
+        .icon-tile {
+            width: 46px; height: 46px; border-radius: 10px;
+            background: #0D0F12; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            transition: background-color .35s ease, transform .35s cubic-bezier(.16,1,.3,1);
         }
-        .card-service:hover { transform: translateY(-6px); border-color: rgba(30,58,95,.28); }
-        .card-service:hover::after { transform: scaleX(1); }
-        .card-service .card-index { transition: color .4s ease; }
-        .card-service:hover .card-index { color: rgba(30,58,95,.35); }
+        .card-flat:hover .icon-tile, .feat:hover .icon-tile { transform: translateY(-2px); }
 
-        .card-lift { transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s ease, border-color .3s ease, background-color .3s ease; }
-        .card-lift:hover { transform: translateY(-4px); }
-
-        /* ---------- Butonlar ---------- */
-        .btn-navy {
-            background: var(--navy); color: #fff;
-            transition: background-color .35s ease, transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease;
+        .arrow-link {
+            display: inline-flex; align-items: center; gap: .45rem;
+            font-size: 12px; font-weight: 700; color: #0D0F12;
         }
-        .btn-navy:hover { background: #16304F; transform: translateY(-2px); }
-        .btn-navy:active { transform: translateY(0); }
-
-        .btn-outline {
-            transition: background-color .35s ease, color .35s ease, border-color .35s ease, transform .35s cubic-bezier(.16,1,.3,1);
+        .arrow-link .material-symbols-outlined {
+            font-size: 16px; transition: transform .32s cubic-bezier(.16,1,.3,1);
         }
-        .btn-outline:hover { transform: translateY(-2px); }
+        .arrow-link:hover .material-symbols-outlined { transform: translateX(4px); }
 
-        /* ---------- SSS akordiyon ---------- */
+        /* ---------- SSS ---------- */
         details.faq > summary { list-style: none; cursor: pointer; }
         details.faq > summary::-webkit-details-marker { display: none; }
-        details.faq .faq-icon { transition: transform .35s cubic-bezier(.16,1,.3,1), color .3s ease; }
-        details.faq[open] .faq-icon { transform: rotate(45deg); color: var(--navy); }
-        details.faq[open] { border-color: rgba(30,58,95,.3); background: #FBFCFE; }
-        details.faq .faq-body { animation: faqIn .45s cubic-bezier(.16,1,.3,1); }
+        details.faq .faq-icon { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+        details.faq[open] .faq-icon { transform: rotate(45deg); }
+        details.faq .faq-body { animation: faqIn .4s cubic-bezier(.16,1,.3,1); }
         @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
-        /* ---------- Süreç bağlayıcı çizgi ---------- */
-        .step-connector::before {
-            content: ""; position: absolute; top: 28px; left: 68px; right: -20px; height: 1px;
-            background: linear-gradient(90deg, rgba(30,58,95,.35), rgba(30,58,95,.06));
-        }
-        @media (max-width: 1023px) { .step-connector::before { display: none; } }
-
         /* ---------- Diğer ---------- */
-        ::selection { background: var(--navy); color: #fff; }
+        ::selection { background: #0D0F12; color: #fff; }
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #F2F4F7; }
-        ::-webkit-scrollbar-thumb { background: #C8CFD9; border-radius: 999px; border: 2px solid #F2F4F7; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--navy); }
+        ::-webkit-scrollbar-track { background: #F0F1F7; }
+        ::-webkit-scrollbar-thumb { background: #C7CBD4; border: 2px solid #F0F1F7; border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0D0F12; }
+        :focus-visible { outline: 2px solid #0D0F12; outline-offset: 3px; }
 
-        :focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
-
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
         /* Mobil menü */
-        #mobile-menu { transition: opacity .35s ease, visibility .35s ease; }
+        #mobile-menu { transition: opacity .32s ease, visibility .32s ease; }
         #mobile-menu.is-closed { opacity: 0; visibility: hidden; pointer-events: none; }
         #mobile-menu .mm-item {
             opacity: 0; transform: translateY(12px);
-            transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1);
+            transition: opacity .45s cubic-bezier(.16,1,.3,1), transform .45s cubic-bezier(.16,1,.3,1);
         }
         #mobile-menu:not(.is-closed) .mm-item { opacity: 1; transform: none; }
 
@@ -221,82 +220,42 @@
 </head>
 <body class="overflow-x-hidden antialiased bg-white text-ink">
 
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-navy focus:text-white focus:px-5 focus:py-3 focus:text-sm focus:font-semibold">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink focus:text-white focus:px-5 focus:py-3 focus:text-sm focus:font-bold">
         İçeriğe geç
     </a>
 
-    <!-- ══════════ ÜST BİLGİ ŞERİDİ ══════════ -->
-    <div class="hidden lg:block bg-paper-soft border-b border-line text-ink-500 text-xs relative z-50">
-        <div class="max-w-content mx-auto px-6 lg:px-10 h-11 flex items-center justify-between">
-            <div class="flex items-center gap-7">
-                <span class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[16px] text-navy">location_on</span>
-                    Karakoç Plaza No:59, Yenişehir / Diyarbakır
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[16px] text-navy">schedule</span>
-                    Pzt – Cmt · 09:00 – 17:00
-                </span>
-            </div>
-            <div class="flex items-center gap-7">
-                <a href="mailto:av.zulfukarcan@hotmail.com" class="flex items-center gap-2 hover:text-navy transition-colors">
-                    <span class="material-symbols-outlined text-[16px] text-navy">mail</span>
-                    av.zulfukarcan@hotmail.com
-                </a>
-                <span class="flex items-center gap-2 text-ink">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                    Diyarbakır Barosu · Lisanslı Arabulucu
-                </span>
-            </div>
-        </div>
-    </div>
-
     <!-- ══════════ HEADER ══════════ -->
     <header id="site-header" class="sticky top-0 z-50 border-b border-transparent">
-        <div class="max-w-content mx-auto px-6 lg:px-10 h-20 lg:h-[88px] flex items-center justify-between gap-6">
+        <div class="max-w-content mx-auto px-6 lg:px-10 h-[76px] lg:h-[88px] flex items-center justify-between gap-6">
 
             <!-- Marka -->
-            <a class="flex items-center gap-3.5 group shrink-0" href="#home" aria-label="Ana sayfa">
-                <span class="w-11 h-11 lg:w-12 lg:h-12 bg-navy text-white flex items-center justify-center font-display font-semibold text-lg tracking-tight group-hover:bg-navy-dark transition-colors duration-500">
-                    ZC
-                </span>
-                <span class="flex flex-col leading-none">
-                    <span class="font-display font-bold text-[17px] lg:text-[19px] tracking-tight text-ink">
-                        Zülfükar CAN
-                    </span>
-                    <span class="text-[9.5px] text-ink-400 tracking-label uppercase font-semibold mt-1.5">
-                        Arabulucu &amp; Avukat
-                    </span>
-                </span>
+            <a class="flex items-baseline gap-1.5 shrink-0 group" href="#home" aria-label="Ana sayfa">
+                <span class="font-display font-black text-[22px] lg:text-[25px] tracking-tight text-ink uppercase leading-none">Zülfükar Can</span>
+                <span class="font-display font-bold text-[9px] text-ink-400 leading-none">™</span>
             </a>
 
             <!-- Masaüstü menü -->
-            <nav class="hidden xl:flex items-center gap-9" aria-label="Ana menü">
-                <a class="nav-link text-[13px] font-medium text-ink-500 hover:text-navy transition-colors" href="#about">Hakkımızda</a>
-                <a class="nav-link text-[13px] font-medium text-ink-500 hover:text-navy transition-colors" href="#services">Uzmanlık Alanları</a>
-                <a class="nav-link text-[13px] font-medium text-ink-500 hover:text-navy transition-colors" href="#mediation">Arabuluculuk</a>
-                <a class="nav-link text-[13px] font-medium text-ink-500 hover:text-navy transition-colors" href="#process">Süreç</a>
-                <a class="nav-link text-[13px] font-medium text-ink-500 hover:text-navy transition-colors" href="#faq">S.S.S.</a>
-                <a class="nav-link text-[13px] font-medium text-ink-500 hover:text-navy transition-colors" href="#contact">İletişim</a>
+            <nav class="hidden xl:flex items-center gap-10" aria-label="Ana menü">
+                <a class="nav-link label text-[11px] text-ink hover:text-ink transition-colors" href="#home">Ana Sayfa</a>
+                <a class="nav-link label text-[11px] text-ink-500 hover:text-ink transition-colors" href="#about">Hakkımda</a>
+                <a class="nav-link label text-[11px] text-ink-500 hover:text-ink transition-colors" href="#services">Uzmanlık</a>
+                <a class="nav-link label text-[11px] text-ink-500 hover:text-ink transition-colors" href="#mediation">Arabuluculuk</a>
+                <a class="nav-link label text-[11px] text-ink-500 hover:text-ink transition-colors" href="#faq">S.S.S.</a>
+                <a class="nav-link label text-[11px] text-ink-500 hover:text-ink transition-colors" href="#contact">İletişim</a>
             </nav>
 
             <!-- Aksiyonlar -->
-            <div class="flex items-center gap-4 lg:gap-6">
-                <a href="tel:05070161813" class="hidden md:flex items-center gap-2.5 group">
-                    <span class="w-10 h-10 border border-line flex items-center justify-center text-navy group-hover:bg-navy group-hover:border-navy group-hover:text-white transition-all duration-500">
-                        <span class="material-symbols-outlined text-[19px]">call</span>
-                    </span>
-                    <span class="flex flex-col leading-none">
-                        <span class="text-[9px] text-ink-400 tracking-label uppercase font-semibold">Danışma Hattı</span>
-                        <span class="text-[14px] font-semibold text-ink mt-1 tabular-nums">0507 016 18 13</span>
-                    </span>
+            <div class="flex items-center gap-4">
+                <a href="tel:05070161813" class="hidden lg:flex items-center gap-2 label text-[11px] text-ink hover:text-ink-500 transition-colors">
+                    <span class="material-symbols-outlined text-[17px]">call</span>
+                    <span class="tabular-nums">0507 016 18 13</span>
                 </a>
 
-                <a class="hidden sm:inline-flex btn-navy items-center gap-2 text-[11px] font-semibold uppercase tracking-label px-6 py-3.5 shadow-navy" href="https://wa.me/905070161813" target="_blank" rel="noopener">
+                <a class="hidden sm:inline-flex btn-solid items-center label text-[11px] px-7 py-3.5" href="https://wa.me/905070161813" target="_blank" rel="noopener">
                     Randevu Al
                 </a>
 
-                <button id="mobile-menu-btn" class="xl:hidden w-11 h-11 flex items-center justify-center border border-line text-ink hover:border-navy hover:text-navy transition-colors" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="mobile-menu-btn" class="xl:hidden w-11 h-11 flex items-center justify-center bg-card hover:bg-card-hover text-ink transition-colors" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="material-symbols-outlined text-[26px]">menu</span>
                 </button>
             </div>
@@ -305,30 +264,30 @@
 
     <!-- ══════════ MOBİL MENÜ ══════════ -->
     <div id="mobile-menu" class="is-closed fixed inset-0 z-[60] bg-white xl:hidden overflow-y-auto">
-        <div class="px-6 py-6 flex items-center justify-between border-b border-line">
-            <span class="font-display font-bold text-lg tracking-tight text-ink">Zülfükar CAN</span>
-            <button id="mobile-menu-close" class="w-11 h-11 flex items-center justify-center border border-line text-ink hover:border-navy hover:text-navy transition-colors" aria-label="Menüyü kapat">
+        <div class="px-6 h-[76px] flex items-center justify-between border-b border-line">
+            <span class="font-display font-black text-[21px] tracking-tight uppercase">Zülfükar Can</span>
+            <button id="mobile-menu-close" class="w-11 h-11 flex items-center justify-center bg-card hover:bg-card-hover text-ink transition-colors" aria-label="Menüyü kapat">
                 <span class="material-symbols-outlined text-[26px]">close</span>
             </button>
         </div>
 
         <nav class="px-6 py-6 flex flex-col" aria-label="Mobil menü">
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.05s" href="#about">Hakkımızda</a>
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.1s" href="#services">Uzmanlık Alanları</a>
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.15s" href="#mediation">Arabuluculuk</a>
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.2s" href="#process">Çalışma Süreci</a>
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.25s" href="#faq">Sık Sorulan Sorular</a>
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.3s" href="#contact">İletişim</a>
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.35s" href="#location">Konum &amp; Ulaşım</a>
-            <a class="mm-item font-display text-2xl text-ink py-4 border-b border-line-soft hover:text-navy transition-colors" style="transition-delay:.4s" href="#hours">Çalışma Saatleri</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.04s" href="#about">Hakkımda</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.08s" href="#services">Uzmanlık Alanları</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.12s" href="#mediation">Arabuluculuk</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.16s" href="#process">Çalışma Süreci</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.2s" href="#faq">S.S.S.</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.24s" href="#contact">İletişim</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.28s" href="#location">Konum</a>
+            <a class="mm-item h-section text-[28px] py-4 border-b border-line-soft hover:text-ink-500 transition-colors" style="transition-delay:.32s" href="#hours">Çalışma Saatleri</a>
         </nav>
 
         <div class="px-6 pb-12 space-y-3">
-            <a href="tel:05070161813" class="mm-item flex items-center justify-center gap-3 border border-line py-4 text-sm font-semibold text-ink tracking-wide hover:border-navy hover:text-navy transition-colors" style="transition-delay:.45s">
+            <a href="tel:05070161813" class="mm-item flex items-center justify-center gap-3 bg-card hover:bg-card-hover py-4 label text-[12px] transition-colors" style="transition-delay:.36s">
                 <span class="material-symbols-outlined text-[19px]">call</span>
                 0507 016 18 13
             </a>
-            <a href="https://wa.me/905070161813" target="_blank" rel="noopener" class="mm-item btn-navy flex items-center justify-center gap-3 py-4 text-[11px] font-semibold uppercase tracking-label" style="transition-delay:.5s">
+            <a href="https://wa.me/905070161813" target="_blank" rel="noopener" class="mm-item btn-solid flex items-center justify-center py-4 label text-[12px]" style="transition-delay:.4s">
                 WhatsApp ile Randevu Al
             </a>
         </div>
@@ -337,77 +296,40 @@
     <main id="main">
 
         <!-- ══════════ HERO ══════════ -->
-        <section id="home" class="relative overflow-hidden">
-            <div class="absolute inset-0 hero-wash"></div>
-            <div class="absolute inset-0 hero-grid-lines"></div>
-            <div class="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full border border-navy/10 hidden lg:block"></div>
-            <div class="absolute -top-24 -right-24 w-[380px] h-[380px] rounded-full border border-navy/[.07] hidden lg:block"></div>
-
-            <div class="relative max-w-content mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-28">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-12 items-center">
+        <section id="home" class="relative bg-white">
+            <div class="max-w-content mx-auto px-6 lg:px-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
                     <!-- Metin -->
-                    <div class="lg:col-span-7">
-                        <div class="reveal">
-                            <span class="eyebrow">Diyarbakır Hukuk &amp; Arabuluculuk Bürosu</span>
-                        </div>
-
-                        <h1 class="reveal font-display text-[2.6rem] sm:text-6xl lg:text-[4.25rem] font-medium text-ink leading-[1.06] tracking-tight mt-7 balance" style="transition-delay:.08s">
-                            Hukuki sorularınız mı var?<br class="hidden sm:block"/>
-                            <span class="italic text-navy">Buradan sonrasını</span> ben hallederim.
+                    <div class="lg:col-span-6 py-14 lg:py-24 order-2 lg:order-1">
+                        <h1 class="reveal h-display text-[2.85rem] sm:text-[4rem] lg:text-[4.6rem] text-ink balance">
+                            Hukuki sorularınız mı var?
+                            <span class="block mt-2">Buradan sonrasını<br class="hidden sm:block"/> ben hallederim.</span>
                         </h1>
 
-                        <p class="reveal text-ink-500 text-base sm:text-[17px] leading-relaxed max-w-xl mt-7" style="transition-delay:.16s">
+                        <p class="reveal text-ink-500 text-[15px] sm:text-base leading-[1.75] max-w-md mt-8" style="transition-delay:.08s">
                             Günümüz danışanları pratik, şeffaf ve sonuç odaklı çözümler bekler. Avukatlık ve lisanslı
-                            arabuluculuk hizmetlerimizle uyuşmazlığınızın ilk gününden çözümüne kadar tüm süreç boyunca
-                            yanınızdayız.
+                            arabuluculuk hizmetlerimizle tüm süreç boyunca yanınızdayız.
                         </p>
 
-                        <div class="reveal flex flex-wrap items-center gap-4 sm:gap-5 mt-10" style="transition-delay:.24s">
-                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener" class="btn-navy inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-label px-8 py-4 shadow-navy">
-                                <span>Ücretsiz Ön Görüşme</span>
-                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        <div class="reveal flex flex-wrap items-center gap-8 mt-10" style="transition-delay:.16s">
+                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                               class="btn-solid inline-flex items-center label text-[11.5px] px-9 py-4">
+                                Randevu Al
                             </a>
-                            <a href="#services" class="btn-outline inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-label px-8 py-4 border border-navy/25 text-navy hover:bg-navy hover:text-white hover:border-navy">
-                                Uzmanlık Alanları
+                            <a href="#about" class="btn-link label text-[11.5px] text-ink">
+                                Özgeçmişi İncele
                             </a>
-                        </div>
-
-                        <!-- İstatistikler -->
-                        <div class="reveal grid grid-cols-3 gap-6 sm:gap-10 mt-14 pt-10 border-t border-line max-w-xl" style="transition-delay:.32s">
-                            <div>
-                                <p class="font-display text-3xl sm:text-4xl font-semibold text-navy">7/24</p>
-                                <p class="text-[10px] text-ink-400 tracking-label uppercase font-semibold mt-2.5 leading-relaxed">İletişim<br/>&amp; Danışma</p>
-                            </div>
-                            <div>
-                                <p class="font-display text-3xl sm:text-4xl font-semibold text-navy">Lisanslı</p>
-                                <p class="text-[10px] text-ink-400 tracking-label uppercase font-semibold mt-2.5 leading-relaxed">Arabulucu<br/>Avukat</p>
-                            </div>
-                            <div>
-                                <p class="font-display text-3xl sm:text-4xl font-semibold text-navy">%100</p>
-                                <p class="text-[10px] text-ink-400 tracking-label uppercase font-semibold mt-2.5 leading-relaxed">Gizlilik<br/>İlkesi</p>
-                            </div>
                         </div>
                     </div>
 
                     <!-- Portre -->
-                    <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                        <div class="reveal portrait-frame w-full max-w-[420px]" style="transition-delay:.2s">
-                            <div class="relative aspect-[4/5] overflow-hidden bg-paper-dim">
-                                <img src="./hero_mockup.jpg"
-                                     alt="Arabulucu Avukat Zülfükar CAN portre fotoğrafı"
-                                     class="w-full h-full object-cover object-top"
-                                     width="840" height="1050" loading="eager" decoding="async"/>
-                            </div>
-
-                            <!-- Beyaz isim kartı (fotoğrafın üzerine taşan) -->
-                            <div class="relative sm:absolute sm:-bottom-7 sm:left-7 sm:right-7 bg-white border border-line shadow-lift px-6 py-5 mt-4 sm:mt-0 z-10">
-                                <div class="w-9 h-[2px] bg-navy mb-3.5"></div>
-                                <p class="font-display text-lg font-semibold tracking-tight text-ink">Av. Arb. Zülfükar CAN</p>
-                                <p class="text-[10px] text-ink-400 tracking-label uppercase font-semibold mt-2 leading-relaxed">
-                                    Diyarbakır Barosu Üyesi · Resmî Arabulucu
-                                </p>
-                            </div>
+                    <div class="lg:col-span-6 order-1 lg:order-2 -mx-6 lg:mx-0">
+                        <div class="hero-stage relative overflow-hidden h-[420px] sm:h-[540px] lg:h-[640px]">
+                            <img src="./hero_mockup.jpg"
+                                 alt="Arabulucu Avukat Zülfükar CAN"
+                                 class="relative z-10 w-full h-full object-cover object-top"
+                                 width="900" height="1100" loading="eager" decoding="async"/>
                         </div>
                     </div>
 
@@ -415,140 +337,45 @@
             </div>
         </section>
 
-        <!-- ══════════ KURUMSAL GÜVENCE ══════════ -->
-        <section class="bg-paper-soft border-y border-line">
-            <div class="max-w-content mx-auto px-6 lg:px-10 py-16 lg:py-20">
+        <!-- ══════════ GÜVEN ŞERİDİ ══════════ -->
+        <section class="bg-band">
+            <div class="max-w-content mx-auto px-6 lg:px-10 py-14 lg:py-16">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
                     <div class="reveal lg:col-span-4">
-                        <span class="eyebrow">Kurumsal Güvence</span>
-                        <h2 class="font-display text-[26px] sm:text-3xl font-medium text-ink leading-snug tracking-tight mt-5 balance">
+                        <h2 class="h-section text-[22px] sm:text-[26px] text-ink balance">
                             Tecrübe ve uzmanlıkla<br/>güçlü çözümler
                         </h2>
-                        <p class="text-ink-500 text-[14.5px] leading-relaxed mt-4">
+                        <p class="text-ink-500 text-[14px] leading-[1.75] mt-4 max-w-sm">
                             Hukuki uyuşmazlıklarda yetkin bir uzmanla çalışmak hem zaman hem de hak kaybını önler.
                             Resmî sicil ve üyeliklerimizle her aşamada güvendesiniz.
                         </p>
                     </div>
 
-                    <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 text-center" style="transition-delay:.04s">
-                            <span class="material-symbols-outlined text-[30px] text-navy">gavel</span>
-                            <p class="font-display font-semibold text-[13px] text-ink mt-3 leading-snug">T.C. Adalet Bakanlığı</p>
-                            <p class="text-[10px] text-ink-400 tracking-wider uppercase font-semibold mt-1.5">Resmî Arabuluculuk</p>
+                    <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-9 items-center">
+                        <div class="reveal text-center sm:text-left" style="transition-delay:.04s">
+                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">T.C. Adalet Bakanlığı</p>
+                            <p class="text-[10.5px] text-ink-400 mt-1.5">Resmî Arabuluculuk</p>
                         </div>
-                        <div class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 text-center" style="transition-delay:.08s">
-                            <span class="material-symbols-outlined text-[30px] text-navy">balance</span>
-                            <p class="font-display font-semibold text-[13px] text-ink mt-3 leading-snug">Diyarbakır Barosu</p>
-                            <p class="text-[10px] text-ink-400 tracking-wider uppercase font-semibold mt-1.5">Baro Levha Sicili</p>
+                        <div class="reveal text-center sm:text-left" style="transition-delay:.08s">
+                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Diyarbakır Barosu</p>
+                            <p class="text-[10.5px] text-ink-400 mt-1.5">Baro Levha Sicili</p>
                         </div>
-                        <div class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 text-center" style="transition-delay:.12s">
-                            <span class="material-symbols-outlined text-[30px] text-navy">handshake</span>
-                            <p class="font-display font-semibold text-[13px] text-ink mt-3 leading-snug">Arabulucular Sicili</p>
-                            <p class="text-[10px] text-ink-400 tracking-wider uppercase font-semibold mt-1.5">Daire Başkanlığı</p>
+                        <div class="reveal text-center sm:text-left" style="transition-delay:.12s">
+                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Arabulucular Sicili</p>
+                            <p class="text-[10.5px] text-ink-400 mt-1.5">Daire Başkanlığı</p>
                         </div>
-                        <div class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 text-center" style="transition-delay:.16s">
-                            <span class="material-symbols-outlined text-[30px] text-navy">verified_user</span>
-                            <p class="font-display font-semibold text-[13px] text-ink mt-3 leading-snug">Türkiye Barolar Birliği</p>
-                            <p class="text-[10px] text-ink-400 tracking-wider uppercase font-semibold mt-1.5">TBB Üyeliği</p>
+                        <div class="reveal text-center sm:text-left" style="transition-delay:.16s">
+                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Türkiye Barolar Birliği</p>
+                            <p class="text-[10.5px] text-ink-400 mt-1.5">TBB Üyeliği</p>
                         </div>
-                        <div class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 text-center" style="transition-delay:.2s">
-                            <span class="material-symbols-outlined text-[30px] text-navy">corporate_fare</span>
-                            <p class="font-display font-semibold text-[13px] text-ink mt-3 leading-snug">Ticaret &amp; İş Hukuku</p>
-                            <p class="text-[10px] text-ink-400 tracking-wider uppercase font-semibold mt-1.5">Uzman Danışmanlık</p>
+                        <div class="reveal text-center sm:text-left" style="transition-delay:.2s">
+                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Ticaret &amp; İş Hukuku</p>
+                            <p class="text-[10.5px] text-ink-400 mt-1.5">Uzman Danışmanlık</p>
                         </div>
-                        <div class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 text-center" style="transition-delay:.24s">
-                            <span class="material-symbols-outlined text-[30px] text-navy">shield</span>
-                            <p class="font-display font-semibold text-[13px] text-ink mt-3 leading-snug">Gizlilik &amp; Güven</p>
-                            <p class="text-[10px] text-ink-400 tracking-wider uppercase font-semibold mt-1.5">Etik Kurallar</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════ HAKKIMIZDA ══════════ -->
-        <section class="py-24 lg:py-32 bg-white" id="about">
-            <div class="max-w-content mx-auto px-6 lg:px-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
-
-                    <!-- Ofis görseli -->
-                    <div class="lg:col-span-5 reveal">
-                        <div class="relative">
-                            <div class="relative aspect-[4/5] sm:aspect-[4/4.4] overflow-hidden bg-paper-dim border border-line">
-                                <img src="./law_office_interior.jpg"
-                                     alt="Diyarbakır hukuk ve arabuluculuk ofisi iç mekân görünümü"
-                                     class="w-full h-full object-cover" width="900" height="990" loading="lazy" decoding="async"/>
-                            </div>
-
-                            <!-- Beyaz bilgi kartı -->
-                            <div class="relative sm:absolute sm:-bottom-8 sm:-right-6 sm:max-w-[290px] bg-white border border-line shadow-lift p-6 mt-4 sm:mt-0">
-                                <div class="w-9 h-[2px] bg-navy mb-3.5"></div>
-                                <p class="font-display text-[17px] font-semibold tracking-tight text-ink">Hukuk &amp; Arabuluculuk Ofisi</p>
-                                <p class="text-[12.5px] text-ink-500 mt-2 leading-relaxed">Karakoç Plaza · Yenişehir / Diyarbakır</p>
-                                <div class="flex items-baseline gap-2.5 mt-4 pt-4 border-t border-line-soft">
-                                    <span class="font-display text-2xl font-semibold text-navy">2019</span>
-                                    <span class="text-[9.5px] text-ink-400 tracking-label uppercase font-semibold">Hizmet Başlangıcı</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Metin -->
-                    <div class="lg:col-span-7">
-                        <div class="reveal"><span class="eyebrow">Kurumsal Profil &amp; Misyon</span></div>
-
-                        <h2 class="reveal font-display text-[2rem] sm:text-[2.6rem] font-medium leading-[1.15] tracking-tight text-ink mt-6 balance" style="transition-delay:.06s">
-                            Hakkımızda ve<br/>hukuki misyonumuz
-                        </h2>
-
-                        <div class="reveal rule-navy mt-7" style="transition-delay:.1s"></div>
-
-                        <p class="reveal text-ink-500 leading-[1.85] text-[15.5px] mt-7" style="transition-delay:.14s">
-                            Arabulucu &amp; Avukat Zülfükar CAN, Diyarbakır merkezli olarak hukuki danışmanlık,
-                            arabuluculuk ve avukatlık hizmetleri sunmaktadır. Ceza hukuku, aile hukuku, boşanma davaları,
-                            icra ve alacak işlemleri, iş hukuku, miras hukuku ve ticaret hukuku alanlarında profesyonel
-                            destek sağlanmaktadır.
-                        </p>
-
-                        <blockquote class="reveal border-l-2 border-navy bg-navy-mist pl-6 pr-5 py-5 my-8" style="transition-delay:.18s">
-                            <p class="font-display italic text-[17px] sm:text-lg text-ink/85 leading-relaxed">
-                                “Müvekkil odaklı yaklaşım, gizlilik ilkesi ve hızlı çözüm anlayışı ile Türkiye genelinde
-                                hukuki destek sunuyoruz.”
-                            </p>
-                        </blockquote>
-
-                        <!-- Sütunlar -->
-                        <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4 mt-9" style="transition-delay:.22s">
-                            <div class="card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 flex items-start gap-4">
-                                <span class="material-symbols-outlined text-navy text-[26px] shrink-0">handshake</span>
-                                <div>
-                                    <p class="font-display font-semibold text-[15px] text-ink">Arabuluculuk</p>
-                                    <p class="text-[12.5px] text-ink-500 mt-1 leading-relaxed">Mahkeme dışı hızlı uzlaşı</p>
-                                </div>
-                            </div>
-                            <div class="card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 flex items-start gap-4">
-                                <span class="material-symbols-outlined text-navy text-[26px] shrink-0">gavel</span>
-                                <div>
-                                    <p class="font-display font-semibold text-[15px] text-ink">Avukatlık</p>
-                                    <p class="text-[12.5px] text-ink-500 mt-1 leading-relaxed">Titiz savunma ve dosya takibi</p>
-                                </div>
-                            </div>
-                            <div class="card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 flex items-start gap-4">
-                                <span class="material-symbols-outlined text-navy text-[26px] shrink-0">lock</span>
-                                <div>
-                                    <p class="font-display font-semibold text-[15px] text-ink">Gizlilik İlkesi</p>
-                                    <p class="text-[12.5px] text-ink-500 mt-1 leading-relaxed">Mesleki sır saklama güvencesi</p>
-                                </div>
-                            </div>
-                            <div class="card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 flex items-start gap-4">
-                                <span class="material-symbols-outlined text-navy text-[26px] shrink-0">speed</span>
-                                <div>
-                                    <p class="font-display font-semibold text-[15px] text-ink">Hızlı Çözüm</p>
-                                    <p class="text-[12.5px] text-ink-500 mt-1 leading-relaxed">Zaman ve maliyet tasarrufu</p>
-                                </div>
-                            </div>
+                        <div class="reveal text-center sm:text-left" style="transition-delay:.24s">
+                            <p class="font-display font-bold text-[15px] text-ink-500 leading-tight">Gizlilik &amp; Güven</p>
+                            <p class="text-[10.5px] text-ink-400 mt-1.5">Etik Kurallar</p>
                         </div>
                     </div>
 
@@ -557,101 +384,64 @@
         </section>
 
         <!-- ══════════ UZMANLIK ALANLARI ══════════ -->
-        <section class="py-24 lg:py-32 bg-paper-soft border-y border-line" id="services">
+        <section class="py-20 lg:py-28 bg-white" id="services">
             <div class="max-w-content mx-auto px-6 lg:px-10">
 
-                <div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
-                    <div class="reveal"><span class="eyebrow is-centered">Hukuki Hizmetlerimiz</span></div>
-                    <h2 class="reveal font-display text-[2rem] sm:text-[2.75rem] font-medium leading-[1.15] tracking-tight text-ink mt-6 balance" style="transition-delay:.06s">
-                        Faaliyet ve uzmanlık alanları
-                    </h2>
-                    <p class="reveal text-ink-500 text-[15.5px] leading-relaxed mt-5" style="transition-delay:.1s">
-                        Hak ve adaleti rehber edinerek, müvekkillerimize her hukuki adımda kurumsal ve
-                        bağlayıcı güvence sağlıyoruz.
-                    </p>
-                </div>
+                <h2 class="reveal h-section text-center text-[2.2rem] sm:text-[3.2rem] lg:text-[3.6rem] text-ink mb-14 lg:mb-16">
+                    Uzmanlık Alanları
+                </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
 
-                    <article class="reveal card-service bg-white border border-line p-8 lg:p-9 shadow-soft hover:shadow-lift">
-                        <div class="flex items-start justify-between mb-6">
-                            <span class="w-14 h-14 bg-navy-pale text-navy flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[28px]">gavel</span>
-                            </span>
-                            <span class="card-index font-display text-3xl font-semibold text-ink/10">01</span>
-                        </div>
-                        <h3 class="font-display text-xl font-semibold text-ink tracking-tight">Ceza Hukuku</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3.5">
+                    <article class="reveal card-flat bg-card p-8 lg:p-9">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">gavel</span></span>
+                        <h3 class="h-card text-[15px] text-ink mt-6">Ceza Hukuku</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Soruşturma ve kovuşturma aşamalarında profesyonel savunma, karakol ve savcılık ifadeleri ile
                             ceza davalarının titizlikle takibi.
                         </p>
                     </article>
 
-                    <article class="reveal card-service bg-white border border-line p-8 lg:p-9 shadow-soft hover:shadow-lift" style="transition-delay:.06s">
-                        <div class="flex items-start justify-between mb-6">
-                            <span class="w-14 h-14 bg-navy-pale text-navy flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[28px]">family_restroom</span>
-                            </span>
-                            <span class="card-index font-display text-3xl font-semibold text-ink/10">02</span>
-                        </div>
-                        <h3 class="font-display text-xl font-semibold text-ink tracking-tight">Aile ve Boşanma Hukuku</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3.5">
+                    <article class="reveal card-flat bg-card p-8 lg:p-9" style="transition-delay:.05s">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">family_restroom</span></span>
+                        <h3 class="h-card text-[15px] text-ink mt-6">Aile ve Boşanma Hukuku</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Anlaşmalı ve çekişmeli boşanma, mal paylaşımı, nafaka, velayet ve soybağı uyuşmazlıklarında
                             hukuki süreçlerin yönetilmesi.
                         </p>
                     </article>
 
-                    <article class="reveal card-service bg-white border border-line p-8 lg:p-9 shadow-soft hover:shadow-lift" style="transition-delay:.12s">
-                        <div class="flex items-start justify-between mb-6">
-                            <span class="w-14 h-14 bg-navy-pale text-navy flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[28px]">handshake</span>
-                            </span>
-                            <span class="card-index font-display text-3xl font-semibold text-ink/10">03</span>
-                        </div>
-                        <h3 class="font-display text-xl font-semibold text-ink tracking-tight">Arabuluculuk Hizmetleri</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3.5">
+                    <article class="reveal card-flat bg-card p-8 lg:p-9" style="transition-delay:.1s">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">handshake</span></span>
+                        <h3 class="h-card text-[15px] text-ink mt-6">Arabuluculuk Hizmetleri</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Taraflar arasındaki iş, ticaret ve tüketici uyuşmazlıklarının hızlı, tarafsız ve mahkeme
                             masrafları olmaksızın çözümü.
                         </p>
                     </article>
 
-                    <article class="reveal card-service bg-white border border-line p-8 lg:p-9 shadow-soft hover:shadow-lift">
-                        <div class="flex items-start justify-between mb-6">
-                            <span class="w-14 h-14 bg-navy-pale text-navy flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[28px]">payments</span>
-                            </span>
-                            <span class="card-index font-display text-3xl font-semibold text-ink/10">04</span>
-                        </div>
-                        <h3 class="font-display text-xl font-semibold text-ink tracking-tight">İcra ve Alacak Takibi</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3.5">
+                    <article class="reveal card-flat bg-card p-8 lg:p-9">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">payments</span></span>
+                        <h3 class="h-card text-[15px] text-ink mt-6">İcra ve Alacak Takibi</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Alacakların yasal yollarla tahsili, borçlulara yönelik icra takipleri, haciz işlemleri ve
                             itiraz süreçlerinin yönetimi.
                         </p>
                     </article>
 
-                    <article class="reveal card-service bg-white border border-line p-8 lg:p-9 shadow-soft hover:shadow-lift" style="transition-delay:.06s">
-                        <div class="flex items-start justify-between mb-6">
-                            <span class="w-14 h-14 bg-navy-pale text-navy flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[28px]">badge</span>
-                            </span>
-                            <span class="card-index font-display text-3xl font-semibold text-ink/10">05</span>
-                        </div>
-                        <h3 class="font-display text-xl font-semibold text-ink tracking-tight">İş Hukuku</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3.5">
+                    <article class="reveal card-flat bg-card p-8 lg:p-9" style="transition-delay:.05s">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">badge</span></span>
+                        <h3 class="h-card text-[15px] text-ink mt-6">İş Hukuku</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             İşe iade davaları, kıdem ve ihbar tazminatları, iş kazaları tazminatı ve iş sözleşmelerinden
                             doğan tüm hakların takibi.
                         </p>
                     </article>
 
-                    <article class="reveal card-service bg-white border border-line p-8 lg:p-9 shadow-soft hover:shadow-lift" style="transition-delay:.12s">
-                        <div class="flex items-start justify-between mb-6">
-                            <span class="w-14 h-14 bg-navy-pale text-navy flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[28px]">history_edu</span>
-                            </span>
-                            <span class="card-index font-display text-3xl font-semibold text-ink/10">06</span>
-                        </div>
-                        <h3 class="font-display text-xl font-semibold text-ink tracking-tight">Miras ve Ticaret Hukuku</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3.5">
+                    <article class="reveal card-flat bg-card p-8 lg:p-9" style="transition-delay:.1s">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">history_edu</span></span>
+                        <h3 class="h-card text-[15px] text-ink mt-6">Miras ve Ticaret Hukuku</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Veraset ilamı, vasiyetnameler, tenkis ve muris muvazaası davaları ile şirketler için
                             sözleşme danışmanlığı.
                         </p>
@@ -661,53 +451,155 @@
             </div>
         </section>
 
-        <!-- ══════════ ARABULUCULUK ══════════ -->
-        <section class="py-24 lg:py-32 bg-white" id="mediation">
+        <!-- ══════════ HAKKIMDA ══════════ -->
+        <section class="py-20 lg:py-24 bg-band" id="about">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-                    <!-- Görsel -->
-                    <div class="lg:col-span-6 reveal order-2 lg:order-1">
-                        <div class="relative aspect-[4/3] overflow-hidden border border-line bg-paper-dim">
-                            <img src="./law_and_mediation.jpg"
-                                 alt="Lisanslı arabuluculuk görüşmesi"
-                                 class="w-full h-full object-cover" loading="lazy" decoding="async"/>
+                    <div class="lg:col-span-5 reveal">
+                        <div class="aspect-[4/5] sm:aspect-[4/4.6] overflow-hidden bg-white">
+                            <img src="./law_office_interior.jpg"
+                                 alt="Diyarbakır hukuk ve arabuluculuk ofisi"
+                                 class="w-full h-full object-cover" width="900" height="1035" loading="lazy" decoding="async"/>
                         </div>
                     </div>
 
-                    <!-- Metin -->
-                    <div class="lg:col-span-6 order-1 lg:order-2">
-                        <div class="reveal"><span class="eyebrow">Resmî Arabuluculuk Hizmeti</span></div>
-
-                        <h2 class="reveal font-display text-[2rem] sm:text-[2.6rem] font-medium leading-[1.15] tracking-tight text-ink mt-6 balance" style="transition-delay:.06s">
-                            Uyuşmazlıklarda <span class="italic text-navy">mahkemesiz</span> ve hızlı uzlaşma
+                    <div class="lg:col-span-7">
+                        <h2 class="reveal h-section text-[2rem] sm:text-[2.8rem] text-ink balance">
+                            Açık iletişim,<br/>doğru hukuki yol.
                         </h2>
 
-                        <p class="reveal text-ink-500 text-[15.5px] leading-[1.85] mt-6" style="transition-delay:.1s">
-                            Lisanslı arabuluculuk sicilimiz ile mahkeme masrafları ve yıllar süren yıpratıcı dava süreçleri
-                            olmaksızın, yasal olarak ilam niteliğinde bağlayıcı anlaşmalar sağlıyoruz.
+                        <p class="reveal text-ink-500 text-[14.5px] leading-[1.85] mt-7 max-w-xl" style="transition-delay:.06s">
+                            Arabulucu &amp; Avukat Zülfükar CAN, Diyarbakır merkezli olarak hukuki danışmanlık,
+                            arabuluculuk ve avukatlık hizmetleri sunmaktadır. Ceza hukuku, aile hukuku, boşanma davaları,
+                            icra ve alacak işlemleri, iş hukuku, miras hukuku ve ticaret hukuku alanlarında profesyonel
+                            destek sağlanmaktadır.
                         </p>
 
-                        <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-5 mt-9 mb-9" style="transition-delay:.14s">
-                            <div class="bg-navy-mist border border-navy/10 p-5">
-                                <p class="font-display text-lg font-semibold text-navy">İlam Niteliği</p>
-                                <p class="text-[12px] text-ink-500 mt-1.5 leading-relaxed">Bağlayıcı anlaşma belgesi</p>
+                        <p class="reveal text-ink-500 text-[14.5px] leading-[1.85] mt-5 max-w-xl" style="transition-delay:.1s">
+                            Müvekkil odaklı yaklaşım, gizlilik ilkesi ve hızlı çözüm anlayışı ile Türkiye genelinde
+                            hukuki destek sunulmaktadır. Detaylı bilgi ve danışmanlık için bizimle her zaman iletişime
+                            geçebilirsiniz.
+                        </p>
+
+                        <!-- Sayısal vurgular -->
+                        <div class="reveal grid grid-cols-3 gap-6 mt-10 pt-9 border-t border-ink/10 max-w-lg" style="transition-delay:.14s">
+                            <div>
+                                <p class="font-display font-black text-[28px] sm:text-[32px] text-ink leading-none">2019</p>
+                                <p class="text-[10.5px] text-ink-500 font-semibold mt-2.5 leading-snug">Hizmet<br/>Başlangıcı</p>
                             </div>
-                            <div class="bg-navy-mist border border-navy/10 p-5">
-                                <p class="font-display text-lg font-semibold text-navy">Düşük Maliyet</p>
-                                <p class="text-[12px] text-ink-500 mt-1.5 leading-relaxed">Mahkeme masrafı yok</p>
+                            <div>
+                                <p class="font-display font-black text-[28px] sm:text-[32px] text-ink leading-none">7/24</p>
+                                <p class="text-[10.5px] text-ink-500 font-semibold mt-2.5 leading-snug">İletişim<br/>&amp; Danışma</p>
                             </div>
-                            <div class="bg-navy-mist border border-navy/10 p-5">
-                                <p class="font-display text-lg font-semibold text-navy">Kısa Süre</p>
-                                <p class="text-[12px] text-ink-500 mt-1.5 leading-relaxed">Haftalar içinde sonuç</p>
+                            <div>
+                                <p class="font-display font-black text-[28px] sm:text-[32px] text-ink leading-none">%100</p>
+                                <p class="text-[10.5px] text-ink-500 font-semibold mt-2.5 leading-snug">Gizlilik<br/>İlkesi</p>
                             </div>
                         </div>
 
                         <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-                           class="reveal btn-navy inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-label px-8 py-4 shadow-navy" style="transition-delay:.18s">
-                            <span>Arabuluculuk Talebi Oluştur</span>
-                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                           class="reveal btn-solid inline-flex items-center label text-[11.5px] px-9 py-4 mt-9" style="transition-delay:.18s">
+                            Randevu Al
                         </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════ NEDEN BİZ (3 sütun) ══════════ -->
+        <section class="py-20 lg:py-28 bg-white">
+            <div class="max-w-content mx-auto px-6 lg:px-10">
+
+                <h2 class="reveal h-section text-[1.75rem] sm:text-[2.2rem] text-ink max-w-2xl balance mb-14">
+                    Güveninizi kazanır, dosyanızı<br class="hidden sm:block"/> özenle takip ederim.
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-0">
+
+                    <div class="reveal feat lg:pr-10 lg:border-r border-line">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">lock</span></span>
+                        <h3 class="h-card text-[14px] text-ink mt-6">Gizlilik İlkesi</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
+                            Avukatlık Kanunu uyarınca mesleki sır saklama yükümlülüğü esastır. Paylaştığınız her bilgi
+                            gizli tutulur.
+                        </p>
+                        <a href="#faq" class="arrow-link mt-5">
+                            Detaylı Bilgi <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="reveal feat lg:px-10 lg:border-r border-line" style="transition-delay:.07s">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">speed</span></span>
+                        <h3 class="h-card text-[14px] text-ink mt-6">Hızlı Çözüm</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
+                            Arabuluculuk yoluyla haftalar içinde sonuç; gereksiz mahkeme masrafı ve yıpratıcı süreçler
+                            olmadan.
+                        </p>
+                        <a href="#mediation" class="arrow-link mt-5">
+                            Detaylı Bilgi <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="reveal feat lg:pl-10" style="transition-delay:.14s">
+                        <span class="icon-tile"><span class="material-symbols-outlined text-[24px]">description</span></span>
+                        <h3 class="h-card text-[14px] text-ink mt-6">Şeffaf Süreç</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
+                            Olası sonuçlar, süreler ve maliyetler baştan açıkça bildirilir. Her aşamada
+                            bilgilendirilirsiniz.
+                        </p>
+                        <a href="#process" class="arrow-link mt-5">
+                            Detaylı Bilgi <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════ ARABULUCULUK ══════════ -->
+        <section class="py-20 lg:py-24 bg-band" id="mediation">
+            <div class="max-w-content mx-auto px-6 lg:px-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+                    <div class="lg:col-span-7 order-2 lg:order-1">
+                        <h2 class="reveal h-section text-[2rem] sm:text-[2.8rem] text-ink balance">
+                            Mahkemesiz ve<br/>hızlı uzlaşma.
+                        </h2>
+
+                        <p class="reveal text-ink-500 text-[14.5px] leading-[1.85] mt-7 max-w-xl" style="transition-delay:.06s">
+                            Lisanslı arabuluculuk sicilimiz ile mahkeme masrafları ve yıllar süren yıpratıcı dava süreçleri
+                            olmaksızın, yasal olarak ilam niteliğinde bağlayıcı anlaşmalar sağlıyoruz.
+                        </p>
+
+                        <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-5 mt-9" style="transition-delay:.1s">
+                            <div class="bg-white p-6">
+                                <p class="h-card text-[13px] text-ink">İlam Niteliği</p>
+                                <p class="text-[12px] text-ink-500 mt-2 leading-relaxed">Bağlayıcı anlaşma belgesi</p>
+                            </div>
+                            <div class="bg-white p-6">
+                                <p class="h-card text-[13px] text-ink">Düşük Maliyet</p>
+                                <p class="text-[12px] text-ink-500 mt-2 leading-relaxed">Mahkeme masrafı yok</p>
+                            </div>
+                            <div class="bg-white p-6">
+                                <p class="h-card text-[13px] text-ink">Kısa Süre</p>
+                                <p class="text-[12px] text-ink-500 mt-2 leading-relaxed">Haftalar içinde sonuç</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                           class="reveal btn-solid inline-flex items-center label text-[11.5px] px-9 py-4 mt-9" style="transition-delay:.14s">
+                            Arabuluculuk Talebi Oluştur
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-5 reveal order-1 lg:order-2">
+                        <div class="aspect-[4/3] lg:aspect-[4/4.4] overflow-hidden bg-white">
+                            <img src="./law_and_mediation.jpg"
+                                 alt="Lisanslı arabuluculuk görüşmesi"
+                                 class="w-full h-full object-cover" loading="lazy" decoding="async"/>
+                        </div>
                     </div>
 
                 </div>
@@ -715,91 +607,83 @@
         </section>
 
         <!-- ══════════ ÇALIŞMA SÜRECİ ══════════ -->
-        <section class="py-24 lg:py-32 bg-paper-soft border-y border-line" id="process">
+        <section class="py-20 lg:py-28 bg-white" id="process">
             <div class="max-w-content mx-auto px-6 lg:px-10">
 
-                <div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
-                    <div class="reveal"><span class="eyebrow is-centered">Nasıl Çalışıyoruz</span></div>
-                    <h2 class="reveal font-display text-[2rem] sm:text-[2.75rem] font-medium leading-[1.15] tracking-tight text-ink mt-6 balance" style="transition-delay:.06s">
+                <div class="mb-14 lg:mb-16">
+                    <h2 class="reveal h-section text-[2rem] sm:text-[2.8rem] text-ink balance">
                         İlk görüşmeden çözüme
                     </h2>
-                    <p class="reveal text-ink-500 text-[15.5px] leading-relaxed mt-5" style="transition-delay:.1s">
+                    <p class="reveal text-ink-500 text-[14.5px] leading-[1.75] mt-5 max-w-lg" style="transition-delay:.06s">
                         Şeffaf ve öngörülebilir dört aşamalı süreç. Her adımda ne olacağını önceden bilirsiniz.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-
-                    <div class="reveal relative step-connector">
-                        <div class="w-14 h-14 bg-white border border-navy/25 text-navy flex items-center justify-center font-display text-lg font-semibold mb-6">01</div>
-                        <h3 class="font-display text-lg font-semibold text-ink tracking-tight">İlk Görüşme</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line">
+                    <div class="reveal bg-white p-8 lg:p-9">
+                        <p class="font-display font-black text-[13px] text-ink-400">01</p>
+                        <h3 class="h-card text-[14px] text-ink mt-5">İlk Görüşme</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Telefon veya WhatsApp üzerinden dosyanızı dinliyor, hukuki durumunuzu ön değerlendirmeden
                             geçiriyoruz.
                         </p>
                     </div>
-
-                    <div class="reveal relative step-connector" style="transition-delay:.08s">
-                        <div class="w-14 h-14 bg-white border border-navy/25 text-navy flex items-center justify-center font-display text-lg font-semibold mb-6">02</div>
-                        <h3 class="font-display text-lg font-semibold text-ink tracking-tight">Dosya İncelemesi</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3">
+                    <div class="reveal bg-white p-8 lg:p-9" style="transition-delay:.06s">
+                        <p class="font-display font-black text-[13px] text-ink-400">02</p>
+                        <h3 class="h-card text-[14px] text-ink mt-5">Dosya İncelemesi</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Belgeleriniz incelenir, olası sonuçlar, süreler ve maliyetler açık biçimde tarafınıza
                             raporlanır.
                         </p>
                     </div>
-
-                    <div class="reveal relative step-connector" style="transition-delay:.16s">
-                        <div class="w-14 h-14 bg-white border border-navy/25 text-navy flex items-center justify-center font-display text-lg font-semibold mb-6">03</div>
-                        <h3 class="font-display text-lg font-semibold text-ink tracking-tight">Strateji ve Yol Haritası</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3">
+                    <div class="reveal bg-white p-8 lg:p-9" style="transition-delay:.12s">
+                        <p class="font-display font-black text-[13px] text-ink-400">03</p>
+                        <h3 class="h-card text-[14px] text-ink mt-5">Strateji ve Yol Haritası</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Arabuluculuk mu, dava mı? Sizin için en hızlı ve en az maliyetli yol birlikte belirlenir.
                         </p>
                     </div>
-
-                    <div class="reveal relative" style="transition-delay:.24s">
-                        <div class="w-14 h-14 bg-navy text-white flex items-center justify-center font-display text-lg font-semibold mb-6">04</div>
-                        <h3 class="font-display text-lg font-semibold text-ink tracking-tight">Takip ve Sonuç</h3>
-                        <p class="text-ink-500 text-[14px] leading-[1.8] mt-3">
+                    <div class="reveal bg-white p-8 lg:p-9" style="transition-delay:.18s">
+                        <p class="font-display font-black text-[13px] text-ink">04</p>
+                        <h3 class="h-card text-[14px] text-ink mt-5">Takip ve Sonuç</h3>
+                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                             Süreç boyunca düzenli bilgilendirme yapılır; her aşamada dosyanızın durumundan haberdar
                             olursunuz.
                         </p>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!-- ══════════ S.S.S. ══════════ -->
-        <section class="py-24 lg:py-32 bg-white" id="faq">
+        <section class="py-20 lg:py-28 bg-band" id="faq">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-                    <div class="lg:col-span-4 lg:sticky lg:top-32">
-                        <div class="reveal"><span class="eyebrow">Sık Sorulan Sorular</span></div>
-                        <h2 class="reveal font-display text-[2rem] sm:text-[2.4rem] font-medium leading-[1.15] tracking-tight text-ink mt-6 balance" style="transition-delay:.06s">
-                            Merak edilenler
+                    <div class="lg:col-span-4 lg:sticky lg:top-28">
+                        <h2 class="reveal h-section text-[2rem] sm:text-[2.6rem] text-ink balance">
+                            Sık sorulan sorular
                         </h2>
-                        <p class="reveal text-ink-500 text-[15px] leading-relaxed mt-5" style="transition-delay:.1s">
-                            Cevabını bulamadığınız bir sorunuz mu var? Doğrudan bize yazın, en kısa sürede dönüş yapalım.
+                        <p class="reveal text-ink-500 text-[14.5px] leading-[1.8] mt-5" style="transition-delay:.06s">
+                            Cevabını bulamadığınız bir sorunuz mu var? Doğrudan yazın, en kısa sürede dönüş yapalım.
                         </p>
                         <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-                           class="reveal btn-outline inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-label px-7 py-3.5 border border-navy/25 text-navy hover:bg-navy hover:text-white mt-7" style="transition-delay:.14s">
-                            <span class="material-symbols-outlined text-[17px]">chat</span>
+                           class="reveal btn-solid inline-flex items-center label text-[11.5px] px-8 py-4 mt-7" style="transition-delay:.1s">
                             Soru Sor
                         </a>
                     </div>
 
-                    <div class="lg:col-span-8 space-y-3.5">
+                    <div class="lg:col-span-8 space-y-3">
 
-                        <details class="faq reveal bg-white border border-line transition-colors">
+                        <details class="faq reveal bg-white">
                             <summary class="flex items-center justify-between gap-6 p-6 sm:p-7">
-                                <h3 class="font-display text-[17px] sm:text-[18px] font-semibold text-ink tracking-tight">
+                                <h3 class="h-card text-[13.5px] sm:text-[14.5px] text-ink pr-2">
                                     Arabuluculuk ile dava açmak arasındaki fark nedir?
                                 </h3>
-                                <span class="faq-icon material-symbols-outlined text-[24px] text-ink-400 shrink-0">add</span>
+                                <span class="faq-icon material-symbols-outlined text-[22px] text-ink shrink-0">add</span>
                             </summary>
-                            <div class="faq-body px-6 sm:px-7 pb-7 -mt-1">
-                                <p class="text-ink-500 text-[14.5px] leading-[1.85]">
+                            <div class="faq-body px-6 sm:px-7 pb-7">
+                                <p class="text-ink-500 text-[13.5px] leading-[1.85]">
                                     Arabuluculuk, tarafların bağımsız ve tarafsız bir arabulucu eşliğinde uyuşmazlığı
                                     kendi iradeleriyle çözdüğü bir yöntemdir. Dava sürecine kıyasla çok daha kısa sürer,
                                     mahkeme masrafı doğurmaz ve varılan anlaşma belgesi mahkeme ilamı niteliğinde
@@ -809,65 +693,65 @@
                             </div>
                         </details>
 
-                        <details class="faq reveal bg-white border border-line transition-colors" style="transition-delay:.05s">
+                        <details class="faq reveal bg-white" style="transition-delay:.04s">
                             <summary class="flex items-center justify-between gap-6 p-6 sm:p-7">
-                                <h3 class="font-display text-[17px] sm:text-[18px] font-semibold text-ink tracking-tight">
+                                <h3 class="h-card text-[13.5px] sm:text-[14.5px] text-ink pr-2">
                                     İlk görüşme için ücret ödemem gerekiyor mu?
                                 </h3>
-                                <span class="faq-icon material-symbols-outlined text-[24px] text-ink-400 shrink-0">add</span>
+                                <span class="faq-icon material-symbols-outlined text-[22px] text-ink shrink-0">add</span>
                             </summary>
-                            <div class="faq-body px-6 sm:px-7 pb-7 -mt-1">
-                                <p class="text-ink-500 text-[14.5px] leading-[1.85]">
+                            <div class="faq-body px-6 sm:px-7 pb-7">
+                                <p class="text-ink-500 text-[13.5px] leading-[1.85]">
                                     Dosyanızın hukuki niteliğini anlamaya yönelik ön görüşmeyi telefon veya WhatsApp
-                                    üzerinden yapıyoruz. Detaylı hukuki mütalaa ve vekâlet süreçlerine ilişkin ücretlendirme,
-                                    Türkiye Barolar Birliği Asgari Ücret Tarifesi çerçevesinde ve görüşme sonrasında
-                                    şeffaf biçimde tarafınıza bildirilir.
+                                    üzerinden yapıyoruz. Detaylı hukuki mütalaa ve vekâlet süreçlerine ilişkin
+                                    ücretlendirme, Türkiye Barolar Birliği Asgari Ücret Tarifesi çerçevesinde ve görüşme
+                                    sonrasında şeffaf biçimde tarafınıza bildirilir.
                                 </p>
                             </div>
                         </details>
 
-                        <details class="faq reveal bg-white border border-line transition-colors" style="transition-delay:.1s">
+                        <details class="faq reveal bg-white" style="transition-delay:.08s">
                             <summary class="flex items-center justify-between gap-6 p-6 sm:p-7">
-                                <h3 class="font-display text-[17px] sm:text-[18px] font-semibold text-ink tracking-tight">
+                                <h3 class="h-card text-[13.5px] sm:text-[14.5px] text-ink pr-2">
                                     Diyarbakır dışında yaşıyorum, hizmet alabilir miyim?
                                 </h3>
-                                <span class="faq-icon material-symbols-outlined text-[24px] text-ink-400 shrink-0">add</span>
+                                <span class="faq-icon material-symbols-outlined text-[22px] text-ink shrink-0">add</span>
                             </summary>
-                            <div class="faq-body px-6 sm:px-7 pb-7 -mt-1">
-                                <p class="text-ink-500 text-[14.5px] leading-[1.85]">
+                            <div class="faq-body px-6 sm:px-7 pb-7">
+                                <p class="text-ink-500 text-[13.5px] leading-[1.85]">
                                     Evet. Büromuz Diyarbakır merkezli olmakla birlikte Türkiye genelinde hukuki destek
                                     sunmaktadır. Kulp, Ergani, Çınar ve Çermik başta olmak üzere ilçelerde ve diğer
-                                    illerde dosya takibi yapılabilmektedir. Görüşmeler telefon, WhatsApp veya
-                                    çevrim içi yöntemlerle sürdürülebilir.
+                                    illerde dosya takibi yapılabilmektedir. Görüşmeler telefon, WhatsApp veya çevrim içi
+                                    yöntemlerle sürdürülebilir.
                                 </p>
                             </div>
                         </details>
 
-                        <details class="faq reveal bg-white border border-line transition-colors" style="transition-delay:.15s">
+                        <details class="faq reveal bg-white" style="transition-delay:.12s">
                             <summary class="flex items-center justify-between gap-6 p-6 sm:p-7">
-                                <h3 class="font-display text-[17px] sm:text-[18px] font-semibold text-ink tracking-tight">
-                                    Görüşme sırasında paylaştığım bilgiler gizli kalıyor mu?
+                                <h3 class="h-card text-[13.5px] sm:text-[14.5px] text-ink pr-2">
+                                    Görüşmede paylaştığım bilgiler gizli kalıyor mu?
                                 </h3>
-                                <span class="faq-icon material-symbols-outlined text-[24px] text-ink-400 shrink-0">add</span>
+                                <span class="faq-icon material-symbols-outlined text-[22px] text-ink shrink-0">add</span>
                             </summary>
-                            <div class="faq-body px-6 sm:px-7 pb-7 -mt-1">
-                                <p class="text-ink-500 text-[14.5px] leading-[1.85]">
+                            <div class="faq-body px-6 sm:px-7 pb-7">
+                                <p class="text-ink-500 text-[13.5px] leading-[1.85]">
                                     Kesinlikle. Avukatlık Kanunu uyarınca mesleki sır saklama yükümlülüğü esastır.
-                                    Vekâlet ilişkisi kurulmasa dahi görüşme kapsamında paylaştığınız tüm bilgi ve belgeler
-                                    gizli tutulur, üçüncü kişilerle paylaşılmaz.
+                                    Vekâlet ilişkisi kurulmasa dahi görüşme kapsamında paylaştığınız tüm bilgi ve
+                                    belgeler gizli tutulur, üçüncü kişilerle paylaşılmaz.
                                 </p>
                             </div>
                         </details>
 
-                        <details class="faq reveal bg-white border border-line transition-colors" style="transition-delay:.2s">
+                        <details class="faq reveal bg-white" style="transition-delay:.16s">
                             <summary class="flex items-center justify-between gap-6 p-6 sm:p-7">
-                                <h3 class="font-display text-[17px] sm:text-[18px] font-semibold text-ink tracking-tight">
-                                    Randevu almak için hangi belgeleri hazırlamalıyım?
+                                <h3 class="h-card text-[13.5px] sm:text-[14.5px] text-ink pr-2">
+                                    Randevu için hangi belgeleri hazırlamalıyım?
                                 </h3>
-                                <span class="faq-icon material-symbols-outlined text-[24px] text-ink-400 shrink-0">add</span>
+                                <span class="faq-icon material-symbols-outlined text-[22px] text-ink shrink-0">add</span>
                             </summary>
-                            <div class="faq-body px-6 sm:px-7 pb-7 -mt-1">
-                                <p class="text-ink-500 text-[14.5px] leading-[1.85]">
+                            <div class="faq-body px-6 sm:px-7 pb-7">
+                                <p class="text-ink-500 text-[13.5px] leading-[1.85]">
                                     Kimlik belgeniz ve uyuşmazlığa ilişkin elinizdeki tüm evraklar (sözleşme, tebligat,
                                     dava dilekçesi, icra takip belgeleri, mesajlaşma kayıtları vb.) süreci hızlandırır.
                                     Belgeleriniz eksik olsa dahi görüşmeye gelebilir, hangi evrakların gerektiğini
@@ -882,61 +766,49 @@
         </section>
 
         <!-- ══════════ İLETİŞİM ══════════ -->
-        <section class="py-24 lg:py-32 bg-paper-soft border-y border-line" id="contact">
+        <section class="py-20 lg:py-28 bg-white" id="contact">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-                    <!-- İletişim bilgileri -->
                     <div class="lg:col-span-5">
-                        <div class="reveal"><span class="eyebrow">İletişim ve Danışmanlık</span></div>
-
-                        <h2 class="reveal font-display text-[2rem] sm:text-[2.6rem] font-medium leading-[1.15] tracking-tight text-ink mt-6 balance" style="transition-delay:.06s">
+                        <h2 class="reveal h-section text-[2rem] sm:text-[2.8rem] text-ink balance">
                             Bize ulaşın
                         </h2>
-
-                        <p class="reveal text-ink-500 text-[15.5px] leading-[1.85] mt-5" style="transition-delay:.1s">
-                            Hukuki danışmanlık almak, dava süreçlerinizle ilgili bilgi edinmek veya arabuluculuk talebinde
-                            bulunmak için doğrudan bizimle iletişime geçebilirsiniz.
+                        <p class="reveal text-ink-500 text-[14.5px] leading-[1.85] mt-6 max-w-md" style="transition-delay:.06s">
+                            Hukuki danışmanlık almak, dava süreçlerinizle ilgili bilgi edinmek veya arabuluculuk
+                            talebinde bulunmak için doğrudan bizimle iletişime geçebilirsiniz.
                         </p>
 
-                        <div class="mt-9 space-y-4">
-                            <a href="tel:05070161813" class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 flex items-center gap-5 group" style="transition-delay:.14s">
-                                <span class="w-12 h-12 bg-navy-pale text-navy flex items-center justify-center shrink-0 group-hover:bg-navy group-hover:text-white transition-colors duration-500">
-                                    <span class="material-symbols-outlined text-[22px]">call</span>
-                                </span>
+                        <div class="mt-9 space-y-3">
+                            <a href="tel:05070161813" class="reveal card-flat bg-card p-6 flex items-center gap-5" style="transition-delay:.1s">
+                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">call</span></span>
                                 <span>
-                                    <span class="block text-[10px] text-ink-400 tracking-label uppercase font-semibold">Telefon Numarası</span>
-                                    <span class="block font-display text-lg font-semibold text-ink mt-1 tabular-nums">0507 016 18 13</span>
+                                    <span class="block label text-[9.5px] text-ink-400">Telefon</span>
+                                    <span class="block font-display font-bold text-[17px] text-ink mt-1 tabular-nums">0507 016 18 13</span>
                                 </span>
                             </a>
 
-                            <a href="mailto:av.zulfukarcan@hotmail.com" class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 flex items-center gap-5 group" style="transition-delay:.18s">
-                                <span class="w-12 h-12 bg-navy-pale text-navy flex items-center justify-center shrink-0 group-hover:bg-navy group-hover:text-white transition-colors duration-500">
-                                    <span class="material-symbols-outlined text-[22px]">mail</span>
-                                </span>
+                            <a href="mailto:av.zulfukarcan@hotmail.com" class="reveal card-flat bg-card p-6 flex items-center gap-5" style="transition-delay:.14s">
+                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">mail</span></span>
                                 <span class="min-w-0">
-                                    <span class="block text-[10px] text-ink-400 tracking-label uppercase font-semibold">E-Posta Adresi</span>
-                                    <span class="block font-display text-[15px] font-semibold text-ink mt-1 break-all">av.zulfukarcan@hotmail.com</span>
+                                    <span class="block label text-[9.5px] text-ink-400">E-Posta</span>
+                                    <span class="block font-display font-bold text-[14px] text-ink mt-1 break-all">av.zulfukarcan@hotmail.com</span>
                                 </span>
                             </a>
 
-                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener" class="reveal card-lift bg-white border border-line hover:border-navy/25 hover:shadow-soft p-6 flex items-center gap-5 group" style="transition-delay:.22s">
-                                <span class="w-12 h-12 bg-navy-pale text-navy flex items-center justify-center shrink-0 group-hover:bg-navy group-hover:text-white transition-colors duration-500">
-                                    <span class="material-symbols-outlined text-[22px]">chat</span>
-                                </span>
+                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener" class="reveal card-flat bg-card p-6 flex items-center gap-5" style="transition-delay:.18s">
+                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">chat</span></span>
                                 <span>
-                                    <span class="block text-[10px] text-ink-400 tracking-label uppercase font-semibold">WhatsApp İletişim Hattı</span>
-                                    <span class="block font-display text-[15px] font-semibold text-ink mt-1">wa.me/905070161813</span>
+                                    <span class="block label text-[9.5px] text-ink-400">WhatsApp</span>
+                                    <span class="block font-display font-bold text-[14px] text-ink mt-1">wa.me/905070161813</span>
                                 </span>
                             </a>
 
-                            <div class="reveal bg-white border border-line p-6 flex items-start gap-5" style="transition-delay:.26s">
-                                <span class="w-12 h-12 bg-navy-pale text-navy flex items-center justify-center shrink-0">
-                                    <span class="material-symbols-outlined text-[22px]">location_on</span>
-                                </span>
+                            <div class="reveal bg-card p-6 flex items-start gap-5" style="transition-delay:.22s">
+                                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">location_on</span></span>
                                 <span>
-                                    <span class="block text-[10px] text-ink-400 tracking-label uppercase font-semibold">Ofis Adresi</span>
-                                    <span class="block text-[14px] text-ink leading-relaxed mt-1.5">
+                                    <span class="block label text-[9.5px] text-ink-400">Ofis Adresi</span>
+                                    <span class="block text-[13.5px] text-ink leading-relaxed mt-1.5">
                                         Prof. Selahattin Yazıcıoğlu Cad. Karakoç Plaza No:59,<br/>21100 Yenişehir / Diyarbakır
                                     </span>
                                 </span>
@@ -945,39 +817,36 @@
                     </div>
 
                     <!-- Form -->
-                    <div class="lg:col-span-7 reveal" style="transition-delay:.12s">
-                        <div class="bg-white border border-line shadow-lift p-8 sm:p-11">
-                            <span class="eyebrow">Randevu Talebi</span>
-                            <h3 class="font-display text-2xl sm:text-[1.9rem] font-medium text-ink tracking-tight mt-5">
-                                Müvekkil başvuru formu
+                    <div class="lg:col-span-7 reveal" style="transition-delay:.1s">
+                        <div class="bg-band p-8 sm:p-11">
+                            <h3 class="h-section text-[1.5rem] sm:text-[1.9rem] text-ink">
+                                Randevu &amp; müvekkil talebi
                             </h3>
-                            <p class="text-ink-500 text-[14px] leading-relaxed mt-3">
+                            <p class="text-ink-500 text-[13.5px] leading-relaxed mt-3">
                                 Hukuki konunuzu iletin, en kısa sürede dönüş sağlayalım. Form gönderildiğinde bilgileriniz
                                 WhatsApp üzerinden tarafımıza iletilir.
                             </p>
 
-                            <div class="w-full h-px bg-line my-8"></div>
-
-                            <form id="appointment-form" class="space-y-6" novalidate>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <form id="appointment-form" class="mt-8 space-y-5" novalidate>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
-                                        <label class="block text-[10px] font-semibold tracking-label uppercase text-ink-400 mb-3" for="client-name">Adınız Soyadınız</label>
+                                        <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-name">Adınız Soyadınız</label>
                                         <input id="client-name" name="name" type="text" required autocomplete="name"
                                                placeholder="Örn: Ahmet Yılmaz"
-                                               class="w-full bg-transparent border-0 border-b border-line px-0 py-3 text-ink text-[15px] placeholder:text-ink-400/60 focus:border-navy focus:ring-0 transition-colors"/>
+                                               class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:ring-2 focus:ring-ink transition-shadow"/>
                                     </div>
                                     <div>
-                                        <label class="block text-[10px] font-semibold tracking-label uppercase text-ink-400 mb-3" for="client-phone">Telefon Numaranız</label>
+                                        <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-phone">Telefon Numaranız</label>
                                         <input id="client-phone" name="phone" type="tel" autocomplete="tel"
                                                placeholder="05xx xxx xx xx"
-                                               class="w-full bg-transparent border-0 border-b border-line px-0 py-3 text-ink text-[15px] placeholder:text-ink-400/60 focus:border-navy focus:ring-0 transition-colors"/>
+                                               class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:ring-2 focus:ring-ink transition-shadow"/>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label class="block text-[10px] font-semibold tracking-label uppercase text-ink-400 mb-3" for="client-topic">Hukuki Konu</label>
+                                    <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-topic">Hukuki Konu</label>
                                     <select id="client-topic" name="topic"
-                                            class="w-full bg-transparent border-0 border-b border-line px-0 py-3 text-ink text-[15px] focus:border-navy focus:ring-0 transition-colors">
+                                            class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] focus:ring-2 focus:ring-ink transition-shadow">
                                         <option value="Genel Danışmanlık">Genel Danışmanlık</option>
                                         <option value="Ceza Hukuku">Ceza Hukuku</option>
                                         <option value="Aile ve Boşanma Hukuku">Aile ve Boşanma Hukuku</option>
@@ -989,24 +858,24 @@
                                 </div>
 
                                 <div>
-                                    <label class="block text-[10px] font-semibold tracking-label uppercase text-ink-400 mb-3" for="client-msg">Mesajınız</label>
-                                    <textarea id="client-msg" name="message" rows="4" required
+                                    <label class="block label text-[9.5px] text-ink-500 mb-2.5" for="client-msg">Mesajınız</label>
+                                    <textarea id="client-msg" name="message" rows="5" required
                                               placeholder="Lütfen hukuki uyuşmazlığınız veya randevu talebiniz hakkında kısa bilgi veriniz..."
-                                              class="w-full bg-transparent border-0 border-b border-line px-0 py-3 text-ink text-[15px] placeholder:text-ink-400/60 focus:border-navy focus:ring-0 transition-colors resize-none"></textarea>
+                                              class="w-full bg-white border-0 px-4 py-3.5 text-ink text-[14.5px] placeholder:text-ink-400 focus:ring-2 focus:ring-ink transition-shadow resize-none"></textarea>
                                 </div>
 
-                                <p id="form-error" class="hidden text-[13px] text-red-600">
+                                <p id="form-error" class="hidden text-[13px] text-red-600 font-medium">
                                     Lütfen adınızı ve mesajınızı doldurun.
                                 </p>
 
-                                <button type="submit" class="btn-navy w-full flex items-center justify-center gap-3 py-4 text-[11px] font-semibold uppercase tracking-label">
+                                <button type="submit" class="btn-solid w-full flex items-center justify-center gap-2.5 py-4 label text-[11.5px]">
                                     <span class="material-symbols-outlined text-[18px]">send</span>
-                                    <span>WhatsApp ile Randevu Gönder</span>
+                                    <span>WhatsApp ile Gönder</span>
                                 </button>
 
                                 <p class="text-[11px] text-ink-400 leading-relaxed text-center">
-                                    Formu göndererek iletişim bilgilerinizin randevu amacıyla kullanılmasını kabul edersiniz.
-                                    Bilgileriniz üçüncü kişilerle paylaşılmaz.
+                                    Formu göndererek iletişim bilgilerinizin randevu amacıyla kullanılmasını kabul
+                                    edersiniz. Bilgileriniz üçüncü kişilerle paylaşılmaz.
                                 </p>
                             </form>
                         </div>
@@ -1017,55 +886,48 @@
         </section>
 
         <!-- ══════════ KONUM ══════════ -->
-        <section class="py-24 lg:py-32 bg-white" id="location">
+        <section class="py-20 lg:py-28 bg-band" id="location">
             <div class="max-w-content mx-auto px-6 lg:px-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
-                    <div class="lg:col-span-5">
-                        <div class="reveal"><span class="eyebrow">Ofis Konumu</span></div>
-
-                        <h2 class="reveal font-display text-[2rem] sm:text-[2.6rem] font-medium leading-[1.15] tracking-tight text-ink mt-6 balance" style="transition-delay:.06s">
+                    <div class="lg:col-span-4">
+                        <h2 class="reveal h-section text-[2rem] sm:text-[2.6rem] text-ink balance">
                             Adres ve ulaşım
                         </h2>
 
-                        <div class="reveal rule-navy mt-7" style="transition-delay:.1s"></div>
-
-                        <div class="reveal bg-paper-soft border border-line p-7 flex items-start gap-5 mt-8" style="transition-delay:.14s">
-                            <span class="material-symbols-outlined text-navy text-[28px] shrink-0">apartment</span>
-                            <div>
-                                <p class="font-display font-semibold text-ink text-[15px]">Karakoç Plaza</p>
-                                <p class="text-[14px] text-ink-500 leading-[1.8] mt-2">
-                                    Prof. Selahattin Yazıcıoğlu Cad. No:59<br/>
-                                    21100 Yenişehir / Diyarbakır
-                                </p>
-                            </div>
+                        <div class="reveal bg-white p-7 mt-8" style="transition-delay:.06s">
+                            <span class="icon-tile"><span class="material-symbols-outlined text-[22px]">apartment</span></span>
+                            <p class="h-card text-[13px] text-ink mt-5">Karakoç Plaza</p>
+                            <p class="text-[13.5px] text-ink-500 leading-[1.8] mt-2">
+                                Prof. Selahattin Yazıcıoğlu Cad. No:59<br/>
+                                21100 Yenişehir / Diyarbakır
+                            </p>
                         </div>
 
-                        <div class="reveal bg-paper-soft border border-line p-7 mt-4" style="transition-delay:.18s">
-                            <p class="text-[10px] text-ink-400 tracking-label uppercase font-semibold">Hizmet Bölgeleri</p>
+                        <div class="reveal bg-white p-7 mt-3" style="transition-delay:.1s">
+                            <p class="label text-[9.5px] text-ink-500">Hizmet Bölgeleri</p>
                             <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="px-3.5 py-1.5 bg-navy text-white text-[11px] font-semibold tracking-wider uppercase">Türkiye Geneli</span>
-                                <span class="px-3.5 py-1.5 bg-white border border-line text-ink-500 text-[11px] font-semibold tracking-wider uppercase">Diyarbakır</span>
-                                <span class="px-3.5 py-1.5 bg-white border border-line text-ink-500 text-[11px] font-semibold tracking-wider uppercase">Kulp</span>
-                                <span class="px-3.5 py-1.5 bg-white border border-line text-ink-500 text-[11px] font-semibold tracking-wider uppercase">Ergani</span>
-                                <span class="px-3.5 py-1.5 bg-white border border-line text-ink-500 text-[11px] font-semibold tracking-wider uppercase">Çınar</span>
-                                <span class="px-3.5 py-1.5 bg-white border border-line text-ink-500 text-[11px] font-semibold tracking-wider uppercase">Çermik</span>
+                                <span class="px-3.5 py-1.5 bg-ink text-white label text-[9.5px]">Türkiye Geneli</span>
+                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Diyarbakır</span>
+                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Kulp</span>
+                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Ergani</span>
+                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Çınar</span>
+                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Çermik</span>
                             </div>
                         </div>
 
-                        <a class="reveal btn-navy inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-label px-8 py-4 shadow-navy mt-7"
+                        <a class="reveal btn-solid inline-flex items-center gap-2.5 label text-[11.5px] px-8 py-4 mt-7"
                            href="https://maps.google.com/?q=Karako%C3%A7+Plaza+Prof.+Selahattin+Yaz%C4%B1c%C4%B1o%C4%9Flu+Cad.+Yeni%C5%9Fehir+Diyarbak%C4%B1r"
-                           target="_blank" rel="noopener" style="transition-delay:.22s">
+                           target="_blank" rel="noopener" style="transition-delay:.14s">
                             <span class="material-symbols-outlined text-[18px]">directions</span>
-                            <span>Yol Tarifi Al</span>
+                            Yol Tarifi Al
                         </a>
                     </div>
 
-                    <!-- Harita -->
-                    <div class="lg:col-span-7 reveal" style="transition-delay:.1s">
-                        <div class="relative h-[420px] lg:h-[520px] w-full overflow-hidden border border-line shadow-soft bg-paper-dim">
+                    <div class="lg:col-span-8 reveal" style="transition-delay:.08s">
+                        <div class="relative h-[380px] lg:h-[520px] w-full overflow-hidden bg-white">
                             <iframe
-                                title="Karakoç Plaza, Yenişehir / Diyarbakır — ofis konumu haritası"
+                                title="Karakoç Plaza, Yenişehir / Diyarbakır — ofis konumu"
                                 src="https://www.google.com/maps?q=Karako%C3%A7%20Plaza%20Prof.%20Selahattin%20Yaz%C4%B1c%C4%B1o%C4%9Flu%20Cad.%20No%3A59%20Yeni%C5%9Fehir%20Diyarbak%C4%B1r&hl=tr&z=16&output=embed"
                                 class="w-full h-full border-0"
                                 loading="lazy"
@@ -1079,65 +941,64 @@
         </section>
 
         <!-- ══════════ ÇALIŞMA SAATLERİ ══════════ -->
-        <section class="py-24 lg:py-32 bg-paper-soft border-t border-line" id="hours">
+        <section class="py-20 lg:py-28 bg-white" id="hours">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
                     <div class="lg:col-span-7">
-                        <div class="reveal"><span class="eyebrow">Mesai Takvimi</span></div>
-                        <h2 class="reveal font-display text-[2rem] sm:text-[2.4rem] font-medium leading-[1.15] tracking-tight text-ink mt-6" style="transition-delay:.06s">
+                        <h2 class="reveal h-section text-[2rem] sm:text-[2.6rem] text-ink">
                             Çalışma saatleri
                         </h2>
-                        <p class="reveal text-ink-500 text-[15px] leading-relaxed mt-4" style="transition-delay:.1s">
+                        <p class="reveal text-ink-500 text-[14.5px] leading-[1.8] mt-5 max-w-md" style="transition-delay:.06s">
                             Aşağıdaki saatler dışında acil durumlar için WhatsApp hattımız 7/24 açıktır.
                         </p>
 
-                        <div class="reveal bg-white border border-line mt-8 divide-y divide-line-soft" style="transition-delay:.14s" id="hours-table">
-                            <div class="flex items-center justify-between px-6 sm:px-7 py-4" data-day="1">
-                                <span class="text-[14.5px] font-medium text-ink">Pazartesi</span>
-                                <span class="font-display text-[15px] font-semibold text-ink tabular-nums">09:00 – 17:00</span>
+                        <div class="reveal mt-8 divide-y divide-line" id="hours-table" style="transition-delay:.1s">
+                            <div class="flex items-center justify-between py-4" data-day="1">
+                                <span class="h-card text-[12.5px] text-ink">Pazartesi</span>
+                                <span class="font-display font-bold text-[14px] text-ink tabular-nums">09:00 – 17:00</span>
                             </div>
-                            <div class="flex items-center justify-between px-6 sm:px-7 py-4" data-day="2">
-                                <span class="text-[14.5px] font-medium text-ink">Salı</span>
-                                <span class="font-display text-[15px] font-semibold text-ink tabular-nums">09:00 – 17:00</span>
+                            <div class="flex items-center justify-between py-4" data-day="2">
+                                <span class="h-card text-[12.5px] text-ink">Salı</span>
+                                <span class="font-display font-bold text-[14px] text-ink tabular-nums">09:00 – 17:00</span>
                             </div>
-                            <div class="flex items-center justify-between px-6 sm:px-7 py-4" data-day="3">
-                                <span class="text-[14.5px] font-medium text-ink">Çarşamba</span>
-                                <span class="font-display text-[15px] font-semibold text-ink tabular-nums">09:00 – 17:00</span>
+                            <div class="flex items-center justify-between py-4" data-day="3">
+                                <span class="h-card text-[12.5px] text-ink">Çarşamba</span>
+                                <span class="font-display font-bold text-[14px] text-ink tabular-nums">09:00 – 17:00</span>
                             </div>
-                            <div class="flex items-center justify-between px-6 sm:px-7 py-4" data-day="4">
-                                <span class="text-[14.5px] font-medium text-ink">Perşembe</span>
-                                <span class="font-display text-[15px] font-semibold text-ink tabular-nums">09:00 – 17:00</span>
+                            <div class="flex items-center justify-between py-4" data-day="4">
+                                <span class="h-card text-[12.5px] text-ink">Perşembe</span>
+                                <span class="font-display font-bold text-[14px] text-ink tabular-nums">09:00 – 17:00</span>
                             </div>
-                            <div class="flex items-center justify-between px-6 sm:px-7 py-4" data-day="5">
-                                <span class="text-[14.5px] font-medium text-ink">Cuma</span>
-                                <span class="font-display text-[15px] font-semibold text-ink tabular-nums">09:00 – 17:00</span>
+                            <div class="flex items-center justify-between py-4" data-day="5">
+                                <span class="h-card text-[12.5px] text-ink">Cuma</span>
+                                <span class="font-display font-bold text-[14px] text-ink tabular-nums">09:00 – 17:00</span>
                             </div>
-                            <div class="flex items-center justify-between px-6 sm:px-7 py-4" data-day="6">
-                                <span class="text-[14.5px] font-medium text-ink">Cumartesi</span>
-                                <span class="font-display text-[15px] font-semibold text-ink tabular-nums">09:00 – 17:00</span>
+                            <div class="flex items-center justify-between py-4" data-day="6">
+                                <span class="h-card text-[12.5px] text-ink">Cumartesi</span>
+                                <span class="font-display font-bold text-[14px] text-ink tabular-nums">09:00 – 17:00</span>
                             </div>
-                            <div class="flex items-center justify-between px-6 sm:px-7 py-4 bg-paper-dim" data-day="0">
-                                <span class="text-[14.5px] font-medium text-ink-400">Pazar</span>
-                                <span class="font-display text-[15px] font-semibold text-ink-400">Kapalı</span>
+                            <div class="flex items-center justify-between py-4" data-day="0">
+                                <span class="h-card text-[12.5px] text-ink-400">Pazar</span>
+                                <span class="font-display font-bold text-[14px] text-ink-400">Kapalı</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 space-y-4">
-                        <div class="reveal bg-white border border-line p-8" style="transition-delay:.08s">
-                            <span class="material-symbols-outlined text-navy text-[28px]">accessible</span>
-                            <h3 class="font-display text-lg font-semibold text-ink tracking-tight mt-4">Sunulan Olanaklar &amp; Erişim</h3>
-                            <p class="text-ink-500 text-[14px] leading-[1.8] mt-3">
+                    <div class="lg:col-span-5 space-y-3">
+                        <div class="reveal bg-card p-8" style="transition-delay:.08s">
+                            <span class="icon-tile"><span class="material-symbols-outlined text-[22px]">accessible</span></span>
+                            <h3 class="h-card text-[13px] text-ink mt-5">Olanaklar &amp; Erişim</h3>
+                            <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
                                 Ofisimizde müvekkillerimizin en iyi şekilde ağırlanması için engelli erişimi, hijyen
                                 standartları ve asansörlü plaza konforu sağlanmıştır.
                             </p>
                         </div>
 
-                        <div class="reveal bg-white border border-line p-8" style="transition-delay:.12s" id="other">
-                            <span class="material-symbols-outlined text-navy text-[28px]">policy</span>
-                            <h3 class="font-display text-lg font-semibold text-ink tracking-tight mt-4">Yasal Uyarı / TBB Meslek Kuralları</h3>
-                            <p class="text-ink-500 text-[13px] leading-[1.8] mt-3">
+                        <div class="reveal bg-card p-8" style="transition-delay:.12s" id="other">
+                            <span class="icon-tile"><span class="material-symbols-outlined text-[22px]">policy</span></span>
+                            <h3 class="h-card text-[13px] text-ink mt-5">Yasal Uyarı / TBB Meslek Kuralları</h3>
+                            <p class="text-ink-500 text-[12.5px] leading-[1.8] mt-3">
                                 Bu internet sitesinde yer alan tüm bilgiler Türkiye Barolar Birliği'nin meslek kuralları
                                 uyarınca bilgilendirme amaçlı hazırlanmış olup reklam amacı taşımamaktadır. Sitedeki
                                 içerikler hukuki danışmanlık teşkil etmez.
@@ -1149,74 +1010,81 @@
             </div>
         </section>
 
+        <!-- ══════════ ALT CTA ══════════ -->
+        <section class="bg-ink text-white">
+            <div class="max-w-content mx-auto px-6 lg:px-10 py-16 lg:py-20">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                    <h2 class="reveal h-section text-[1.9rem] sm:text-[2.6rem] text-white balance max-w-2xl">
+                        Dosyanızı konuşalım.<br/>İlk adımı bugün atın.
+                    </h2>
+                    <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                       class="reveal inline-flex items-center justify-center bg-white text-ink hover:bg-band label text-[11.5px] px-10 py-5 transition-colors shrink-0" style="transition-delay:.06s">
+                        Randevu Al
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- ══════════ FOOTER ══════════ -->
-    <footer class="bg-white border-t border-line pt-20 pb-10">
+    <footer class="bg-white pt-16 pb-10 border-t border-line">
         <div class="max-w-content mx-auto px-6 lg:px-10">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 pb-14 border-b border-line">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 pb-12 border-b border-line">
 
-                <!-- Marka -->
-                <div class="md:col-span-5 space-y-5">
-                    <div class="flex items-center gap-3.5">
-                        <img src="./logo.jpg" alt="" aria-hidden="true" class="w-12 h-12 object-cover border border-line" width="48" height="48" loading="lazy"/>
-                        <span class="flex flex-col leading-none">
-                            <span class="font-display font-bold text-[19px] tracking-tight text-ink">Av. Arb. Zülfükar CAN</span>
-                            <span class="text-[9.5px] text-navy tracking-label uppercase font-semibold mt-1.5">Hukuk &amp; Arabuluculuk Bürosu</span>
-                        </span>
+                <div class="md:col-span-5">
+                    <div class="flex items-baseline gap-1.5">
+                        <span class="font-display font-black text-[22px] tracking-tight uppercase text-ink">Zülfükar Can</span>
+                        <span class="font-display font-bold text-[9px] text-ink-400">™</span>
                     </div>
-                    <p class="text-[13.5px] text-ink-500 leading-[1.85] max-w-sm">
+                    <p class="label text-[9.5px] text-ink-400 mt-2">Arabulucu &amp; Avukat</p>
+                    <p class="text-[13.5px] text-ink-500 leading-[1.85] mt-5 max-w-sm">
                         Diyarbakır merkezli bağımsız, tarafsız ve hukukun üstünlüğü ilkesine dayalı avukatlık ve
                         lisanslı arabuluculuk hizmetleri.
                     </p>
-                    <div class="flex items-center gap-3 pt-1">
-                        <a href="tel:05070161813" aria-label="Telefon ile arayın" class="w-10 h-10 border border-line flex items-center justify-center text-ink-500 hover:bg-navy hover:border-navy hover:text-white transition-colors duration-500">
+                    <div class="flex items-center gap-2.5 mt-6">
+                        <a href="tel:05070161813" aria-label="Telefon" class="w-10 h-10 bg-card hover:bg-ink hover:text-white text-ink flex items-center justify-center transition-colors">
                             <span class="material-symbols-outlined text-[19px]">call</span>
                         </a>
-                        <a href="mailto:av.zulfukarcan@hotmail.com" aria-label="E-posta gönderin" class="w-10 h-10 border border-line flex items-center justify-center text-ink-500 hover:bg-navy hover:border-navy hover:text-white transition-colors duration-500">
+                        <a href="mailto:av.zulfukarcan@hotmail.com" aria-label="E-posta" class="w-10 h-10 bg-card hover:bg-ink hover:text-white text-ink flex items-center justify-center transition-colors">
                             <span class="material-symbols-outlined text-[19px]">mail</span>
                         </a>
-                        <a href="https://wa.me/905070161813" target="_blank" rel="noopener" aria-label="WhatsApp ile yazın" class="w-10 h-10 border border-line flex items-center justify-center text-ink-500 hover:bg-navy hover:border-navy hover:text-white transition-colors duration-500">
+                        <a href="https://wa.me/905070161813" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 bg-card hover:bg-ink hover:text-white text-ink flex items-center justify-center transition-colors">
                             <span class="material-symbols-outlined text-[19px]">chat</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Menü -->
                 <div class="md:col-span-3">
-                    <h4 class="font-display font-semibold text-[15px] text-ink tracking-tight">Hızlı Menü</h4>
-                    <div class="w-7 h-[2px] bg-navy mt-3 mb-5"></div>
-                    <ul class="flex flex-col gap-3 text-[13.5px] text-ink-500">
-                        <li><a class="hover:text-navy transition-colors" href="#about">Hakkımızda</a></li>
-                        <li><a class="hover:text-navy transition-colors" href="#services">Uzmanlık Alanları</a></li>
-                        <li><a class="hover:text-navy transition-colors" href="#mediation">Arabuluculuk</a></li>
-                        <li><a class="hover:text-navy transition-colors" href="#process">Çalışma Süreci</a></li>
-                        <li><a class="hover:text-navy transition-colors" href="#faq">Sık Sorulan Sorular</a></li>
-                        <li><a class="hover:text-navy transition-colors" href="#location">Konum &amp; Ulaşım</a></li>
+                    <h4 class="label text-[10px] text-ink">Hızlı Menü</h4>
+                    <ul class="flex flex-col gap-3 mt-5 text-[13.5px] text-ink-500">
+                        <li><a class="hover:text-ink transition-colors" href="#about">Hakkımda</a></li>
+                        <li><a class="hover:text-ink transition-colors" href="#services">Uzmanlık Alanları</a></li>
+                        <li><a class="hover:text-ink transition-colors" href="#mediation">Arabuluculuk</a></li>
+                        <li><a class="hover:text-ink transition-colors" href="#process">Çalışma Süreci</a></li>
+                        <li><a class="hover:text-ink transition-colors" href="#faq">S.S.S.</a></li>
+                        <li><a class="hover:text-ink transition-colors" href="#location">Konum</a></li>
                     </ul>
                 </div>
 
-                <!-- CTA -->
                 <div class="md:col-span-4">
-                    <h4 class="font-display font-semibold text-[15px] text-ink tracking-tight">Randevu &amp; İletişim</h4>
-                    <div class="w-7 h-[2px] bg-navy mt-3 mb-5"></div>
-                    <p class="text-[13.5px] text-ink-500 leading-[1.85]">
+                    <h4 class="label text-[10px] text-ink">Randevu &amp; İletişim</h4>
+                    <p class="text-[13.5px] text-ink-500 leading-[1.85] mt-5">
                         Doğrudan randevu almak ve dosya detaylarınızı görüşmek için WhatsApp hattımız aktiftir.
                     </p>
                     <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-                       class="btn-navy inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-label px-6 py-3.5 mt-6">
-                        <span>WhatsApp ile Yazın</span>
-                        <span class="material-symbols-outlined text-[17px]">arrow_forward</span>
+                       class="btn-solid inline-flex items-center label text-[11px] px-7 py-3.5 mt-6">
+                        WhatsApp ile Yazın
                     </a>
                 </div>
             </div>
 
             <!-- Resmî uyarı -->
-            <div id="resmi-uyari" class="mt-10 border border-navy/20 bg-navy-mist p-6 sm:p-7 flex flex-col sm:flex-row items-start gap-5">
-                <span class="material-symbols-outlined text-navy text-[30px] shrink-0">shield_lock</span>
+            <div id="resmi-uyari" class="mt-10 bg-card p-6 sm:p-7 flex flex-col sm:flex-row items-start gap-5">
+                <span class="icon-tile shrink-0"><span class="material-symbols-outlined text-[22px]">shield_lock</span></span>
                 <div>
-                    <h5 class="font-display font-semibold text-[15px] text-navy tracking-tight">Önemli İletişim Uyarısı</h5>
-                    <p class="text-[13px] text-ink-500 leading-[1.85] mt-2">
+                    <h5 class="h-card text-[12.5px] text-ink">Önemli İletişim Uyarısı</h5>
+                    <p class="text-[12.5px] text-ink-500 leading-[1.85] mt-2">
                         Lütfen yalnızca bu web sitesinde yer alan resmî telefon numarası
                         (<strong class="text-ink font-semibold tabular-nums">0507 016 18 13</strong>) üzerinden bizimle
                         iletişime geçiniz. Tarafımıza ait olmayan diğer numaralardan gelen arama veya mesajları dikkate
@@ -1225,8 +1093,7 @@
                 </div>
             </div>
 
-            <!-- Telif -->
-            <div class="mt-10 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-ink-400">
+            <div class="mt-10 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4 text-[11.5px] text-ink-400">
                 <p>© <span id="year">2026</span> Arabulucu Avukat Zülfükar CAN. Tüm hakları saklıdır.</p>
                 <p>Diyarbakır Barosu · Avukatlık &amp; Arabuluculuk</p>
             </div>
@@ -1236,18 +1103,18 @@
     <!-- ══════════ SABİT BUTONLAR ══════════ -->
     <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
         <button id="to-top" aria-label="Yukarı çık"
-                class="opacity-0 pointer-events-none translate-y-2 w-12 h-12 bg-white border border-line text-ink shadow-lift flex items-center justify-center hover:border-navy hover:text-navy transition-all duration-500">
+                class="opacity-0 pointer-events-none translate-y-2 w-12 h-12 bg-white border border-line text-ink shadow-lg flex items-center justify-center hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
             <span class="material-symbols-outlined text-[22px]">arrow_upward</span>
         </button>
 
         <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-           class="group flex items-center gap-3 bg-white border border-line text-ink pl-4 pr-5 py-3.5 shadow-lift hover:bg-navy hover:border-navy hover:text-white transition-all duration-500">
-            <span class="material-symbols-outlined text-[21px] text-emerald-600 group-hover:text-white transition-colors">chat</span>
-            <span class="text-[11px] font-semibold uppercase tracking-label">WhatsApp</span>
+           class="btn-solid flex items-center gap-2.5 pl-4 pr-5 py-3.5 shadow-xl">
+            <span class="material-symbols-outlined text-[20px]">chat</span>
+            <span class="label text-[10.5px]">WhatsApp</span>
         </a>
     </div>
 
-    <!-- ══════════ YAPISAL VERİ (SEO) ══════════ -->
+    <!-- ══════════ YAPISAL VERİ ══════════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1302,21 +1169,21 @@
         {
           "@type": "Question",
           "name": "İlk görüşme için ücret ödemem gerekiyor mu?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Dosyanızın hukuki niteliğini anlamaya yönelik ön görüşmeyi telefon veya WhatsApp üzerinden yapıyoruz. Detaylı hukuki mütalaa ve vekâlet süreçlerine ilişkin ücretlendirme, Türkiye Barolar Birliği Asgari Ücret Tarifesi çerçevesinde şeffaf biçimde bildirilir." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Ön görüşme telefon veya WhatsApp üzerinden yapılır. Detaylı hukuki mütalaa ve vekâlet süreçlerine ilişkin ücretlendirme, Türkiye Barolar Birliği Asgari Ücret Tarifesi çerçevesinde şeffaf biçimde bildirilir." }
         },
         {
           "@type": "Question",
           "name": "Diyarbakır dışında yaşıyorum, hizmet alabilir miyim?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Evet. Büromuz Diyarbakır merkezli olmakla birlikte Türkiye genelinde hukuki destek sunmaktadır. Görüşmeler telefon, WhatsApp veya çevrim içi yöntemlerle sürdürülebilir." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Evet. Büro Diyarbakır merkezli olmakla birlikte Türkiye genelinde hukuki destek sunmaktadır. Görüşmeler telefon, WhatsApp veya çevrim içi yöntemlerle sürdürülebilir." }
         },
         {
           "@type": "Question",
-          "name": "Görüşme sırasında paylaştığım bilgiler gizli kalıyor mu?",
+          "name": "Görüşmede paylaştığım bilgiler gizli kalıyor mu?",
           "acceptedAnswer": { "@type": "Answer", "text": "Avukatlık Kanunu uyarınca mesleki sır saklama yükümlülüğü esastır. Vekâlet ilişkisi kurulmasa dahi paylaştığınız tüm bilgi ve belgeler gizli tutulur." }
         },
         {
           "@type": "Question",
-          "name": "Randevu almak için hangi belgeleri hazırlamalıyım?",
+          "name": "Randevu için hangi belgeleri hazırlamalıyım?",
           "acceptedAnswer": { "@type": "Answer", "text": "Kimlik belgeniz ve uyuşmazlığa ilişkin elinizdeki tüm evraklar süreci hızlandırır. Belgeleriniz eksik olsa dahi görüşmeye gelebilirsiniz." }
         }
       ]
@@ -1330,7 +1197,7 @@
 
         var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        /* ---------- Scroll reveal ---------- */
+        /* Scroll reveal */
         var revealEls = document.querySelectorAll('.reveal');
         if (prefersReduced || !('IntersectionObserver' in window)) {
             revealEls.forEach(function (el) { el.classList.add('is-visible'); });
@@ -1342,11 +1209,11 @@
                         io.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
             revealEls.forEach(function (el) { io.observe(el); });
         }
 
-        /* ---------- Header durumu + yukarı çık ---------- */
+        /* Header + yukarı çık */
         var header = document.getElementById('site-header');
         var toTop = document.getElementById('to-top');
 
@@ -1369,7 +1236,7 @@
             });
         }
 
-        /* ---------- Mobil menü ---------- */
+        /* Mobil menü */
         var menuBtn = document.getElementById('mobile-menu-btn');
         var menu = document.getElementById('mobile-menu');
         var menuClose = document.getElementById('mobile-menu-close');
@@ -1392,11 +1259,13 @@
             if (e.key === 'Escape' && menu && !menu.classList.contains('is-closed')) setMenu(false);
         });
 
-        /* ---------- Menüde aktif bölüm ---------- */
-        var sections = ['about', 'services', 'mediation', 'process', 'faq', 'contact']
-            .map(function (id) { return document.getElementById(id); })
-            .filter(Boolean);
+        /* Menüde aktif bölüm */
         var navLinks = document.querySelectorAll('header .nav-link');
+        var sections = [];
+        navLinks.forEach(function (link) {
+            var el = document.getElementById(link.getAttribute('href').slice(1));
+            if (el) sections.push(el);
+        });
 
         if (sections.length && 'IntersectionObserver' in window) {
             var spy = new IntersectionObserver(function (entries) {
@@ -1404,7 +1273,8 @@
                     if (!entry.isIntersecting) return;
                     navLinks.forEach(function (link) {
                         var isActive = link.getAttribute('href') === '#' + entry.target.id;
-                        link.classList.toggle('text-navy', isActive);
+                        link.classList.toggle('is-active', isActive);
+                        link.classList.toggle('text-ink', isActive);
                         link.classList.toggle('text-ink-500', !isActive);
                     });
                 });
@@ -1412,17 +1282,16 @@
             sections.forEach(function (s) { spy.observe(s); });
         }
 
-        /* ---------- Bugünü vurgula ---------- */
+        /* Bugünü vurgula */
         var todayRow = document.querySelector('#hours-table [data-day="' + new Date().getDay() + '"]');
         if (todayRow && todayRow.dataset.day !== '0') {
-            todayRow.classList.add('bg-navy-mist');
             var badge = document.createElement('span');
-            badge.className = 'ml-3 px-2 py-0.5 bg-navy text-white text-[9px] font-semibold uppercase tracking-wider align-middle';
+            badge.className = 'ml-3 px-2 py-0.5 bg-ink text-white text-[9px] font-bold uppercase tracking-wider align-middle';
             badge.textContent = 'Bugün';
             todayRow.firstElementChild.appendChild(badge);
         }
 
-        /* ---------- Randevu formu → WhatsApp ---------- */
+        /* Randevu formu → WhatsApp */
         var form = document.getElementById('appointment-form');
         if (form) {
             form.addEventListener('submit', function (e) {
@@ -1458,7 +1327,7 @@
             });
         }
 
-        /* ---------- Footer yılı ---------- */
+        /* Footer yılı */
         var yearEl = document.getElementById('year');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
     })();
