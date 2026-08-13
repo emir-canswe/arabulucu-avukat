@@ -56,7 +56,7 @@
     </script>
 
     <style>
-        html { scroll-padding-top: 88px; }
+        html { scroll-padding-top: 108px; }
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
@@ -105,27 +105,56 @@
         }
         .reveal.is-visible { opacity: 1; transform: none; }
 
-        /* ---------- Header ---------- */
-        #site-header {
-            background: rgba(255,255,255,.82);
-            backdrop-filter: saturate(180%) blur(12px);
-            -webkit-backdrop-filter: saturate(180%) blur(12px);
-            transition: box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+        /* ---------- Header (yüzen pill) ---------- */
+        #nav-shell {
+            background: rgba(255,255,255,.88);
+            backdrop-filter: saturate(180%) blur(14px);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            border: 1px solid #EDEFF3;
+            box-shadow: 0 1px 2px rgba(13,15,18,.04), 0 8px 28px rgba(13,15,18,.06);
+            transition: box-shadow .35s ease, background-color .35s ease, border-color .35s ease;
         }
-        #site-header.is-scrolled {
-            background: rgba(255,255,255,.96);
-            border-bottom-color: #E5E7EB;
-            box-shadow: 0 1px 18px rgba(13,15,18,.06);
+        #site-header.is-scrolled #nav-shell {
+            background: rgba(255,255,255,.97);
+            border-color: #E5E7EB;
+            box-shadow: 0 2px 4px rgba(13,15,18,.05), 0 14px 40px rgba(13,15,18,.11);
         }
 
         .nav-link { position: relative; }
         .nav-link::after {
-            content: ""; position: absolute; left: 0; bottom: -7px;
-            width: 100%; height: 2px; background: #0D0F12;
+            content: ""; position: absolute; left: 0; bottom: -6px;
+            width: 100%; height: 2px; background: #0D0F12; border-radius: 2px;
             transform: scaleX(0); transform-origin: right;
             transition: transform .32s cubic-bezier(.16,1,.3,1);
         }
         .nav-link:hover::after, .nav-link.is-active::after { transform: scaleX(1); transform-origin: left; }
+
+        /* Menü açılır paneli */
+        .nav-dd { position: relative; }
+        .nav-dd-panel {
+            position: absolute; top: calc(100% + 18px); left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            opacity: 0; visibility: hidden;
+            transition: opacity .28s ease, transform .28s cubic-bezier(.16,1,.3,1), visibility .28s;
+        }
+        .nav-dd:hover .nav-dd-panel,
+        .nav-dd:focus-within .nav-dd-panel {
+            opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+        }
+        .nav-dd-chevron { transition: transform .28s cubic-bezier(.16,1,.3,1); }
+        .nav-dd:hover .nav-dd-chevron, .nav-dd:focus-within .nav-dd-chevron { transform: rotate(180deg); }
+
+        /* Ok daireli pill buton */
+        .btn-pill {
+            background: #0D0F12; color: #fff; border-radius: 999px;
+            transition: background-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);
+        }
+        .btn-pill:hover { background: #2C3039; transform: translateY(-1px); }
+        .btn-pill .pill-arrow {
+            background: rgba(255,255,255,.16);
+            transition: transform .32s cubic-bezier(.16,1,.3,1), background-color .3s ease;
+        }
+        .btn-pill:hover .pill-arrow { transform: translateX(3px); background: rgba(255,255,255,.26); }
 
         /* ---------- Butonlar ---------- */
         .btn-solid {
@@ -225,37 +254,83 @@
     </a>
 
     <!-- ══════════ HEADER ══════════ -->
-    <header id="site-header" class="sticky top-0 z-50 border-b border-transparent">
-        <div class="max-w-content mx-auto px-6 lg:px-10 h-[76px] lg:h-[88px] flex items-center justify-between gap-6">
+    <header id="site-header" class="sticky top-0 z-50 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5">
+        <div id="nav-shell" class="max-w-content mx-auto rounded-2xl h-[68px] lg:h-[74px] pl-5 pr-3 lg:pl-7 lg:pr-3 flex items-center justify-between gap-6">
 
-            <!-- Marka -->
-            <a class="flex items-baseline gap-1.5 shrink-0 group" href="#home" aria-label="Ana sayfa">
-                <span class="font-display font-black text-[22px] lg:text-[25px] tracking-tight text-ink uppercase leading-none">Zülfükar Can</span>
-                <span class="font-display font-bold text-[9px] text-ink-400 leading-none">™</span>
+            <!-- Marka (solda) -->
+            <a class="flex items-center gap-2.5 shrink-0 group" href="#home" aria-label="Ana sayfa">
+                <span class="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-ink text-white flex items-center justify-center shrink-0 group-hover:bg-ink-800 transition-colors">
+                    <span class="material-symbols-outlined text-[19px]">balance</span>
+                </span>
+                <span class="font-display font-black text-[15px] lg:text-[17px] tracking-tight text-ink uppercase leading-none whitespace-nowrap">
+                    Avukat Zülfükar Can
+                </span>
             </a>
 
             <!-- Masaüstü menü -->
-            <nav class="hidden xl:flex items-center gap-7 2xl:gap-9" aria-label="Ana menü">
-                <a class="nav-link label text-[10.5px] whitespace-nowrap text-ink hover:text-ink transition-colors" href="#home">Ana Sayfa</a>
-                <a class="nav-link label text-[10.5px] whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#about">Hakkımda</a>
-                <a class="nav-link label text-[10.5px] whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#services">Uzmanlık</a>
-                <a class="nav-link label text-[10.5px] whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#mediation">Arabuluculuk</a>
-                <a class="nav-link label text-[10.5px] whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#faq">S.S.S.</a>
-                <a class="nav-link label text-[10.5px] whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#contact">İletişim</a>
+            <nav class="hidden xl:flex items-center gap-8 2xl:gap-10" aria-label="Ana menü">
+                <a class="nav-link text-[14px] font-medium whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#about">Hakkımda</a>
+
+                <!-- Uzmanlık: açılır menü -->
+                <div class="nav-dd">
+                    <a class="nav-link flex items-center gap-1 text-[14px] font-medium whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#services">
+                        Uzmanlık
+                        <span class="nav-dd-chevron material-symbols-outlined text-[18px] -mr-0.5">expand_more</span>
+                    </a>
+
+                    <div class="nav-dd-panel w-[300px] pt-1">
+                        <div class="bg-white rounded-2xl border border-line shadow-[0_12px_40px_rgba(13,15,18,.14)] p-2.5">
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-card transition-colors" href="#services">
+                                <span class="material-symbols-outlined text-[20px] text-ink">gavel</span>
+                                <span class="text-[13.5px] font-medium text-ink">Ceza Hukuku</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-card transition-colors" href="#services">
+                                <span class="material-symbols-outlined text-[20px] text-ink">family_restroom</span>
+                                <span class="text-[13.5px] font-medium text-ink">Aile ve Boşanma Hukuku</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-card transition-colors" href="#mediation">
+                                <span class="material-symbols-outlined text-[20px] text-ink">handshake</span>
+                                <span class="text-[13.5px] font-medium text-ink">Arabuluculuk Hizmetleri</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-card transition-colors" href="#services">
+                                <span class="material-symbols-outlined text-[20px] text-ink">payments</span>
+                                <span class="text-[13.5px] font-medium text-ink">İcra ve Alacak Takibi</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-card transition-colors" href="#services">
+                                <span class="material-symbols-outlined text-[20px] text-ink">badge</span>
+                                <span class="text-[13.5px] font-medium text-ink">İş Hukuku</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-card transition-colors" href="#services">
+                                <span class="material-symbols-outlined text-[20px] text-ink">history_edu</span>
+                                <span class="text-[13.5px] font-medium text-ink">Miras ve Ticaret Hukuku</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="nav-link text-[14px] font-medium whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#process">Süreç</a>
+                <a class="nav-link text-[14px] font-medium whitespace-nowrap text-ink-500 hover:text-ink transition-colors" href="#faq">S.S.S.</a>
             </nav>
 
-            <!-- Aksiyonlar -->
-            <div class="flex items-center gap-4 shrink-0">
-                <a href="tel:05070161813" class="hidden 2xl:flex items-center gap-2 label text-[10.5px] whitespace-nowrap text-ink hover:text-ink-500 transition-colors">
-                    <span class="material-symbols-outlined text-[17px]">call</span>
+            <!-- Aksiyonlar (sağda) -->
+            <div class="flex items-center gap-2 sm:gap-4 lg:gap-5 shrink-0">
+                <a href="tel:05070161813" class="hidden 2xl:flex items-center gap-2 text-[14px] font-medium whitespace-nowrap text-ink-500 hover:text-ink transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">call</span>
                     <span class="tabular-nums">0507 016 18 13</span>
                 </a>
 
-                <a class="hidden sm:inline-flex btn-solid items-center label text-[10.5px] whitespace-nowrap px-7 py-3.5" href="https://wa.me/905070161813" target="_blank" rel="noopener">
-                    Randevu Al
+                <a href="#contact" class="hidden lg:inline-block text-[14px] font-medium whitespace-nowrap text-ink-500 hover:text-ink transition-colors">
+                    İletişim
                 </a>
 
-                <button id="mobile-menu-btn" class="xl:hidden w-11 h-11 flex items-center justify-center bg-card hover:bg-card-hover text-ink transition-colors" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+                <a class="hidden sm:inline-flex btn-pill items-center gap-2.5 pl-5 pr-1.5 py-1.5" href="https://wa.me/905070161813" target="_blank" rel="noopener">
+                    <span class="text-[13.5px] font-semibold whitespace-nowrap">Randevu Al</span>
+                    <span class="pill-arrow w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    </span>
+                </a>
+
+                <button id="mobile-menu-btn" class="xl:hidden w-11 h-11 rounded-xl flex items-center justify-center bg-card hover:bg-card-hover text-ink transition-colors" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="material-symbols-outlined text-[26px]">menu</span>
                 </button>
             </div>
@@ -264,9 +339,14 @@
 
     <!-- ══════════ MOBİL MENÜ ══════════ -->
     <div id="mobile-menu" class="is-closed fixed inset-0 z-[60] bg-white xl:hidden overflow-y-auto">
-        <div class="px-6 h-[76px] flex items-center justify-between border-b border-line">
-            <span class="font-display font-black text-[21px] tracking-tight uppercase">Zülfükar Can</span>
-            <button id="mobile-menu-close" class="w-11 h-11 flex items-center justify-center bg-card hover:bg-card-hover text-ink transition-colors" aria-label="Menüyü kapat">
+        <div class="px-6 h-[92px] flex items-center justify-between border-b border-line">
+            <span class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-ink text-white flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[19px]">balance</span>
+                </span>
+                <span class="font-display font-black text-[15px] tracking-tight uppercase">Avukat Zülfükar Can</span>
+            </span>
+            <button id="mobile-menu-close" class="w-11 h-11 rounded-xl flex items-center justify-center bg-card hover:bg-card-hover text-ink transition-colors" aria-label="Menüyü kapat">
                 <span class="material-symbols-outlined text-[26px]">close</span>
             </button>
         </div>
@@ -301,7 +381,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
                     <!-- Metin -->
-                    <div class="lg:col-span-6 py-14 lg:py-24 order-2 lg:order-1">
+                    <div class="lg:col-span-6 pt-12 pb-10 lg:py-24">
                         <h1 class="reveal h-display text-[2.35rem] sm:text-[3.1rem] lg:text-[3.5rem] xl:text-[3.85rem] text-ink">
                             Hukuki sorularınız mı var?
                             <span class="block mt-3">Buradan sonrasını ben hallederim.</span>
@@ -324,7 +404,7 @@
                     </div>
 
                     <!-- Portre -->
-                    <div class="lg:col-span-6 order-1 lg:order-2 -mx-6 lg:mx-0">
+                    <div class="lg:col-span-6 -mx-6 lg:mx-0">
                         <div class="hero-stage relative overflow-hidden h-[420px] sm:h-[540px] lg:h-[640px]">
                             <img src="./hero_mockup.jpg"
                                  alt="Arabulucu Avukat Zülfükar CAN"
@@ -1033,11 +1113,13 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 pb-12 border-b border-line">
 
                 <div class="md:col-span-5">
-                    <div class="flex items-baseline gap-1.5">
-                        <span class="font-display font-black text-[22px] tracking-tight uppercase text-ink">Zülfükar Can</span>
-                        <span class="font-display font-bold text-[9px] text-ink-400">™</span>
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-9 h-9 rounded-lg bg-ink text-white flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">balance</span>
+                        </span>
+                        <span class="font-display font-black text-[17px] tracking-tight uppercase text-ink">Avukat Zülfükar Can</span>
                     </div>
-                    <p class="label text-[9.5px] text-ink-400 mt-2">Arabulucu &amp; Avukat</p>
+                    <p class="label text-[9.5px] text-ink-400 mt-3">Arabulucu &amp; Avukat</p>
                     <p class="text-[13.5px] text-ink-500 leading-[1.85] mt-5 max-w-sm">
                         Diyarbakır merkezli bağımsız, tarafsız ve hukukun üstünlüğü ilkesine dayalı avukatlık ve
                         lisanslı arabuluculuk hizmetleri.
