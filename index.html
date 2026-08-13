@@ -240,14 +240,107 @@
         }
         #mobile-menu:not(.is-closed) .mm-item { opacity: 1; transform: none; }
 
+        /* ---------- Açılış Animasyonu (Intro Loader) ---------- */
+        #intro-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: #0D0F12;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.85s ease, visibility 0.85s;
+            will-change: transform, opacity;
+        }
+
+        #intro-loader.is-loaded {
+            transform: translateY(-100%);
+            opacity: 0.95;
+            pointer-events: none;
+        }
+
+        .intro-spin-ring {
+            animation: introSpin 9s linear infinite;
+        }
+
+        @keyframes introSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .intro-glow-box {
+            animation: introPulseGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes introPulseGlow {
+            from { box-shadow: 0 0 25px rgba(255, 255, 255, 0.08), inset 0 0 15px rgba(255, 255, 255, 0.05); }
+            to { box-shadow: 0 0 50px rgba(255, 255, 255, 0.25), inset 0 0 25px rgba(255, 255, 255, 0.15); }
+        }
+
+        .intro-content-in {
+            animation: introFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes introFadeUp {
+            from { opacity: 0; transform: translateY(24px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .intro-progress-bar {
+            width: 0%;
+            animation: introProgress 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+
+        @keyframes introProgress {
+            0% { width: 0%; }
+            50% { width: 68%; }
+            100% { width: 100%; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
             .reveal { opacity: 1; transform: none; }
+            #intro-loader { display: none !important; }
         }
     </style>
 </head>
 <body class="overflow-x-hidden antialiased bg-white text-ink">
+
+    <!-- ══════════ İNTRO / AÇILIŞ ANİMASYONU ══════════ -->
+    <div id="intro-loader" aria-hidden="true">
+        <!-- Arka Plan Parıltısı & Grid dokusu -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(255,255,255,0.08)_0%,transparent_65%)] pointer-events-none"></div>
+        <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+
+        <!-- Merkez İçerik Kapsayıcısı -->
+        <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-md mx-auto intro-content-in">
+            <!-- Terazi Logosu & Dönen Halka -->
+            <div class="relative mb-7 flex items-center justify-center">
+                <div class="intro-spin-ring absolute -inset-4 sm:-inset-5 rounded-full border border-dashed border-white/30"></div>
+                <div class="intro-glow-box w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center shadow-2xl transition-all">
+                    <span class="material-symbols-outlined text-3xl sm:text-4xl text-white tracking-normal">balance</span>
+                </div>
+            </div>
+
+            <!-- Büro Unvanı -->
+            <span class="label text-[10px] sm:text-[11px] tracking-[0.24em] text-gray-400 uppercase mb-2.5 block">
+                Diyarbakır Hukuk & Arabuluculuk
+            </span>
+
+            <!-- Avukat İsmi -->
+            <h1 class="font-display font-black text-2xl sm:text-3xl lg:text-4xl tracking-tight uppercase text-white mb-6 whitespace-nowrap">
+                Av. Arb. Zülfükar CAN
+            </h1>
+
+            <!-- İnce Çizgi İlerleme Çubuğu -->
+            <div class="w-48 sm:w-60 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+                <div class="intro-progress-bar absolute inset-y-0 left-0 bg-white rounded-full"></div>
+            </div>
+        </div>
+    </div>
 
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink focus:text-white focus:px-5 focus:py-3 focus:text-sm focus:font-bold">
         İçeriğe geç
@@ -1278,6 +1371,53 @@
         'use strict';
 
         var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* Açılış Animasyonu (Intro Loader Controller) */
+        (function () {
+            var loader = document.getElementById('intro-loader');
+            if (!loader) return;
+
+            if (prefersReduced) {
+                loader.style.display = 'none';
+                return;
+            }
+
+            // Sayfa açılışında kaydırma kilidi
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+
+            var hasFinished = false;
+
+            function dismissIntro() {
+                if (hasFinished) return;
+                hasFinished = true;
+
+                loader.classList.add('is-loaded');
+
+                setTimeout(function () {
+                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = '';
+                    loader.style.display = 'none';
+                }, 850);
+            }
+
+            var startTime = Date.now();
+            var minDelay = 1600;
+
+            function onReady() {
+                var elapsed = Date.now() - startTime;
+                var remaining = Math.max(0, minDelay - elapsed);
+                setTimeout(dismissIntro, remaining);
+            }
+
+            if (document.readyState === 'complete') {
+                onReady();
+            } else {
+                window.addEventListener('load', onReady);
+            }
+
+            setTimeout(dismissIntro, 2500);
+        })();
 
         /* Scroll reveal */
         var revealEls = document.querySelectorAll('.reveal');
