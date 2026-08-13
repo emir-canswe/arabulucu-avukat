@@ -490,6 +490,25 @@
             to { transform: scaleX(1); }
         }
 
+        /* ---------- Floating Action Buttons (FABs) ---------- */
+        .fab-whatsapp {
+            animation: whatsappRipple 2s infinite;
+        }
+        @keyframes whatsappRipple {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.44), 0 8px 30px rgba(37, 211, 102, 0.2); }
+            70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0), 0 8px 30px rgba(37, 211, 102, 0.2); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 8px 30px rgba(37, 211, 102, 0.2); }
+        }
+        .fab-totop:hover .material-symbols-outlined {
+            animation: arrowSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes arrowSlideUp {
+            0% { transform: translateY(0); opacity: 1; }
+            49% { transform: translateY(-16px); opacity: 0; }
+            50% { transform: translateY(16px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
@@ -1605,16 +1624,19 @@
     </footer>
 
     <!-- ══════════ SABİT BUTONLAR ══════════ -->
-    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-center">
+        <!-- Yukarı Git Butonu (FAB) -->
         <button id="to-top" aria-label="Yukarı çık"
-                class="opacity-0 pointer-events-none translate-y-2 w-12 h-12 bg-white border border-line text-ink shadow-lg flex items-center justify-center hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
-            <span class="material-symbols-outlined text-[22px]">arrow_upward</span>
+                class="fab-totop opacity-0 pointer-events-none translate-y-2 w-12 h-12 rounded-full bg-[#0F172A] text-white shadow-xl flex items-center justify-center hover:bg-[#10B981] hover:scale-110 active:scale-95 transition-all duration-300">
+            <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
         </button>
 
-        <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-           class="btn-solid flex items-center gap-2.5 pl-4 pr-5 py-3.5 shadow-xl">
-            <span class="material-symbols-outlined text-[20px]">chat</span>
-            <span class="label text-[10.5px]">WhatsApp</span>
+        <!-- WhatsApp İletişim Butonu (FAB) -->
+        <a href="https://wa.me/905070161813" target="_blank" rel="noopener" aria-label="WhatsApp ile İletişime Geç"
+           class="fab-whatsapp w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_8px_30px_rgba(37,211,102,0.3)] hover:bg-[#20ba5a] hover:scale-110 active:scale-95 transition-all duration-300">
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.63 1.97 14.155.945 11.524.945c-5.441 0-9.866 4.372-9.87 9.802 0 1.812.507 3.516 1.47 5.025L2.148 21.84l6.5-1.701zM17.8 14.86c-.334-.167-1.976-.975-2.28-1.087-.306-.112-.529-.167-.752.167-.224.334-.864 1.087-1.059 1.309-.195.223-.39.251-.724.084-1.44-.72-2.39-1.2-3.342-2.828-.252-.432.252-.401.72-.739.042-.03.083-.061.121-.093.18-.152.28-.27.382-.477.102-.207.051-.39-.025-.557-.076-.167-.752-1.812-1.03-2.481-.27-.655-.544-.566-.752-.577-.195-.01-.418-.012-.641-.012s-.585.084-.891.419c-.307.334-1.17 1.144-1.17 2.787 0 1.643 1.2 3.223 1.367 3.447.167.224 2.361 3.59 5.716 5.028.8.342 1.422.546 1.908.7.802.256 1.534.22 2.112.134.644-.096 1.976-.808 2.253-1.59.278-.782.278-1.45.195-1.59-.084-.14-.307-.224-.641-.391z"/>
+            </svg>
         </a>
     </div>
 
