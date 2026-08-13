@@ -303,7 +303,6 @@
             html { scroll-behavior: auto; }
             *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
             .reveal { opacity: 1; transform: none; }
-            #intro-loader { display: none !important; }
         }
     </style>
 </head>
@@ -1376,11 +1375,6 @@
         (function () {
             var loader = document.getElementById('intro-loader');
             if (!loader) return;
-
-            if (prefersReduced) {
-                loader.style.display = 'none';
-                return;
-            }
 
             // Sayfa açılışında kaydırma kilidi
             document.documentElement.style.overflow = 'hidden';
