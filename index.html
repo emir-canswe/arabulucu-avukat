@@ -147,20 +147,22 @@
             transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
         }
 
-        /* ---------- Sticky Layered Section Stacking Effect ---------- */
+        /* ---------- Awwwards 3D Card Parallax Stacking Effect ---------- */
         .stack-section {
             position: relative;
+            perspective: 1200px;
         }
 
-        /* Mobilde (1024px altı) tüm yazılar %100 eksiksiz okunsun diye 
-           içerik bitiminde sınır örtüşmeli (boundary overlap) lüks kart yapısı */
         .stack-card {
             position: relative;
             margin-top: -28px;
-            border-top-left-radius: 32px;
-            border-top-right-radius: 32px;
-            box-shadow: 0 -20px 50px rgba(28, 30, 35, 0.09);
-            border-top: 1px solid #E2DACB;
+            border-top-left-radius: 36px;
+            border-top-right-radius: 36px;
+            box-shadow: 0 -25px 60px rgba(15, 23, 42, 0.14);
+            border-top: 1px solid rgba(226, 218, 203, 0.8);
+            transform-origin: center top;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, filter 0.2s ease;
+            will-change: transform, opacity, filter;
         }
 
         #home.stack-section {
@@ -170,12 +172,11 @@
         @media (min-width: 640px) {
             .stack-card {
                 margin-top: -36px;
-                border-top-left-radius: 40px;
-                border-top-right-radius: 40px;
+                border-top-left-radius: 48px;
+                border-top-right-radius: 48px;
             }
         }
 
-        /* Masaüstünde (1024px ve üzeri) 100vh tam ekran okuma mesafeli sticky katmanlı kart efekti */
         @media (min-width: 1024px) {
             .stack-card {
                 position: sticky;
@@ -185,10 +186,9 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                border-top-left-radius: 52px;
-                border-top-right-radius: 52px;
-                box-shadow: 0 -25px 60px rgba(28, 30, 35, 0.08);
-                will-change: transform;
+                border-top-left-radius: 56px;
+                border-top-right-radius: 56px;
+                box-shadow: 0 -30px 75px rgba(15, 23, 42, 0.18);
             }
         }
 
@@ -1925,6 +1925,53 @@
                 );
             });
         }
+
+        /* Awwwards 3D Section Stacking Parallax Controller */
+        (function () {
+            var cards = document.querySelectorAll('.stack-card');
+            if (!cards.length || prefersReduced) return;
+
+            function updateParallax() {
+                var vh = window.innerHeight;
+                for (var i = 0; i < cards.length - 1; i++) {
+                    var card = cards[i];
+                    var nextCard = cards[i + 1];
+                    var rect = nextCard.getBoundingClientRect();
+
+                    if (rect.top < vh && rect.top > 0) {
+                        var progress = 1 - (rect.top / vh);
+                        var scale = 1 - (progress * 0.06); // 1.0 -> 0.94
+                        var translateY = -(progress * 35); // 0 -> -35px
+                        var opacity = 1 - (progress * 0.28); // 1.0 -> 0.72
+
+                        card.style.transform = 'scale(' + scale + ') translate3d(0, ' + translateY + 'px, 0)';
+                        card.style.opacity = opacity;
+                        card.style.filter = 'brightness(' + (1 - progress * 0.15) + ')';
+                    } else if (rect.top <= 0) {
+                        card.style.transform = 'scale(0.94) translate3d(0, -35px, 0)';
+                        card.style.opacity = '0.72';
+                        card.style.filter = 'brightness(0.85)';
+                    } else {
+                        card.style.transform = 'none';
+                        card.style.opacity = '1';
+                        card.style.filter = 'none';
+                    }
+                }
+            }
+
+            var ticking = false;
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        updateParallax();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            updateParallax();
+        })();
 
         /* Footer yılı */
         var yearEl = document.getElementById('year');
