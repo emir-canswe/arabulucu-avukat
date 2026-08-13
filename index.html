@@ -190,7 +190,7 @@
             }
         }
 
-        /* ---------- Header (Executive Floating Midnight Island Dock) ---------- */
+        /* ---------- Header: Floating Archipelago (3 separate islands) ---------- */
         #site-header {
             opacity: 0;
             transform: translate3d(0, -14px, 0);
@@ -204,22 +204,29 @@
             pointer-events: auto;
         }
 
-        #nav-shell {
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        .nav-island {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: saturate(180%) blur(18px);
+            -webkit-backdrop-filter: saturate(180%) blur(18px);
+            border: 1px solid rgba(226, 218, 203, 0.6);
+            box-shadow: 0 4px 24px rgba(28, 30, 35, 0.06), 0 1px 3px rgba(28, 30, 35, 0.04);
+            transition: box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
         }
-        #site-header.is-scrolled #nav-shell {
-            box-shadow: 0 25px 70px rgba(15, 23, 42, 0.45);
-            border-color: rgba(51, 65, 85, 0.9);
+
+        #site-header.is-scrolled .nav-island {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(226, 218, 203, 0.9);
+            box-shadow: 0 8px 40px rgba(28, 30, 35, 0.1), 0 2px 6px rgba(28, 30, 35, 0.05);
         }
 
         .nav-link { position: relative; }
         .nav-link::after {
-            content: ""; position: absolute; left: 0; bottom: -6px;
-            width: 100%; height: 2px; background: #0D0F12; border-radius: 2px;
-            transform: scaleX(0); transform-origin: right;
+            content: ""; position: absolute; left: 50%; bottom: -2px;
+            width: 4px; height: 4px; border-radius: 50%; background: #10B981;
+            transform: translateX(-50%) scale(0);
             transition: transform .32s cubic-bezier(.16,1,.3,1);
         }
-        .nav-link:hover::after, .nav-link.is-active::after { transform: scaleX(1); transform-origin: left; }
+        .nav-link:hover::after, .nav-link.is-active::after { transform: translateX(-50%) scale(1); }
 
         /* Menü açılır paneli */
         .nav-dd { position: relative; }
@@ -501,87 +508,87 @@
         İçeriğe geç
     </a>
 
-    <!-- ══════════ HEADER: EXECUTIVE FLOATING MIDNIGHT ISLAND DOCK ══════════ -->
-    <header id="site-header" class="sticky top-0 z-[99999] px-3 sm:px-6 lg:px-8 pt-3 sm:pt-5 pointer-events-none">
-        <div id="nav-shell" class="max-w-6xl mx-auto rounded-full h-[56px] sm:h-[64px] lg:h-[70px] px-2.5 sm:px-3 lg:px-4 flex items-center justify-between gap-2 sm:gap-4 bg-[#0F172A]/92 backdrop-blur-2xl border border-slate-700/60 shadow-[0_25px_60px_rgba(15,23,42,0.35)] text-white pointer-events-auto">
+    <!-- ══════════ HEADER: FLOATING ARCHIPELAGO (3 AYRI ADA) ══════════ -->
+    <header id="site-header" class="sticky top-0 z-[99999] pointer-events-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5">
+            <div class="flex items-center justify-between gap-3 lg:gap-5">
 
-            <!-- Marka & Canlı Durum Rozeti (Solda) -->
-            <a class="flex items-center gap-2 sm:gap-3 shrink-0 pl-1.5 sm:pl-2 group min-w-0" href="#home" aria-label="Ana sayfa">
-                <span class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full bg-[#10B981] text-white flex items-center justify-center shrink-0 shadow-lg shadow-emerald-500/25 group-hover:scale-105 transition-transform">
-                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]">balance</span>
-                </span>
-                <div class="flex flex-col min-w-0">
-                    <span class="font-display font-bold text-[13px] sm:text-[14.5px] lg:text-[16px] tracking-tight text-white whitespace-nowrap truncate">
-                        Av. Z. CAN
+                <!-- ═══ ADA 1: Marka Rozeti (Sol) ═══ -->
+                <a href="#home" aria-label="Ana sayfa" class="nav-island pointer-events-auto flex items-center gap-2.5 sm:gap-3 pl-2 pr-3 sm:pl-3 sm:pr-5 py-2 sm:py-2.5 rounded-full group shrink-0">
+                    <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0F172A] text-white flex items-center justify-center shrink-0 group-hover:bg-[#10B981] transition-colors shadow-sm">
+                        <span class="material-symbols-outlined text-[19px] sm:text-[20px]">balance</span>
                     </span>
-                    <span class="hidden sm:flex items-center gap-1.5 text-[10px] text-emerald-400 font-semibold">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>Danışma Açık</span>
-                    </span>
-                </div>
-            </a>
+                    <div class="hidden sm:flex flex-col">
+                        <span class="font-display font-bold text-[14px] lg:text-[15px] tracking-tight text-ink whitespace-nowrap">Av. Arb. Zülfükar CAN</span>
+                        <span class="flex items-center gap-1.5 text-[9.5px] text-emerald-700 font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Danışma Açık
+                        </span>
+                    </div>
+                </a>
 
-            <!-- Masaüstü Yüzen Kapsül Menü (Ortada) -->
-            <nav class="hidden xl:flex items-center gap-1 bg-slate-800/60 p-1.5 rounded-full border border-slate-700/40" aria-label="Ana menü">
-                <a class="nav-link px-4 py-2 rounded-full text-[13px] font-semibold text-slate-200 hover:text-white hover:bg-slate-700/60 transition-all" href="#about">Hakkımda</a>
+                <!-- ═══ ADA 2: Navigasyon Kapsüleri (Orta) ═══ -->
+                <nav class="hidden xl:flex nav-island pointer-events-auto items-center gap-1 px-2 py-1.5 rounded-full" aria-label="Ana menü">
+                    <a class="nav-link px-4 py-2.5 rounded-full text-[13px] font-semibold text-ink-500 hover:text-ink hover:bg-ink/5 transition-all" href="#about">Hakkımda</a>
 
-                <!-- Uzmanlık: açılır menü -->
-                <div class="nav-dd relative">
-                    <a class="nav-link px-4 py-2 rounded-full text-[13px] font-semibold text-slate-200 hover:text-white hover:bg-slate-700/60 transition-all flex items-center gap-1" href="#services">
-                        Uzmanlık
-                        <span class="nav-dd-chevron material-symbols-outlined text-[16px] -mr-0.5">expand_more</span>
-                    </a>
-
-                    <div class="nav-dd-panel w-[300px] pt-2">
-                        <div class="bg-[#0F172A] rounded-2xl border border-slate-700/80 shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-2">
-                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 transition-colors text-slate-200 hover:text-white" href="#services">
-                                <span class="material-symbols-outlined text-[19px] text-[#38BDF8]">gavel</span>
-                                <span class="text-[13px] font-semibold">Ceza Hukuku</span>
-                            </a>
-                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 transition-colors text-slate-200 hover:text-white" href="#services">
-                                <span class="material-symbols-outlined text-[19px] text-[#38BDF8]">family_restroom</span>
-                                <span class="text-[13px] font-semibold">Aile ve Boşanma Hukuku</span>
-                            </a>
-                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 transition-colors text-slate-200 hover:text-white" href="#mediation">
-                                <span class="material-symbols-outlined text-[19px] text-[#10B981]">handshake</span>
-                                <span class="text-[13px] font-semibold">Arabuluculuk Hizmetleri</span>
-                            </a>
-                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 transition-colors text-slate-200 hover:text-white" href="#services">
-                                <span class="material-symbols-outlined text-[19px] text-[#38BDF8]">payments</span>
-                                <span class="text-[13px] font-semibold">İcra ve Alacak Takibi</span>
-                            </a>
-                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 transition-colors text-slate-200 hover:text-white" href="#services">
-                                <span class="material-symbols-outlined text-[19px] text-[#38BDF8]">badge</span>
-                                <span class="text-[13px] font-semibold">İş Hukuku</span>
-                            </a>
-                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 transition-colors text-slate-200 hover:text-white" href="#services">
-                                <span class="material-symbols-outlined text-[19px] text-[#38BDF8]">history_edu</span>
-                                <span class="text-[13px] font-semibold">Miras ve Ticaret Hukuku</span>
-                            </a>
+                    <div class="nav-dd relative">
+                        <a class="nav-link px-4 py-2.5 rounded-full text-[13px] font-semibold text-ink-500 hover:text-ink hover:bg-ink/5 transition-all flex items-center gap-1" href="#services">
+                            Uzmanlık
+                            <span class="nav-dd-chevron material-symbols-outlined text-[16px] -mr-0.5">expand_more</span>
+                        </a>
+                        <div class="nav-dd-panel w-[300px] pt-2">
+                            <div class="nav-island bg-white/95 rounded-2xl p-2 shadow-[0_16px_48px_rgba(28,30,35,0.14)]">
+                                <a class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#FAF6F0] transition-colors" href="#services">
+                                    <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">gavel</span></span>
+                                    <span class="text-[13px] font-semibold text-ink">Ceza Hukuku</span>
+                                </a>
+                                <a class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#FAF6F0] transition-colors" href="#services">
+                                    <span class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">family_restroom</span></span>
+                                    <span class="text-[13px] font-semibold text-ink">Aile ve Boşanma Hukuku</span>
+                                </a>
+                                <a class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#FAF6F0] transition-colors" href="#mediation">
+                                    <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">handshake</span></span>
+                                    <span class="text-[13px] font-semibold text-ink">Arabuluculuk Hizmetleri</span>
+                                </a>
+                                <a class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#FAF6F0] transition-colors" href="#services">
+                                    <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">payments</span></span>
+                                    <span class="text-[13px] font-semibold text-ink">İcra ve Alacak Takibi</span>
+                                </a>
+                                <a class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#FAF6F0] transition-colors" href="#services">
+                                    <span class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">badge</span></span>
+                                    <span class="text-[13px] font-semibold text-ink">İş Hukuku</span>
+                                </a>
+                                <a class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#FAF6F0] transition-colors" href="#services">
+                                    <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">history_edu</span></span>
+                                    <span class="text-[13px] font-semibold text-ink">Miras ve Ticaret Hukuku</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+                    <a class="nav-link px-4 py-2.5 rounded-full text-[13px] font-semibold text-ink-500 hover:text-ink hover:bg-ink/5 transition-all" href="#process">Süreç</a>
+                    <a class="nav-link px-4 py-2.5 rounded-full text-[13px] font-semibold text-ink-500 hover:text-ink hover:bg-ink/5 transition-all" href="#faq">S.S.S.</a>
+                    <a class="nav-link px-4 py-2.5 rounded-full text-[13px] font-semibold text-ink-500 hover:text-ink hover:bg-ink/5 transition-all" href="#contact">İletişim</a>
+                </nav>
+
+                <!-- ═══ ADA 3: Aksiyonlar (Sağ) ═══ -->
+                <div class="flex items-center gap-2 sm:gap-3 shrink-0 pointer-events-auto">
+                    <a href="tel:05070161813" class="hidden lg:flex nav-island items-center gap-2 text-[13px] font-semibold text-ink-500 hover:text-ink px-4 py-2.5 rounded-full transition-colors">
+                        <span class="material-symbols-outlined text-[17px] text-[#10B981]">call</span>
+                        <span class="tabular-nums">0507 016 18 13</span>
+                    </a>
+
+                    <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                       class="hidden sm:inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#0F172A] hover:bg-[#1E293B] text-white font-bold label text-[11px] sm:text-[11.5px] shadow-lg shadow-ink/15 transition-all hover:shadow-xl hover:scale-[1.03] active:scale-100">
+                        <span class="material-symbols-outlined text-[16px]">calendar_month</span>
+                        <span>Randevu Al</span>
+                    </a>
+
+                    <button id="mobile-menu-btn" class="xl:hidden nav-island w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-ink hover:bg-ink/5 transition-colors" aria-label="Menüyü aç">
+                        <span class="material-symbols-outlined text-[22px]">menu</span>
+                    </button>
                 </div>
 
-                <a class="nav-link px-4 py-2 rounded-full text-[13px] font-semibold text-slate-200 hover:text-white hover:bg-slate-700/60 transition-all" href="#process">Süreç</a>
-                <a class="nav-link px-4 py-2 rounded-full text-[13px] font-semibold text-slate-200 hover:text-white hover:bg-slate-700/60 transition-all" href="#faq">S.S.S.</a>
-            </nav>
-
-            <!-- Sağ Aksiyonlar: Hızlı Arama & Parlayan Zümrüt Kapsül -->
-            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-                <a href="tel:05070161813" class="hidden lg:flex items-center gap-2 text-[13px] font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-full hover:bg-slate-800 transition-colors">
-                    <span class="material-symbols-outlined text-[17px] text-[#10B981]">call</span>
-                    <span class="tabular-nums">0507 016 18 13</span>
-                </a>
-
-                <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-                   class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#10B981] hover:bg-[#059669] text-white font-bold label text-[11.5px] shadow-lg shadow-emerald-500/25 transition-transform hover:scale-105 active:scale-100">
-                    <span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                    <span>Randevu Al</span>
-                </a>
-
-                <button id="mobile-menu-btn" class="xl:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white transition-colors" aria-label="Menüyü aç">
-                    <span class="material-symbols-outlined text-[20px] sm:text-[22px]">menu</span>
-                </button>
             </div>
         </div>
     </header>
