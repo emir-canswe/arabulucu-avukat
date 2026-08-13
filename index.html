@@ -509,6 +509,35 @@
             100% { transform: translateY(0); opacity: 1; }
         }
 
+        /* ---------- Hero Animated Bluish Gradient Blobs ---------- */
+        @keyframes blob1 {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(45px, -60px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.95); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        @keyframes blob2 {
+            0% { transform: translate(0, 0) scale(1.05); }
+            33% { transform: translate(-40px, 45px) scale(0.95); }
+            66% { transform: translate(50px, -40px) scale(1.05); }
+            100% { transform: translate(0, 0) scale(1.05); }
+        }
+        @keyframes blob3 {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-20px, -35px) scale(1.1); }
+            66% { transform: translate(35px, 30px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        .animate-blob1 {
+            animation: blob1 16s infinite alternate ease-in-out;
+        }
+        .animate-blob2 {
+            animation: blob2 20s infinite alternate ease-in-out;
+        }
+        .animate-blob3 {
+            animation: blob3 14s infinite alternate ease-in-out;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
@@ -688,26 +717,37 @@
     <main id="main">
 
         <!-- ══════════ HERO (EXECUTIVE 2-COLUMN SPLIT HERO) ══════════ -->
-        <section id="home" class="stack-section stack-card relative bg-[#FAF6F0] z-10 pt-20 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-24 overflow-hidden border-b border-[#E2DACB]">
-            <div class="max-w-content mx-auto px-6 lg:px-10">
+        <section id="home" class="stack-section stack-card relative bg-[#0B1530] z-10 pt-20 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-24 overflow-hidden border-b border-white/10" data-nav-theme="dark">
+            
+            <!-- Animated Background Blobs -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <!-- Blob 1: Deep Cyan/Blue -->
+                <div class="absolute w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] rounded-full bg-sky-500/10 blur-[80px] sm:blur-[110px] animate-blob1"></div>
+                <!-- Blob 2: Deep Indigo -->
+                <div class="absolute w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] rounded-full bg-indigo-500/10 blur-[100px] sm:blur-[130px] animate-blob2"></div>
+                <!-- Blob 3: Deep Teal/Blue -->
+                <div class="absolute w-[300px] sm:w-[350px] h-[300px] sm:h-[350px] rounded-full bg-teal-500/5 blur-[70px] sm:blur-[90px] animate-blob3"></div>
+            </div>
+
+            <div class="max-w-content mx-auto px-6 lg:px-10 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                     <!-- Left Column: Serious Executive Typography & CTAs -->
                     <div class="lg:col-span-7 reveal-left">
                         <!-- Eyebrow Badge -->
-                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] sm:text-[11px] mb-6 sm:mb-8">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/25 text-sky-300 label text-[10.5px] sm:text-[11px] mb-6 sm:mb-8">
                             <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
                             <span>T.C. Adalet Bakanlığı Sicilli Arabulucu &amp; Avukat</span>
                         </div>
 
                         <!-- Serious Authoritative Headline -->
-                        <h1 class="font-display font-bold text-[2.4rem] sm:text-[3.6rem] lg:text-[4.4rem] leading-[1.08] text-ink tracking-tight balance">
+                        <h1 class="font-display font-bold text-[2.4rem] sm:text-[3.6rem] lg:text-[4.4rem] leading-[1.08] text-white tracking-tight balance">
                             Haklarınız Güven Altında,<br/>
-                            <span class="text-[#0284C7]">Çözüm Yanınızda.</span>
+                            <span class="text-sky-400">Çözüm Yanınızda.</span>
                         </h1>
 
                         <!-- Dignified Subtitle -->
-                        <p class="text-ink-500 text-[15px] sm:text-[16.5px] leading-[1.85] max-w-xl mt-6">
+                        <p class="text-blue-100/80 text-[15px] sm:text-[16.5px] leading-[1.85] max-w-xl mt-6">
                             Diyarbakır merkezli hukuk büromuzda; ceza hukuku, aile ve boşanma davaları, iş uyuşmazlıkları ve ilam niteliğinde lisanslı arabuluculuk süreçlerinde haklarınızı yasal güvenceyle savunuyoruz.
                         </p>
 
@@ -720,50 +760,50 @@
                             </a>
 
                             <a href="#contact"
-                               class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-ink/20 hover:border-ink bg-white hover:bg-white text-ink font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-md">
+                               class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-lg">
                                 <span>İletişime Geç</span>
-                                <span class="w-6 h-6 rounded-full bg-ink/5 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-[15px]">north_east</span>
+                                <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[15px] text-white">north_east</span>
                                 </span>
                             </a>
                         </div>
 
-                        <!-- Trust Metrics Bar (Modern Cards Redesign) -->
-                        <div class="grid grid-cols-3 gap-3.5 pt-8 mt-10 border-t border-[#E2DACB] max-w-lg">
+                        <!-- Trust Metrics Bar (Glassmorphism Redesign) -->
+                        <div class="grid grid-cols-3 gap-3.5 pt-8 mt-10 border-t border-white/10 max-w-lg">
                             
                             <!-- Stat Card 1 -->
-                            <div class="bg-white p-4 rounded-2xl border border-[#E2DACB] shadow-sm hover:shadow-md hover:border-sky-500/25 transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-sky-500/25 transition-all duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-ink leading-none">1.500+</span>
-                                    <span class="material-symbols-outlined text-[18px] text-sky-600 shrink-0">folder_shared</span>
+                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-white leading-none">1.500+</span>
+                                    <span class="material-symbols-outlined text-[18px] text-sky-400 shrink-0">folder_shared</span>
                                 </div>
-                                <p class="text-[10px] text-ink-500 font-bold mt-3.5 uppercase tracking-wider">Çözülen Dosya</p>
+                                <p class="text-[10px] text-blue-200/90 font-bold mt-3.5 uppercase tracking-wider">Çözülen Dosya</p>
                             </div>
 
                             <!-- Stat Card 2 -->
-                            <div class="bg-white p-4 rounded-2xl border border-[#E2DACB] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-ink leading-none">2019</span>
-                                    <span class="material-symbols-outlined text-[18px] text-ink-400 shrink-0">gavel</span>
+                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-white leading-none">2019</span>
+                                    <span class="material-symbols-outlined text-[18px] text-white/40 shrink-0">gavel</span>
                                 </div>
-                                <p class="text-[10px] text-ink-500 font-bold mt-3.5 uppercase tracking-wider">Yıllık Deneyim</p>
+                                <p class="text-[10px] text-blue-200/90 font-bold mt-3.5 uppercase tracking-wider">Yıllık Deneyim</p>
                             </div>
 
                             <!-- Stat Card 3 -->
-                            <div class="bg-white p-4 rounded-2xl border border-[#E2DACB] shadow-sm hover:shadow-md hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
                                     <span class="font-display font-bold text-[20px] sm:text-[24px] text-[#10B981] leading-none">%100</span>
                                     <span class="material-symbols-outlined text-[18px] text-[#10B981] shrink-0">shield</span>
                                 </div>
-                                <p class="text-[10px] text-ink-500 font-bold mt-3.5 uppercase tracking-wider">Gizlilik</p>
+                                <p class="text-[10px] text-blue-200/90 font-bold mt-3.5 uppercase tracking-wider">Gizlilik</p>
                             </div>
 
                         </div>
                     </div>
 
                     <!-- Right Column: Executive Portrait Card with Glass Badge -->
-                    <div class="lg:col-span-5 reveal-right relative">
-                        <div class="relative rounded-[36px] sm:rounded-[44px] overflow-hidden border-4 border-white shadow-[0_25px_60px_rgba(15,23,42,0.12)] bg-white aspect-[4/5] sm:aspect-[4/4.6]">
+                    <div class="lg:col-span-5 reveal-right relative z-10">
+                        <div class="relative rounded-[36px] sm:rounded-[44px] overflow-hidden border-4 border-slate-800/40 shadow-[0_25px_60px_rgba(0,0,0,0.35)] bg-slate-900 aspect-[4/5] sm:aspect-[4/4.6]">
                             <img src="./hero_mockup.jpg"
                                  alt="Arabulucu Avukat Zülfükar CAN"
                                  class="w-full h-full object-cover object-top"
