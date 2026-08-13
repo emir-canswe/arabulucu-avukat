@@ -161,12 +161,15 @@
             box-shadow: 0 -25px 60px rgba(15, 23, 42, 0.14);
             border-top: 1px solid rgba(226, 218, 203, 0.8);
             transform-origin: center top;
-            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, filter 0.2s ease;
             will-change: transform, opacity, filter;
         }
 
-        #home.stack-section {
+        #home.stack-card {
             margin-top: 0 !important;
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+            box-shadow: none !important;
+            border-top: none !important;
         }
 
         @media (min-width: 640px) {
@@ -188,7 +191,7 @@
                 justify-content: center;
                 border-top-left-radius: 56px;
                 border-top-right-radius: 56px;
-                box-shadow: 0 -30px 75px rgba(15, 23, 42, 0.18);
+                box-shadow: 0 -35px 80px rgba(15, 23, 42, 0.22);
             }
         }
 
@@ -619,7 +622,7 @@
     <main id="main">
 
         <!-- ══════════ HERO ══════════ -->
-        <section id="home" class="stack-section relative bg-[#FAF6F0] z-10 pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
+        <section id="home" class="stack-section stack-card relative bg-[#FAF6F0] z-10 pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
             <div class="max-w-5xl mx-auto px-6 sm:px-8 text-center">
 
                 <!-- Eyebrow Badge -->
@@ -1956,17 +1959,19 @@
 
                     if (rect.top < vh && rect.top > 0) {
                         var progress = 1 - (rect.top / vh);
-                        var scale = 1 - (progress * 0.06); // 1.0 -> 0.94
-                        var translateY = -(progress * 35); // 0 -> -35px
-                        var opacity = 1 - (progress * 0.28); // 1.0 -> 0.72
+                        // Dramatic 3D scale down: 1.0 -> 0.88
+                        var scale = 1 - (progress * 0.12);
+                        var translateY = -(progress * 45);
+                        var opacity = 1 - (progress * 0.35); // 1.0 -> 0.65
+                        var brightness = 1 - (progress * 0.30); // 1.0 -> 0.70
 
                         card.style.transform = 'scale(' + scale + ') translate3d(0, ' + translateY + 'px, 0)';
                         card.style.opacity = opacity;
-                        card.style.filter = 'brightness(' + (1 - progress * 0.15) + ')';
+                        card.style.filter = 'brightness(' + brightness + ')';
                     } else if (rect.top <= 0) {
-                        card.style.transform = 'scale(0.94) translate3d(0, -35px, 0)';
-                        card.style.opacity = '0.72';
-                        card.style.filter = 'brightness(0.85)';
+                        card.style.transform = 'scale(0.88) translate3d(0, -45px, 0)';
+                        card.style.opacity = '0.65';
+                        card.style.filter = 'brightness(0.70)';
                     } else {
                         card.style.transform = 'none';
                         card.style.opacity = '1';
