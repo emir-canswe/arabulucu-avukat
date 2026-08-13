@@ -1537,41 +1537,50 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
                     <div class="lg:col-span-4">
-                        <h2 class="reveal h-section text-[2rem] sm:text-[2.6rem] text-ink balance">
-                            Adres ve ulaşım
+                        <span class="reveal-scale inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-800 label text-[10.5px] mb-4">
+                            Konum Bilgisi
+                        </span>
+                        <h2 class="reveal h-section text-[2.2rem] sm:text-[2.6rem] text-ink balance font-display font-bold leading-tight">
+                            Adres ve Ulaşım
                         </h2>
 
-                        <div class="reveal bg-white p-7 mt-8" style="transition-delay:.06s">
-                            <span class="icon-tile"><span class="material-symbols-outlined text-[22px]">apartment</span></span>
-                            <p class="h-card text-[13px] text-ink mt-5">Karakoç Plaza</p>
-                            <p class="text-[13.5px] text-ink-500 leading-[1.8] mt-2">
+                        <!-- Address Info Card -->
+                        <div class="reveal bg-white p-7 rounded-[24px] border border-[#E2DACB] shadow-sm hover:shadow-md transition-all duration-300 mt-6" style="transition-delay:.06s">
+                            <span class="w-10 h-10 rounded-full bg-ink/5 text-ink flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-[20px] text-ink">apartment</span>
+                            </span>
+                            <p class="font-display font-bold text-[14px] text-ink">Karakoç Plaza</p>
+                            <p class="text-[13px] text-ink-500 leading-[1.8] mt-2">
                                 Prof. Selahattin Yazıcıoğlu Cad. No:59<br/>
+                                Kat:2 Daire:8 (Ofis Konumu)<br/>
                                 21100 Yenişehir / Diyarbakır
                             </p>
                         </div>
 
-                        <div class="reveal bg-white p-7 mt-3" style="transition-delay:.1s">
-                            <p class="label text-[9.5px] text-ink-500">Hizmet Bölgeleri</p>
+                        <!-- Service Regions Card -->
+                        <div class="reveal bg-white p-7 rounded-[24px] border border-[#E2DACB] shadow-sm hover:shadow-md transition-all duration-300 mt-3.5" style="transition-delay:.1s">
+                            <p class="label text-[9.5px] text-ink-500 font-bold uppercase tracking-wider">Hizmet Bölgeleri</p>
                             <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="px-3.5 py-1.5 bg-ink text-white label text-[9.5px]">Türkiye Geneli</span>
-                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Diyarbakır</span>
-                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Kulp</span>
-                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Ergani</span>
-                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Çınar</span>
-                                <span class="px-3.5 py-1.5 bg-card text-ink-500 label text-[9.5px]">Çermik</span>
+                                <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-100 font-bold label text-[9px]">Türkiye Geneli</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-100 label text-[9px]">Diyarbakır</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-100 label text-[9px]">Kulp</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-100 label text-[9px]">Ergani</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-100 label text-[9px]">Çınar</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-100 label text-[9px]">Çermik</span>
                             </div>
                         </div>
 
-                        <a class="reveal btn-solid inline-flex items-center gap-2.5 label text-[11.5px] px-8 py-4 mt-7"
+                        <a class="reveal inline-flex items-center gap-2.5 text-white font-bold label text-[11.5px] px-8 py-4 rounded-full bg-ink hover:bg-[#10B981] shadow-lg shadow-slate-900/10 hover:shadow-emerald-500/20 transition-all hover:scale-105 active:scale-100 mt-7"
                            href="https://maps.google.com/?q=Karako%C3%A7+Plaza+Prof.+Selahattin+Yaz%C4%B1c%C4%B1o%C4%9Flu+Cad.+Yeni%C5%9Fehir+Diyarbak%C4%B1r"
                            target="_blank" rel="noopener" style="transition-delay:.14s">
                             <span class="material-symbols-outlined text-[18px]">directions</span>
-                            Yol Tarifi Al
+                            <span>Yol Tarifi Al</span>
                         </a>
                     </div>
 
                     <div class="lg:col-span-8 reveal" style="transition-delay:.08s">
-                        <div class="relative h-[380px] lg:h-[520px] w-full overflow-hidden bg-white">
+                        <!-- Rounded and Framed Map Container -->
+                        <div class="relative h-[380px] lg:h-[520px] w-full overflow-hidden rounded-[32px] border border-[#E2DACB] shadow-2xl bg-white">
                             <iframe
                                 title="Karakoç Plaza, Yenişehir / Diyarbakır — ofis konumu"
                                 src="https://www.google.com/maps?q=Karako%C3%A7%20Plaza%20Prof.%20Selahattin%20Yaz%C4%B1c%C4%B1o%C4%9Flu%20Cad.%20No%3A59%20Yeni%C5%9Fehir%20Diyarbak%C4%B1r&hl=tr&z=16&output=embed"
