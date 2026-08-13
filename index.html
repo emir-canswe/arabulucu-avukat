@@ -147,30 +147,40 @@
             transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
         }
 
-        /* ---------- Sticky Layered Section Stacking Effect (Mobile & Desktop) ---------- */
+        /* ---------- Sticky Layered Section Stacking Effect ---------- */
         .stack-section {
             position: relative;
         }
 
+        /* Mobilde (1024px altı) tüm yazılar %100 eksiksiz okunsun diye 
+           içerik bitiminde sınır örtüşmeli (boundary overlap) lüks kart yapısı */
         .stack-card {
-            position: sticky;
-            top: 0;
-            border-top-left-radius: 28px;
-            border-top-right-radius: 28px;
-            box-shadow: 0 -18px 45px rgba(28, 30, 35, 0.08);
+            position: relative;
+            margin-top: -28px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            box-shadow: 0 -20px 50px rgba(28, 30, 35, 0.09);
             border-top: 1px solid #E2DACB;
-            will-change: transform;
+        }
+
+        #home.stack-section {
+            margin-top: 0 !important;
         }
 
         @media (min-width: 640px) {
             .stack-card {
+                margin-top: -36px;
                 border-top-left-radius: 40px;
                 border-top-right-radius: 40px;
             }
         }
 
+        /* Masaüstünde (1024px ve üzeri) 100vh tam ekran okuma mesafeli sticky katmanlı kart efekti */
         @media (min-width: 1024px) {
             .stack-card {
+                position: sticky;
+                top: 0;
+                margin-top: 0;
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -178,6 +188,7 @@
                 border-top-left-radius: 52px;
                 border-top-right-radius: 52px;
                 box-shadow: 0 -25px 60px rgba(28, 30, 35, 0.08);
+                will-change: transform;
             }
         }
 
