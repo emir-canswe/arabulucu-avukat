@@ -204,43 +204,56 @@
             pointer-events: auto;
         }
 
+        /* Default state: DARK navbar on LIGHT sections (Contrast) */
         .nav-island {
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: saturate(180%) blur(18px);
-            -webkit-backdrop-filter: saturate(180%) blur(18px);
-            border: 1px solid rgba(226, 218, 203, 0.6);
-            box-shadow: 0 4px 24px rgba(28, 30, 35, 0.06), 0 1px 3px rgba(28, 30, 35, 0.04);
-            transition: box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease, color 0.4s ease;
+            background: rgba(15, 23, 42, 0.88) !important;
+            backdrop-filter: saturate(180%) blur(18px) !important;
+            -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
+            border: 1px solid rgba(51, 65, 85, 0.5) !important;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease, color 0.4s ease !important;
         }
 
         #site-header.is-scrolled .nav-island {
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(226, 218, 203, 0.9);
-            box-shadow: 0 8px 40px rgba(28, 30, 35, 0.1), 0 2px 6px rgba(28, 30, 35, 0.05);
+            background: rgba(15, 23, 42, 0.95) !important;
+            border-color: rgba(51, 65, 85, 0.8) !important;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25) !important;
         }
 
-        /* Navbar on DARK sections: invert to dark glass */
+        /* Default links & text colors inside DARK navbar (light sections) */
+        #site-header .nav-brand-name { color: #ffffff !important; }
+        #site-header .nav-brand-status { color: #34D399 !important; }
+        #site-header .nav-brand-icon { background: #10B981 !important; color: #ffffff !important; }
+        #site-header .nav-link { color: rgba(226, 232, 240, 0.85) !important; }
+        #site-header .nav-link:hover { color: #ffffff !important; }
+        #site-header .nav-phone { color: rgba(226, 232, 240, 0.85) !important; }
+        #site-header .nav-phone:hover { color: #ffffff !important; }
+        #site-header .nav-cta { background: #10B981 !important; color: #ffffff !important; }
+        #site-header .nav-cta:hover { background: #059669 !important; }
+        #site-header .nav-menu-btn { color: #ffffff !important; }
+
+        /* nav-on-dark state: LIGHT navbar on DARK sections (Contrast) */
         #site-header.nav-on-dark .nav-island {
-            background: rgba(15, 23, 42, 0.72);
-            border-color: rgba(51, 65, 85, 0.5);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
-            color: #fff;
+            background: rgba(255, 255, 255, 0.88) !important;
+            border-color: rgba(226, 218, 203, 0.7) !important;
+            box-shadow: 0 4px 24px rgba(28, 30, 35, 0.08), 0 1px 3px rgba(28, 30, 35, 0.05) !important;
         }
         #site-header.nav-on-dark.is-scrolled .nav-island {
-            background: rgba(15, 23, 42, 0.92);
-            border-color: rgba(51, 65, 85, 0.8);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.96) !important;
+            border-color: rgba(226, 218, 203, 0.9) !important;
+            box-shadow: 0 8px 40px rgba(28, 30, 35, 0.15) !important;
         }
-        #site-header.nav-on-dark .nav-link { color: rgba(203, 213, 225, 0.9); }
-        #site-header.nav-on-dark .nav-link:hover { color: #fff; }
-        #site-header.nav-on-dark .nav-brand-name { color: #fff; }
-        #site-header.nav-on-dark .nav-brand-status { color: #34D399; }
-        #site-header.nav-on-dark .nav-brand-icon { background: #10B981; color: #fff; }
-        #site-header.nav-on-dark .nav-phone { color: rgba(203, 213, 225, 0.9); }
-        #site-header.nav-on-dark .nav-phone:hover { color: #fff; }
-        #site-header.nav-on-dark .nav-cta { background: #10B981; }
-        #site-header.nav-on-dark .nav-cta:hover { background: #059669; }
-        #site-header.nav-on-dark .nav-menu-btn { color: #fff; }
+        #site-header.nav-on-dark .nav-brand-name { color: #0D0F12 !important; }
+        #site-header.nav-on-dark .nav-brand-status { color: #047857 !important; }
+        #site-header.nav-on-dark .nav-brand-icon { background: #0F172A !important; color: #ffffff !important; }
+        #site-header.nav-on-dark .nav-brand-icon:hover { background: #10B981 !important; }
+        #site-header.nav-on-dark .nav-link { color: #4B5563 !important; }
+        #site-header.nav-on-dark .nav-link:hover { color: #0D0F12 !important; }
+        #site-header.nav-on-dark .nav-phone { color: #4B5563 !important; }
+        #site-header.nav-on-dark .nav-phone:hover { color: #0D0F12 !important; }
+        #site-header.nav-on-dark .nav-cta { background: #0F172A !important; color: #ffffff !important; }
+        #site-header.nav-on-dark .nav-cta:hover { background: #1E293B !important; }
+        #site-header.nav-on-dark .nav-menu-btn { color: #0D0F12 !important; }
 
         .nav-link { position: relative; }
         .nav-link::after {
