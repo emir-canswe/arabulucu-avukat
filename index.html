@@ -2216,6 +2216,18 @@
                 updateParallax();
             }, { passive: true });
 
+            // Dynamically recalculate sticky top bounds when FAQ accordions expand/collapse
+            var faqDetails = document.querySelectorAll('details.faq');
+            faqDetails.forEach(function (details) {
+                details.addEventListener('toggle', function () {
+                    updateParallax();
+                    // Repeatedly trigger during CSS transition/animation
+                    setTimeout(updateParallax, 100);
+                    setTimeout(updateParallax, 300);
+                    setTimeout(updateParallax, 500);
+                });
+            });
+
             updateParallax();
         })();
 
