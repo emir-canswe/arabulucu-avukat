@@ -196,6 +196,19 @@
         }
 
         /* ---------- Header (yüzen pill) ---------- */
+        #site-header {
+            opacity: 0;
+            transform: translate3d(0, -14px, 0);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        body.intro-complete #site-header {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            pointer-events: auto;
+        }
+
         #nav-shell {
             background: rgba(255,255,255,.88);
             backdrop-filter: saturate(180%) blur(14px);
@@ -334,7 +347,7 @@
         #intro-loader {
             position: fixed;
             inset: 0;
-            z-index: 99999;
+            z-index: 999999;
             pointer-events: auto;
             user-select: none;
             overflow: hidden;
@@ -1719,6 +1732,7 @@
                 hasFinished = true;
 
                 loader.classList.add('is-loaded');
+                document.body.classList.add('intro-complete');
 
                 setTimeout(function () {
                     document.documentElement.style.overflow = '';
