@@ -147,6 +147,28 @@
             transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
         }
 
+        /* ---------- Sticky Layered Section Stacking Effect ---------- */
+        .stack-section {
+            position: relative;
+        }
+
+        .stack-card {
+            position: sticky;
+            top: 0;
+            border-top-left-radius: 36px;
+            border-top-right-radius: 36px;
+            box-shadow: 0 -22px 50px rgba(28, 30, 35, 0.08);
+            border-top: 1px solid #E2DACB;
+            will-change: transform;
+        }
+
+        @media (min-width: 640px) {
+            .stack-card {
+                border-top-left-radius: 52px;
+                border-top-right-radius: 52px;
+            }
+        }
+
         /* ---------- Header (yüzen pill) ---------- */
         #nav-shell {
             background: rgba(255,255,255,.88);
@@ -574,7 +596,7 @@
     <main id="main">
 
         <!-- ══════════ HERO ══════════ -->
-        <section id="home" class="relative bg-[#FAF6F0] pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
+        <section id="home" class="stack-section relative bg-[#FAF6F0] z-10 pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
             <div class="max-w-5xl mx-auto px-6 sm:px-8 text-center">
 
                 <!-- Eyebrow Badge -->
@@ -654,7 +676,7 @@
         </section>
 
         <!-- ══════════ UZMANLIK & HİZMETLERİMİZ ══════════ -->
-        <section class="py-20 lg:py-28 bg-[#FAF6F0]" id="services">
+        <section class="stack-section stack-card py-20 lg:py-28 bg-[#FAF6F0] z-20" id="services">
             <div class="max-w-content mx-auto px-6 lg:px-10">
 
                 <!-- Centered Section Header -->
@@ -816,7 +838,7 @@
         </section>
 
         <!-- ══════════ CANLI ANİMASYONLU SAYAÇ (IMPACT STATS) ══════════ -->
-        <section class="py-20 lg:py-28 bg-[#FAF6F0]" id="impact-stats">
+        <section class="stack-section stack-card py-20 lg:py-28 bg-[#FAF6F0] z-30" id="impact-stats">
             <div class="max-w-content mx-auto px-6 lg:px-10 text-center">
 
                 <!-- Eyebrow Badge -->
@@ -867,7 +889,7 @@
         </div>
 
         <!-- ══════════ HAKKIMDA ══════════ -->
-        <section class="py-20 lg:py-24 bg-band" id="about">
+        <section class="stack-section stack-card py-20 lg:py-24 bg-[#F4EEE3] z-40" id="about">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -974,7 +996,7 @@
         </section>
 
         <!-- ══════════ ARABULUCULUK ══════════ -->
-        <section class="py-20 lg:py-24 bg-band" id="mediation">
+        <section class="stack-section stack-card py-20 lg:py-24 bg-[#FAF6F0] z-50" id="mediation">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -1022,7 +1044,7 @@
         </section>
 
         <!-- ══════════ ÇALIŞMA SÜRECİ ══════════ -->
-        <section class="py-20 lg:py-28 bg-white" id="process">
+        <section class="stack-section stack-card py-20 lg:py-28 bg-[#F4EEE3] z-[60]" id="process">
             <div class="max-w-content mx-auto px-6 lg:px-10">
 
                 <div class="mb-14 lg:mb-16">
@@ -1071,7 +1093,7 @@
         </section>
 
         <!-- ══════════ S.S.S. ══════════ -->
-        <section class="py-20 lg:py-28 bg-band" id="faq">
+        <section class="stack-section stack-card py-20 lg:py-28 bg-[#FAF6F0] z-[70]" id="faq">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -1181,7 +1203,7 @@
         </section>
 
         <!-- ══════════ İLETİŞİM & RANDEVU TALEBİ (INTERACTIVE CARD FORM) ══════════ -->
-        <section class="py-20 lg:py-28 bg-[#FAF6F0] relative overflow-hidden" id="contact">
+        <section class="stack-section stack-card py-20 lg:py-28 bg-[#F4EEE3] z-[80] relative overflow-hidden" id="contact">
             <!-- Subtle background aura -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -1307,7 +1329,7 @@
         </section>
 
         <!-- ══════════ KONUM ══════════ -->
-        <section class="py-20 lg:py-28 bg-band" id="location">
+        <section class="stack-section stack-card py-20 lg:py-28 bg-[#FAF6F0] z-[90]" id="location">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
@@ -1362,7 +1384,7 @@
         </section>
 
         <!-- ══════════ ÇALIŞMA SAATLERİ ══════════ -->
-        <section class="py-20 lg:py-28 bg-white" id="hours">
+        <section class="stack-section stack-card py-20 lg:py-28 bg-[#F4EEE3] z-[100]" id="hours">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
