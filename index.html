@@ -1126,6 +1126,9 @@
             <div class="max-w-content mx-auto px-6 lg:px-10">
 
                 <div class="mb-14 lg:mb-16">
+                    <span class="reveal-scale inline-flex items-center gap-2 px-4 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] mb-3.5">
+                        Adım Adım Yol Haritamız
+                    </span>
                     <h2 class="reveal h-section text-[2rem] sm:text-[2.8rem] text-ink balance">
                         İlk görüşmeden çözüme
                     </h2>
@@ -1134,37 +1137,77 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line">
-                    <div class="reveal bg-white p-8 lg:p-9">
-                        <p class="font-display font-black text-[13px] text-ink-400">01</p>
-                        <h3 class="h-card text-[14px] text-ink mt-5">İlk Görüşme</h3>
-                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
-                            Telefon veya WhatsApp üzerinden dosyanızı dinliyor, hukuki durumunuzu ön değerlendirmeden
-                            geçiriyoruz.
-                        </p>
+                <!-- 4 Column Premium Steps Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                    <!-- Step 1 -->
+                    <div class="reveal-card bg-white p-8 rounded-[28px] sm:rounded-[32px] border border-[#E2DACB] hover:border-emerald-500/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group flex flex-col justify-between relative overflow-hidden">
+                        <!-- Top Row: Step Number & Icon -->
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="w-11 h-11 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-800 font-display font-bold text-[14px] flex items-center justify-center shadow-sm group-hover:bg-[#10B981] group-hover:text-white group-hover:border-[#10B981] transition-all duration-300">
+                                01
+                            </span>
+                            <span class="material-symbols-outlined text-[20px] text-ink-300 group-hover:text-[#10B981] transition-colors duration-300">phone_in_talk</span>
+                        </div>
+                        <!-- Content -->
+                        <div>
+                            <h3 class="font-display font-bold text-[16px] sm:text-[18px] text-ink">İlk Görüşme</h3>
+                            <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
+                                Telefon veya WhatsApp üzerinden dosyanızı dinliyor, hukuki durumunuzu ön değerlendirmeden geçiriyoruz.
+                            </p>
+                        </div>
+                        <!-- Accent Bottom Light Ring -->
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#10B981]/20 to-transparent transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
                     </div>
-                    <div class="reveal bg-white p-8 lg:p-9" style="transition-delay:.06s">
-                        <p class="font-display font-black text-[13px] text-ink-400">02</p>
-                        <h3 class="h-card text-[14px] text-ink mt-5">Dosya İncelemesi</h3>
-                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
-                            Belgeleriniz incelenir, olası sonuçlar, süreler ve maliyetler açık biçimde tarafınıza
-                            raporlanır.
-                        </p>
+
+                    <!-- Step 2 -->
+                    <div class="reveal-card bg-white p-8 rounded-[28px] sm:rounded-[32px] border border-[#E2DACB] hover:border-blue-500/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group flex flex-col justify-between relative overflow-hidden" style="transition-delay:.08s">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="w-11 h-11 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-800 font-display font-bold text-[14px] flex items-center justify-center shadow-sm group-hover:bg-[#0284C7] group-hover:text-white group-hover:border-[#0284C7] transition-all duration-300">
+                                02
+                            </span>
+                            <span class="material-symbols-outlined text-[20px] text-ink-300 group-hover:text-[#0284C7] transition-colors duration-300">quick_reference</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-[16px] sm:text-[18px] text-ink">Dosya İncelemesi</h3>
+                            <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
+                                Belgeleriniz incelenir; olası sonuçlar, süreler ve maliyetler açık biçimde tarafınıza raporlanır.
+                            </p>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#0284C7]/20 to-transparent transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
                     </div>
-                    <div class="reveal bg-white p-8 lg:p-9" style="transition-delay:.12s">
-                        <p class="font-display font-black text-[13px] text-ink-400">03</p>
-                        <h3 class="h-card text-[14px] text-ink mt-5">Strateji ve Yol Haritası</h3>
-                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
-                            Arabuluculuk mu, dava mı? Sizin için en hızlı ve en az maliyetli yol birlikte belirlenir.
-                        </p>
+
+                    <!-- Step 3 -->
+                    <div class="reveal-card bg-white p-8 rounded-[28px] sm:rounded-[32px] border border-[#E2DACB] hover:border-amber-500/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group flex flex-col justify-between relative overflow-hidden" style="transition-delay:.16s">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="w-11 h-11 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-800 font-display font-bold text-[14px] flex items-center justify-center shadow-sm group-hover:bg-amber-600 group-hover:text-white group-hover:border-amber-600 transition-all duration-300">
+                                03
+                            </span>
+                            <span class="material-symbols-outlined text-[20px] text-ink-300 group-hover:text-amber-600 transition-colors duration-300">map</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-[16px] sm:text-[18px] text-ink">Strateji &amp; Yol Haritası</h3>
+                            <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
+                                Arabuluculuk mu, dava mı? Sizin için en hızlı ve en az maliyetli yol birlikte belirlenir.
+                            </p>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-600/20 to-transparent transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
                     </div>
-                    <div class="reveal bg-white p-8 lg:p-9" style="transition-delay:.18s">
-                        <p class="font-display font-black text-[13px] text-ink">04</p>
-                        <h3 class="h-card text-[14px] text-ink mt-5">Takip ve Sonuç</h3>
-                        <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
-                            Süreç boyunca düzenli bilgilendirme yapılır; her aşamada dosyanızın durumundan haberdar
-                            olursunuz.
-                        </p>
+
+                    <!-- Step 4 -->
+                    <div class="reveal-card bg-white p-8 rounded-[28px] sm:rounded-[32px] border border-[#E2DACB] hover:border-emerald-500/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group flex flex-col justify-between relative overflow-hidden" style="transition-delay:.24s">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="w-11 h-11 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-800 font-display font-bold text-[14px] flex items-center justify-center shadow-sm group-hover:bg-[#10B981] group-hover:text-white group-hover:border-[#10B981] transition-all duration-300">
+                                04
+                            </span>
+                            <span class="material-symbols-outlined text-[20px] text-ink-300 group-hover:text-[#10B981] transition-colors duration-300">task_alt</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-[16px] sm:text-[18px] text-ink">Takip &amp; Sonuç</h3>
+                            <p class="text-ink-500 text-[13.5px] leading-[1.8] mt-3">
+                                Süreç boyunca düzenli bilgilendirme yapılır; her aşamada dosyanızın durumundan haberdar olursunuz.
+                            </p>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#10B981]/20 to-transparent transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
                     </div>
                 </div>
             </div>
