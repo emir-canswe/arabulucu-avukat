@@ -30,8 +30,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
 
-    <!-- Archivo (kalın grotesk başlıklar) + Inter (gövde) -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+    <!-- Plus Jakarta Sans (Sleek Executive Typography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
@@ -40,14 +40,14 @@
             theme: {
                 extend: {
                     colors: {
-                        ink:  { DEFAULT: "#0D0F12", 800: "#1A1D22", 500: "#6E7481", 400: "#9CA3AF" },
+                        ink:  { DEFAULT: "#0D0F12", 800: "#1A1D22", 500: "#5A606C", 400: "#8C93A0" },
                         band: { DEFAULT: "#F0F1F7", deep: "#E9EBF3" },
-                        card: { DEFAULT: "#F3F4F6", hover: "#ECEEF1" },
-                        line: { DEFAULT: "#E5E7EB", soft: "#EEF0F3" }
+                        card: { DEFAULT: "#F4F5F8", hover: "#ECEEF2" },
+                        line: { DEFAULT: "#E2E5EC", soft: "#EEF0F5" }
                     },
                     fontFamily: {
-                        sans: ["Inter", "system-ui", "sans-serif"],
-                        display: ["Archivo", "Inter", "system-ui", "sans-serif"]
+                        sans: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+                        display: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"]
                     },
                     maxWidth: { content: "1240px" }
                 }
@@ -59,41 +59,40 @@
         html { scroll-padding-top: 108px; }
 
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             color: #0D0F12;
             background: #fff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            letter-spacing: -0.011em;
         }
 
-        /* ---------- Başlık tipografisi ---------- */
-        .font-display { font-family: 'Archivo', Inter, sans-serif; }
+        /* ---------- Başlık Tipografisi (Bespoke Executive Typography) ---------- */
+        .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
 
         .h-display {
-            font-family: 'Archivo', Inter, sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -0.022em;
-            line-height: 1.02;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.14;
         }
         .h-section {
-            font-family: 'Archivo', Inter, sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -0.018em;
-            line-height: 1.08;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.022em;
+            line-height: 1.2;
         }
         .h-card {
-            font-family: 'Archivo', Inter, sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.005em;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.35;
         }
         .label {
-            font-family: 'Archivo', Inter, sans-serif;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: .14em;
+            letter-spacing: .15em;
         }
         .balance { text-wrap: balance; }
 
@@ -330,7 +329,7 @@
             </span>
 
             <!-- Avukat İsmi -->
-            <h1 class="font-display font-black text-2xl sm:text-3xl lg:text-4xl tracking-tight uppercase text-white mb-6 whitespace-nowrap">
+            <h1 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white mb-6 whitespace-nowrap">
                 Av. Arb. Zülfükar CAN
             </h1>
 
@@ -354,7 +353,7 @@
                 <span class="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-ink text-white flex items-center justify-center shrink-0 group-hover:bg-ink-800 transition-colors">
                     <span class="material-symbols-outlined text-[19px]">balance</span>
                 </span>
-                <span class="font-display font-black text-[15px] lg:text-[17px] tracking-tight text-ink uppercase leading-none whitespace-nowrap">
+                <span class="font-display font-bold text-[15px] lg:text-[17px] tracking-tight text-ink whitespace-nowrap">
                     Avukat Zülfükar Can
                 </span>
             </a>
@@ -436,7 +435,7 @@
                 <span class="w-8 h-8 rounded-lg bg-ink text-white flex items-center justify-center shrink-0">
                     <span class="material-symbols-outlined text-[19px]">balance</span>
                 </span>
-                <span class="font-display font-black text-[15px] tracking-tight uppercase">Avukat Zülfükar Can</span>
+                <span class="font-display font-bold text-[15px] tracking-tight text-ink">Avukat Zülfükar Can</span>
             </span>
             <button id="mobile-menu-close" class="w-11 h-11 rounded-xl flex items-center justify-center bg-card hover:bg-card-hover text-ink transition-colors" aria-label="Menüyü kapat">
                 <span class="material-symbols-outlined text-[26px]">close</span>
@@ -1209,7 +1208,7 @@
                         <span class="w-9 h-9 rounded-lg bg-ink text-white flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-[20px]">balance</span>
                         </span>
-                        <span class="font-display font-black text-[17px] tracking-tight uppercase text-ink">Avukat Zülfükar Can</span>
+                        <span class="font-display font-bold text-[17px] tracking-tight text-ink">Avukat Zülfükar Can</span>
                     </div>
                     <p class="label text-[9.5px] text-ink-400 mt-3">Arabulucu &amp; Avukat</p>
                     <p class="text-[13.5px] text-ink-500 leading-[1.85] mt-5 max-w-sm">
