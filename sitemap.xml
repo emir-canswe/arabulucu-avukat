@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- Ana Sayfa -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Uzmanlık Alanları -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#services</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Lisanslı Arabuluculuk -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#mediation</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Hakkımda / Avukat Özgeçmişi -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#about</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Çalışma Süreci & İlkeler -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#process</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Sık Sorulan Sorular (S.S.S.) -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#faq</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- İletişim & Randevu -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#contact</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Adres, Ulaşım & Ofis Konumu -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#location</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Çalışma Saatleri -->
+    <url>
+        <loc>https://arabulucuavukatzulfukarcan.com.tr/#hours</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>

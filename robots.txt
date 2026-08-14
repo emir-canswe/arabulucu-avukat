@@ -1,0 +1,10 @@
+# Robots.txt for https://arabulucuavukatzulfukarcan.com.tr/
+User-agent: *
+Allow: /
+
+# Disallow system or hidden directories
+Disallow: /.git/
+Disallow: /.claude/
+
+# Sitemap Location
+Sitemap: https://arabulucuavukatzulfukarcan.com.tr/sitemap.xml
