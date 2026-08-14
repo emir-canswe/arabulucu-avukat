@@ -386,7 +386,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #FAF6F0;
+            background: #0B1530;
         }
 
         .intro-curtain {
@@ -395,7 +395,7 @@
             right: 0;
             width: 100%;
             height: 50.5%;
-            background: #FAF6F0;
+            background: #0B1530;
             z-index: 10;
             transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
             will-change: transform;
@@ -403,12 +403,12 @@
 
         .intro-curtain-top {
             top: 0;
-            border-bottom: 1px solid #E2DACB;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .intro-curtain-bottom {
             bottom: 0;
-            border-top: 1px solid #E2DACB;
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
         .intro-center-content {
@@ -547,43 +547,50 @@
 </head>
 <body class="overflow-x-hidden antialiased bg-white text-ink">
 
-    <!-- ══════════ İNTRO / AÇILIŞ ANİMASYONU (WARM IVORY CINEMATIC SPLASH) ══════════ -->
+    <!-- ══════════ İNTRO / AÇILIŞ ANİMASYONU (DARK BLUE CINEMATIC SPLASH) ══════════ -->
     <div id="intro-loader" aria-hidden="true">
         <!-- Çift Kanatlı Perde Katmanları -->
         <div class="intro-curtain intro-curtain-top"></div>
         <div class="intro-curtain intro-curtain-bottom"></div>
 
+        <!-- Animated Background Blobs -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none z-[5]">
+            <div class="absolute w-[400px] h-[400px] rounded-full bg-sky-500/15 blur-[100px] animate-blob1" style="top:20%;left:15%"></div>
+            <div class="absolute w-[350px] h-[350px] rounded-full bg-indigo-500/12 blur-[120px] animate-blob2" style="top:50%;right:10%"></div>
+            <div class="absolute w-[300px] h-[300px] rounded-full bg-teal-500/10 blur-[90px] animate-blob3" style="bottom:15%;left:40%"></div>
+        </div>
+
         <!-- Arka Plan Parıltısı -->
-        <div class="intro-bg-glow absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.08)_0%,transparent_60%)] pointer-events-none z-20"></div>
+        <div class="intro-bg-glow absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.08)_0%,transparent_60%)] pointer-events-none z-20"></div>
 
         <!-- Merkez İçerik Kapsayıcısı -->
         <div class="intro-center-content flex flex-col items-center text-center px-6 max-w-lg mx-auto">
             <!-- Emblemli Terazi Logosu -->
             <div class="intro-emblem relative mb-8 flex items-center justify-center">
-                <div class="intro-pulse-ring absolute -inset-6 rounded-full border border-emerald-500/20"></div>
-                <div class="intro-spin-dash absolute -inset-3 rounded-full border border-dashed border-emerald-500/30"></div>
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white border border-[#E2DACB] flex items-center justify-center shadow-[0_15px_40px_rgba(28,30,35,0.08)]">
-                    <span class="material-symbols-outlined text-4xl sm:text-5xl text-[#10B981]">balance</span>
+                <div class="intro-pulse-ring absolute -inset-6 rounded-full border border-sky-400/25"></div>
+                <div class="intro-spin-dash absolute -inset-3 rounded-full border border-dashed border-sky-400/30"></div>
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center shadow-[0_15px_50px_rgba(56,189,248,0.15)]">
+                    <span class="material-symbols-outlined text-4xl sm:text-5xl text-sky-400">balance</span>
                 </div>
             </div>
 
             <!-- Alt Başlık / Eyebrow -->
             <div class="overflow-hidden mb-2.5">
-                <span class="intro-text-sub label text-[10.5px] sm:text-[11.5px] tracking-[0.28em] text-emerald-800 uppercase block font-bold">
+                <span class="intro-text-sub label text-[10.5px] sm:text-[11.5px] tracking-[0.28em] text-sky-300 uppercase block font-bold">
                     Diyarbakır Hukuk &amp; Arabuluculuk
                 </span>
             </div>
 
             <!-- Avukat İsmi -->
             <div class="overflow-hidden mb-7">
-                <h1 class="intro-text-title font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-ink whitespace-nowrap">
+                <h1 class="intro-text-title font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white whitespace-nowrap">
                     Arabulucu Avukat Zülfükar CAN
                 </h1>
             </div>
 
-            <!-- İki Yana Genişleyen İnce Zümrüt Işık Çizgisi -->
-            <div class="w-48 sm:w-64 h-[2px] bg-[#E2DACB] rounded-full overflow-hidden relative">
-                <div class="intro-line-fill absolute inset-0 bg-gradient-to-r from-transparent via-[#10B981] to-transparent"></div>
+            <!-- İki Yana Genişleyen İnce Işık Çizgisi -->
+            <div class="w-48 sm:w-64 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+                <div class="intro-line-fill absolute inset-0 bg-gradient-to-r from-transparent via-sky-400 to-transparent"></div>
             </div>
         </div>
     </div>
