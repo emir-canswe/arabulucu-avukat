@@ -395,7 +395,7 @@
         }
         #mobile-menu:not(.is-closed) .mm-item { opacity: 1; transform: none; }
 
-        /* ---------- Luxury Split Curtain Intro Loader (Warm Ivory Theme) ---------- */
+        /* ---------- Luxury Split Curtain Intro Loader (Dark Blue Theme) ---------- */
         #intro-loader {
             position: fixed;
             inset: 0;
@@ -407,6 +407,8 @@
             align-items: center;
             justify-content: center;
             background: #0B1530;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
 
         .intro-curtain {
@@ -417,8 +419,10 @@
             height: 50.5%;
             background: #0B1530;
             z-index: 10;
-            transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
             will-change: transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
 
         .intro-curtain-top {
@@ -434,8 +438,10 @@
         .intro-center-content {
             position: relative;
             z-index: 30;
-            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
 
         /* Çıkış Durumu (.is-loaded) */
@@ -445,24 +451,26 @@
 
         #intro-loader.is-loaded .intro-center-content {
             opacity: 0;
-            transform: scale(0.92);
+            transform: translate3d(0, 0, 0) scale(0.94);
         }
 
         #intro-loader.is-loaded .intro-curtain-top {
-            transform: translateY(-100%);
+            transform: translate3d(0, -100%, 0);
         }
 
         #intro-loader.is-loaded .intro-curtain-bottom {
-            transform: translateY(100%);
+            transform: translate3d(0, 100%, 0);
         }
 
         #intro-loader.is-loaded .intro-bg-glow {
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.4s ease;
         }
 
-        /* İkon & Metin Animasyonları */
+        /* İkon & Metin Animasyonları (GPU Optimized) */
         .intro-spin-dash {
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
             animation: introSpinDash 12s linear infinite;
         }
         @keyframes introSpinDash {
@@ -471,37 +479,44 @@
         }
 
         .intro-pulse-ring {
-            animation: introPulseRing 2.6s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+            animation: introPulseRing 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
         }
         @keyframes introPulseRing {
             0% { transform: scale(0.85); opacity: 0.8; }
-            50% { transform: scale(1.18); opacity: 0.15; }
+            50% { transform: scale(1.15); opacity: 0.15; }
             100% { transform: scale(0.85); opacity: 0.8; }
         }
 
         .intro-emblem {
-            animation: introEmblemIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+            animation: introEmblemIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         @keyframes introEmblemIn {
-            from { opacity: 0; transform: scale(0.82); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: translate3d(0, 0, 0) scale(0.85); }
+            to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
         }
 
         .intro-text-sub {
-            animation: introSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+            will-change: transform, opacity;
+            animation: introSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
             opacity: 0;
         }
         .intro-text-title {
-            animation: introSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
+            will-change: transform, opacity;
+            animation: introSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
             opacity: 0;
         }
         @keyframes introSlideUp {
-            from { opacity: 0; transform: translateY(28px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
         }
 
         .intro-line-fill {
-            animation: introLineExpand 1.2s cubic-bezier(0.65, 0, 0.35, 1) 0.32s forwards;
+            will-change: transform;
+            animation: introLineExpand 1s cubic-bezier(0.65, 0, 0.35, 1) 0.25s forwards;
             transform: scaleX(0);
             transform-origin: center;
         }
@@ -585,12 +600,19 @@
 
         <!-- Merkez İçerik Kapsayıcısı -->
         <div class="intro-center-content flex flex-col items-center text-center px-6 max-w-lg mx-auto">
-            <!-- Emblemli Terazi Logosu -->
+            <!-- Emblemli Terazi Logosu (Instant Inline Vector SVG) -->
             <div class="intro-emblem relative mb-8 flex items-center justify-center">
                 <div class="intro-pulse-ring absolute -inset-6 rounded-full border border-sky-400/25"></div>
                 <div class="intro-spin-dash absolute -inset-3 rounded-full border border-dashed border-sky-400/30"></div>
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center shadow-[0_15px_50px_rgba(56,189,248,0.15)]">
-                    <span class="material-symbols-outlined text-4xl sm:text-5xl text-sky-400">balance</span>
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/[0.08] border border-white/15 flex items-center justify-center shadow-[0_15px_50px_rgba(56,189,248,0.15)]">
+                    <svg class="w-10 h-10 sm:w-12 sm:h-12 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                        <path d="M7 21h10"/>
+                        <path d="M12 3v18"/>
+                        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+                        <circle cx="12" cy="3" r="1" fill="currentColor"/>
+                    </svg>
                 </div>
             </div>
 
@@ -1974,7 +1996,7 @@
             }
 
             var startTime = Date.now();
-            var minDelay = 1600;
+            var minDelay = 1000;
 
             function onReady() {
                 var elapsed = Date.now() - startTime;
@@ -1988,7 +2010,7 @@
                 window.addEventListener('load', onReady);
             }
 
-            setTimeout(dismissIntro, 2500);
+            setTimeout(dismissIntro, 1800);
         })();
 
         /* Canlı Sayı Sayacı (Count-Up Animation) */
