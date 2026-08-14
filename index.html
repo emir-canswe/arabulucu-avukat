@@ -386,7 +386,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #FAF6F0;
+            background: #0B1530;
         }
 
         .intro-curtain {
@@ -395,7 +395,7 @@
             right: 0;
             width: 100%;
             height: 50.5%;
-            background: #FAF6F0;
+            background: #0B1530;
             z-index: 10;
             transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
             will-change: transform;
@@ -403,12 +403,12 @@
 
         .intro-curtain-top {
             top: 0;
-            border-bottom: 1px solid #E2DACB;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .intro-curtain-bottom {
             bottom: 0;
-            border-top: 1px solid #E2DACB;
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
         .intro-center-content {
@@ -547,50 +547,50 @@
 </head>
 <body class="overflow-x-hidden antialiased bg-white text-ink">
 
-    <!-- ══════════ İNTRO / AÇILIŞ ANİMASYONU (WARM IVORY CINEMATIC SPLASH) ══════════ -->
+    <!-- ══════════ İNTRO / AÇILIŞ ANİMASYONU (DARK BLUE CINEMATIC SPLASH) ══════════ -->
     <div id="intro-loader" aria-hidden="true">
         <!-- Çift Kanatlı Perde Katmanları -->
         <div class="intro-curtain intro-curtain-top"></div>
         <div class="intro-curtain intro-curtain-bottom"></div>
 
-        <!-- Soft Animated Background Blobs -->
+        <!-- Animated Background Blobs -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none z-[5]">
-            <div class="absolute w-[400px] h-[400px] rounded-full bg-emerald-500/[0.04] blur-[100px] animate-blob1" style="top:20%;left:15%"></div>
-            <div class="absolute w-[350px] h-[350px] rounded-full bg-sky-500/[0.03] blur-[120px] animate-blob2" style="top:50%;right:10%"></div>
-            <div class="absolute w-[300px] h-[300px] rounded-full bg-amber-500/[0.03] blur-[90px] animate-blob3" style="bottom:15%;left:40%"></div>
+            <div class="absolute w-[400px] h-[400px] rounded-full bg-sky-500/15 blur-[100px] animate-blob1" style="top:20%;left:15%"></div>
+            <div class="absolute w-[350px] h-[350px] rounded-full bg-indigo-500/12 blur-[120px] animate-blob2" style="top:50%;right:10%"></div>
+            <div class="absolute w-[300px] h-[300px] rounded-full bg-teal-500/10 blur-[90px] animate-blob3" style="bottom:15%;left:40%"></div>
         </div>
 
         <!-- Arka Plan Parıltısı -->
-        <div class="intro-bg-glow absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.06)_0%,transparent_60%)] pointer-events-none z-20"></div>
+        <div class="intro-bg-glow absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.08)_0%,transparent_60%)] pointer-events-none z-20"></div>
 
         <!-- Merkez İçerik Kapsayıcısı -->
         <div class="intro-center-content flex flex-col items-center text-center px-6 max-w-lg mx-auto">
             <!-- Emblemli Terazi Logosu -->
             <div class="intro-emblem relative mb-8 flex items-center justify-center">
-                <div class="intro-pulse-ring absolute -inset-6 rounded-full border border-emerald-500/15"></div>
-                <div class="intro-spin-dash absolute -inset-3 rounded-full border border-dashed border-emerald-500/20"></div>
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white border border-[#E2DACB] flex items-center justify-center shadow-[0_15px_40px_rgba(28,30,35,0.06)]">
-                    <span class="material-symbols-outlined text-4xl sm:text-5xl text-[#10B981]">balance</span>
+                <div class="intro-pulse-ring absolute -inset-6 rounded-full border border-sky-400/25"></div>
+                <div class="intro-spin-dash absolute -inset-3 rounded-full border border-dashed border-sky-400/30"></div>
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center shadow-[0_15px_50px_rgba(56,189,248,0.15)]">
+                    <span class="material-symbols-outlined text-4xl sm:text-5xl text-sky-400">balance</span>
                 </div>
             </div>
 
             <!-- Alt Başlık / Eyebrow -->
             <div class="overflow-hidden mb-2.5">
-                <span class="intro-text-sub label text-[10.5px] sm:text-[11.5px] tracking-[0.28em] text-emerald-800 uppercase block font-bold">
+                <span class="intro-text-sub label text-[10.5px] sm:text-[11.5px] tracking-[0.28em] text-sky-300 uppercase block font-bold">
                     Diyarbakır Hukuk &amp; Arabuluculuk
                 </span>
             </div>
 
             <!-- Avukat İsmi -->
             <div class="overflow-hidden mb-7">
-                <h1 class="intro-text-title font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-ink whitespace-nowrap">
+                <h1 class="intro-text-title font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white whitespace-nowrap">
                     Arabulucu Avukat Zülfükar CAN
                 </h1>
             </div>
 
-            <!-- İki Yana Genişleyen İnce Zümrüt Işık Çizgisi -->
-            <div class="w-48 sm:w-64 h-[2px] bg-[#E2DACB] rounded-full overflow-hidden relative">
-                <div class="intro-line-fill absolute inset-0 bg-gradient-to-r from-transparent via-[#10B981] to-transparent"></div>
+            <!-- İki Yana Genişleyen İnce Işık Çizgisi -->
+            <div class="w-48 sm:w-64 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+                <div class="intro-line-fill absolute inset-0 bg-gradient-to-r from-transparent via-sky-400 to-transparent"></div>
             </div>
         </div>
     </div>
@@ -724,13 +724,16 @@
     <main id="main">
 
         <!-- ══════════ HERO (EXECUTIVE 2-COLUMN SPLIT HERO) ══════════ -->
-        <section id="home" class="stack-section stack-card relative bg-[#FAF6F0] z-10 pt-20 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-24 overflow-hidden border-b border-[#E2DACB]">
+        <section id="home" class="stack-section stack-card relative bg-[#0B1530] z-10 pt-20 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-24 overflow-hidden border-b border-white/10" data-nav-theme="dark">
             
-            <!-- Subtle Animated Background Blobs -->
+            <!-- Animated Background Blobs -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div class="absolute w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] rounded-full bg-emerald-500/[0.04] blur-[80px] sm:blur-[110px] animate-blob1" style="top:10%;left:5%"></div>
-                <div class="absolute w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] rounded-full bg-sky-500/[0.03] blur-[100px] sm:blur-[130px] animate-blob2" style="top:60%;right:0"></div>
-                <div class="absolute w-[300px] sm:w-[350px] h-[300px] sm:h-[350px] rounded-full bg-amber-500/[0.03] blur-[70px] sm:blur-[90px] animate-blob3" style="bottom:5%;left:35%"></div>
+                <!-- Blob 1: Deep Cyan/Blue -->
+                <div class="absolute w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] rounded-full bg-sky-500/10 blur-[80px] sm:blur-[110px] animate-blob1"></div>
+                <!-- Blob 2: Deep Indigo -->
+                <div class="absolute w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] rounded-full bg-indigo-500/10 blur-[100px] sm:blur-[130px] animate-blob2"></div>
+                <!-- Blob 3: Deep Teal/Blue -->
+                <div class="absolute w-[300px] sm:w-[350px] h-[300px] sm:h-[350px] rounded-full bg-teal-500/5 blur-[70px] sm:blur-[90px] animate-blob3"></div>
             </div>
 
             <div class="max-w-content mx-auto px-6 lg:px-10 relative z-10">
@@ -739,19 +742,19 @@
                     <!-- Left Column: Serious Executive Typography & CTAs -->
                     <div class="lg:col-span-7 reveal-left">
                         <!-- Eyebrow Badge -->
-                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 label text-[10.5px] sm:text-[11px] mb-6 sm:mb-8">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/25 text-sky-300 label text-[10.5px] sm:text-[11px] mb-6 sm:mb-8">
                             <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
                             <span>T.C. Adalet Bakanlığı Sicilli Arabulucu &amp; Avukat</span>
                         </div>
 
                         <!-- Serious Authoritative Headline -->
-                        <h1 class="font-display font-bold text-[2.4rem] sm:text-[3.6rem] lg:text-[4.4rem] leading-[1.08] text-ink tracking-tight balance">
+                        <h1 class="font-display font-bold text-[2.4rem] sm:text-[3.6rem] lg:text-[4.4rem] leading-[1.08] text-white tracking-tight balance">
                             Haklarınız Güven Altında,<br/>
-                            <span class="text-[#10B981]">Çözüm Yanınızda.</span>
+                            <span class="text-sky-400">Çözüm Yanınızda.</span>
                         </h1>
 
                         <!-- Dignified Subtitle -->
-                        <p class="text-ink-500 text-[15px] sm:text-[16.5px] leading-[1.85] max-w-xl mt-6">
+                        <p class="text-blue-100/80 text-[15px] sm:text-[16.5px] leading-[1.85] max-w-xl mt-6">
                             Diyarbakır merkezli hukuk büromuzda; ceza hukuku, aile ve boşanma davaları, iş uyuşmazlıkları ve ilam niteliğinde lisanslı arabuluculuk süreçlerinde haklarınızı yasal güvenceyle savunuyoruz.
                         </p>
 
@@ -764,42 +767,42 @@
                             </a>
 
                             <a href="#contact"
-                               class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-ink/15 hover:border-ink bg-white hover:bg-white text-ink font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-md">
+                               class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-lg">
                                 <span>İletişime Geç</span>
-                                <span class="w-6 h-6 rounded-full bg-ink/5 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-[15px]">north_east</span>
+                                <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[15px] text-white">north_east</span>
                                 </span>
                             </a>
                         </div>
 
-                        <!-- Trust Metrics Bar -->
-                        <div class="grid grid-cols-3 gap-3.5 pt-8 mt-10 border-t border-[#E2DACB] max-w-lg">
+                        <!-- Trust Metrics Bar (Glassmorphism Redesign) -->
+                        <div class="grid grid-cols-3 gap-3.5 pt-8 mt-10 border-t border-white/10 max-w-lg">
                             
                             <!-- Stat Card 1 -->
-                            <div class="bg-white p-4 rounded-2xl border border-[#E2DACB] shadow-sm hover:shadow-md hover:border-emerald-500/25 transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-sky-500/25 transition-all duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-ink leading-none">1.500+</span>
-                                    <span class="material-symbols-outlined text-[18px] text-[#10B981] shrink-0">folder_shared</span>
+                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-white leading-none">1.500+</span>
+                                    <span class="material-symbols-outlined text-[18px] text-sky-400 shrink-0">folder_shared</span>
                                 </div>
-                                <p class="text-[10px] text-ink-500 font-bold mt-3.5 uppercase tracking-wider">Çözülen Dosya</p>
+                                <p class="text-[10px] text-blue-200/90 font-bold mt-3.5 uppercase tracking-wider">Çözülen Dosya</p>
                             </div>
 
                             <!-- Stat Card 2 -->
-                            <div class="bg-white p-4 rounded-2xl border border-[#E2DACB] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-ink leading-none">2019</span>
-                                    <span class="material-symbols-outlined text-[18px] text-ink-400 shrink-0">gavel</span>
+                                    <span class="font-display font-bold text-[20px] sm:text-[24px] text-white leading-none">2019</span>
+                                    <span class="material-symbols-outlined text-[18px] text-white/40 shrink-0">gavel</span>
                                 </div>
-                                <p class="text-[10px] text-ink-500 font-bold mt-3.5 uppercase tracking-wider">Yıllık Deneyim</p>
+                                <p class="text-[10px] text-blue-200/90 font-bold mt-3.5 uppercase tracking-wider">Yıllık Deneyim</p>
                             </div>
 
                             <!-- Stat Card 3 -->
-                            <div class="bg-white p-4 rounded-2xl border border-[#E2DACB] shadow-sm hover:shadow-md hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
                                     <span class="font-display font-bold text-[20px] sm:text-[24px] text-[#10B981] leading-none">%100</span>
                                     <span class="material-symbols-outlined text-[18px] text-[#10B981] shrink-0">shield</span>
                                 </div>
-                                <p class="text-[10px] text-ink-500 font-bold mt-3.5 uppercase tracking-wider">Gizlilik</p>
+                                <p class="text-[10px] text-blue-200/90 font-bold mt-3.5 uppercase tracking-wider">Gizlilik</p>
                             </div>
 
                         </div>
@@ -807,14 +810,14 @@
 
                     <!-- Right Column: Executive Portrait Card with Glass Badge -->
                     <div class="lg:col-span-5 reveal-right relative z-10">
-                        <div class="relative rounded-[36px] sm:rounded-[44px] overflow-hidden border-4 border-white shadow-[0_25px_60px_rgba(15,23,42,0.12)] bg-white aspect-[4/5] sm:aspect-[4/4.6]">
+                        <div class="relative rounded-[36px] sm:rounded-[44px] overflow-hidden border-4 border-slate-800/40 shadow-[0_25px_60px_rgba(0,0,0,0.35)] bg-slate-900 aspect-[4/5] sm:aspect-[4/4.6]">
                             <img src="./hero_mockup.jpg"
                                  alt="Arabulucu Avukat Zülfükar CAN"
                                  class="w-full h-full object-cover object-top"
                                  width="750" height="900" loading="eager" decoding="async"/>
 
                             <!-- Overlay Gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                             <!-- Glassmorphism Badge -->
                             <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-between">
