@@ -76,7 +76,11 @@
     </script>
 
     <style>
-        html { scroll-padding-top: 108px; }
+        html {
+            scroll-padding-top: 108px;
+            overflow-y: scroll;
+            scrollbar-gutter: stable;
+        }
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -170,103 +174,53 @@
             transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
         }
 
-        /* ---------- Awwwards 3D Card Parallax Stacking Effect ---------- */
-        .stack-section {
-            position: relative;
-            perspective: 1200px;
-        }
-
-        /* Mobile: no overlap, no 3D transforms, clean vertical scroll */
-        .stack-card {
-            position: relative;
-            transform-origin: center top;
-        }
-
-        #home.stack-card {
-            border-top-left-radius: 0 !important;
-            border-top-right-radius: 0 !important;
-            box-shadow: none !important;
-            border-top: none !important;
-        }
-
-        /* Desktop only: sticky 3D stacking with rounded caps & overlap */
-        @media (min-width: 1024px) {
-            .stack-card {
-                position: sticky;
-                top: 0;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                border-top-left-radius: 56px;
-                border-top-right-radius: 56px;
-                box-shadow: 0 -35px 80px rgba(15, 23, 42, 0.22);
-                border-top: 1px solid rgba(226, 218, 203, 0.8);
-                will-change: transform, opacity, filter;
-            }
-
-            #home.stack-card {
-                margin-top: 0 !important;
-            }
-        }
-
         /* ---------- Header: Floating Archipelago (3 separate islands) ---------- */
         #site-header {
             opacity: 0;
-            transform: translate3d(0, -22px, 0);
-            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translate3d(0, -18px, 0);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
             pointer-events: none;
         }
 
         body.intro-complete #site-header {
             opacity: 1;
             transform: translate3d(0, 0, 0);
-            pointer-events: auto;
+            /* Keep pointer-events: none on container; inner .nav-island has pointer-events-auto */
+            pointer-events: none;
             transition-delay: 0.05s;
         }
 
-        /* ---------- Hero Staged Cinematic Entrance Animation ---------- */
-        .hero-stagger {
+        /* ---------- Hero Silky Smooth, Shift-Free Entrance Animation ---------- */
+        .hero-fade-left {
             opacity: 0;
-            transform: translate3d(0, 36px, 0);
+            transform: translate3d(0, 18px, 0);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .hero-fade-right {
+            opacity: 0;
+            transform: scale3d(0.98, 0.98, 1);
             transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
                         transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
-        .hero-stagger-scale {
+        .hero-fade-stats {
             opacity: 0;
-            transform: translate3d(0, 24px, 0) scale3d(0.92, 0.92, 1);
-            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translate3d(0, 14px, 0);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s,
+                        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
             will-change: opacity, transform;
         }
 
-        .hero-stagger-right {
-            opacity: 0;
-            transform: translate3d(36px, 20px, 0) scale3d(0.94, 0.94, 1);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-
-        body.intro-complete .hero-stagger,
-        body.intro-complete .hero-stagger-scale,
-        body.intro-complete .hero-stagger-right {
+        body.intro-complete .hero-fade-left,
+        body.intro-complete .hero-fade-right,
+        body.intro-complete .hero-fade-stats {
             opacity: 1;
             transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
         }
-
-        /* Choreographed cascade delays */
-        body.intro-complete .hero-delay-1 { transition-delay: 0.12s; }
-        body.intro-complete .hero-delay-2 { transition-delay: 0.25s; }
-        body.intro-complete .hero-delay-3 { transition-delay: 0.38s; }
-        body.intro-complete .hero-delay-4 { transition-delay: 0.52s; }
-        body.intro-complete .hero-delay-5 { transition-delay: 0.66s; }
-        body.intro-complete .hero-delay-6 { transition-delay: 0.78s; }
-        body.intro-complete .hero-delay-7 { transition-delay: 0.90s; }
-        body.intro-complete .hero-delay-img { transition-delay: 0.30s; }
-        body.intro-complete .hero-delay-badge { transition-delay: 0.72s; }
 
         /* Default state: DARK navbar on LIGHT sections (Contrast) */
         .nav-island {
@@ -810,7 +764,7 @@
     <main id="main">
 
         <!-- ══════════ HERO (EXECUTIVE 2-COLUMN SPLIT HERO) ══════════ -->
-        <section id="home" class="stack-section stack-card relative bg-[#0B1530] z-10 pt-20 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-24 overflow-hidden border-b border-white/10" data-nav-theme="dark">
+        <section id="home" class="relative bg-[#0B1530] text-white pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 overflow-hidden border-b border-white/10" data-nav-theme="dark">
             
             <!-- Animated Background Blobs -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -827,45 +781,47 @@
 
                     <!-- Left Column: Serious Executive Typography & CTAs -->
                     <div class="lg:col-span-7">
-                        <!-- Eyebrow Badge -->
-                        <div class="hero-stagger hero-delay-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/25 text-sky-300 label text-[10.5px] sm:text-[11px] mb-6 sm:mb-8">
-                            <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
-                            <span>T.C. Adalet Bakanlığı Sicilli Arabulucu &amp; Avukat</span>
-                        </div>
+                        <div class="hero-fade-left">
+                            <!-- Eyebrow Badge -->
+                            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/25 text-sky-300 label text-[10.5px] sm:text-[11px] mb-6 sm:mb-8">
+                                <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                                <span>T.C. Adalet Bakanlığı Sicilli Arabulucu &amp; Avukat</span>
+                            </div>
 
-                        <!-- Serious Authoritative Headline -->
-                        <h1 class="hero-stagger hero-delay-2 font-display font-bold text-[2.4rem] sm:text-[3.6rem] lg:text-[4.4rem] leading-[1.08] text-white tracking-tight balance">
-                            Haklarınız Güven Altında,<br/>
-                            <span class="text-sky-400">Çözüm Yanınızda.</span>
-                        </h1>
+                            <!-- Serious Authoritative Headline -->
+                            <h1 class="font-display font-bold text-[2.4rem] sm:text-[3.6rem] lg:text-[4.4rem] leading-[1.08] text-white tracking-tight balance">
+                                Haklarınız Güven Altında,<br/>
+                                <span class="text-sky-400">Çözüm Yanınızda.</span>
+                            </h1>
 
-                        <!-- Dignified Subtitle -->
-                        <p class="hero-stagger hero-delay-3 text-blue-100/80 text-[15px] sm:text-[16.5px] leading-[1.85] max-w-xl mt-6">
-                            Diyarbakır merkezli hukuk büromuzda; ceza hukuku, aile ve boşanma davaları, iş uyuşmazlıkları ve ilam niteliğinde lisanslı arabuluculuk süreçlerinde haklarınızı yasal güvenceyle savunuyoruz.
-                        </p>
+                            <!-- Dignified Subtitle -->
+                            <p class="text-blue-100/80 text-[15px] sm:text-[16.5px] leading-[1.85] max-w-xl mt-6">
+                                Diyarbakır merkezli hukuk büromuzda; ceza hukuku, aile ve boşanma davaları, iş uyuşmazlıkları ve ilam niteliğinde lisanslı arabuluculuk süreçlerinde haklarınızı yasal güvenceyle savunuyoruz.
+                            </p>
 
-                        <!-- Action Buttons -->
-                        <div class="hero-stagger hero-delay-4 flex flex-wrap items-center gap-4 sm:gap-5 mt-9">
-                            <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
-                               class="inline-flex items-center gap-3 text-white font-bold label text-[12px] px-8 sm:px-9 py-4 rounded-full bg-[#10B981] hover:bg-[#059669] shadow-xl shadow-emerald-500/20 transition-all hover:scale-105 active:scale-100">
-                                <span class="material-symbols-outlined text-[18px]">calendar_month</span>
-                                <span>Randevu Oluştur</span>
-                            </a>
+                            <!-- Action Buttons -->
+                            <div class="flex flex-wrap items-center gap-4 sm:gap-5 mt-9">
+                                <a href="https://wa.me/905070161813" target="_blank" rel="noopener"
+                                   class="inline-flex items-center gap-3 text-white font-bold label text-[12px] px-8 sm:px-9 py-4 rounded-full bg-[#10B981] hover:bg-[#059669] shadow-xl shadow-emerald-500/20 transition-all hover:scale-105 active:scale-100">
+                                    <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                                    <span>Randevu Oluştur</span>
+                                </a>
 
-                            <a href="#contact"
-                               class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-lg">
-                                <span>İletişime Geç</span>
-                                <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-[15px] text-white">north_east</span>
-                                </span>
-                            </a>
+                                <a href="#contact"
+                                   class="inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full border border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-semibold label text-[11.5px] sm:text-[12px] transition-all hover:shadow-lg">
+                                    <span>İletişime Geç</span>
+                                    <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[15px] text-white">north_east</span>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
 
                         <!-- Trust Metrics Bar (Glassmorphism Redesign) -->
-                        <div class="grid grid-cols-3 gap-3.5 pt-8 mt-10 border-t border-white/10 max-w-lg">
+                        <div class="hero-fade-stats grid grid-cols-3 gap-3.5 pt-8 mt-10 border-t border-white/10 max-w-lg">
                             
                             <!-- Stat Card 1 -->
-                            <div class="hero-stagger hero-delay-5 bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-sky-500/25 transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-sky-500/25 transition-colors duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
                                     <span class="font-display font-bold text-[18px] sm:text-[22px] text-white leading-none">Lisanslı</span>
                                     <span class="material-symbols-outlined text-[18px] text-sky-400 shrink-0">handshake</span>
@@ -874,7 +830,7 @@
                             </div>
 
                             <!-- Stat Card 2 -->
-                            <div class="hero-stagger hero-delay-6 bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md transition-colors duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
                                     <span class="font-display font-bold text-[20px] sm:text-[24px] text-white leading-none">2019</span>
                                     <span class="material-symbols-outlined text-[18px] text-white/40 shrink-0">history_edu</span>
@@ -883,7 +839,7 @@
                             </div>
 
                             <!-- Stat Card 3 -->
-                            <div class="hero-stagger hero-delay-7 bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-500/20 transition-colors duration-300 flex flex-col justify-between">
                                 <div class="flex items-center justify-between">
                                     <span class="font-display font-bold text-[20px] sm:text-[24px] text-[#10B981] leading-none">%100</span>
                                     <span class="material-symbols-outlined text-[18px] text-[#10B981] shrink-0">shield</span>
@@ -895,7 +851,7 @@
                     </div>
 
                     <!-- Right Column: Executive Portrait Card with Glass Badge -->
-                    <div class="lg:col-span-5 relative z-10 hero-stagger-right hero-delay-img">
+                    <div class="lg:col-span-5 relative z-10 hero-fade-right">
                         <div class="relative rounded-[36px] sm:rounded-[44px] overflow-hidden border-4 border-slate-800/40 shadow-[0_25px_60px_rgba(0,0,0,0.35)] bg-slate-900 aspect-[4/5] sm:aspect-[4/4.6]">
                             <img src="./hero_mockup.jpg"
                                  alt="Arabulucu Avukat Zülfükar CAN"
@@ -906,7 +862,7 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                             <!-- Glassmorphism Badge -->
-                            <div class="hero-stagger-scale hero-delay-badge absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-between">
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-between">
                                 <div>
                                     <h3 class="font-display font-bold text-[14px] sm:text-[15px] text-ink">Arabulucu Avukat Zülfükar CAN</h3>
                                     <p class="text-[11.5px] text-ink-500 font-semibold mt-0.5">Diyarbakır Barosu · Kuruluş: 2019</p>
@@ -952,7 +908,7 @@
         </section>
 
         <!-- ══════════ UZMANLIK & HİZMETLERİMİZ ══════════ -->
-        <section class="stack-section stack-card py-12 sm:py-16 lg:py-20 bg-[#EBF3FA] z-20" id="services">
+        <section class="py-16 sm:py-20 lg:py-24 bg-[#EBF3FA]" id="services">
             <div class="max-w-content mx-auto px-6 lg:px-10">
 
                 <!-- Centered Section Header -->
@@ -1114,7 +1070,7 @@
         </section>
 
         <!-- ══════════ CANLI ANİMASYONLU SAYAÇ (IMPACT STATS) ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-28 bg-[#0F172A] text-white z-30" id="impact-stats" data-nav-theme="dark">
+        <section class="py-20 lg:py-28 bg-[#0F172A] text-white" id="impact-stats" data-nav-theme="dark">
             <div class="max-w-content mx-auto px-6 lg:px-10 text-center">
 
                 <!-- Eyebrow Badge -->
@@ -1194,7 +1150,7 @@
         </div>
 
         <!-- ══════════ HAKKIMDA ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-24 bg-[#F0F5FA] z-40" id="about">
+        <section class="py-20 lg:py-24 bg-[#F0F5FA]" id="about">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -1252,7 +1208,7 @@
 
 
         <!-- ══════════ ARABULUCULUK (MEDIATION SECTION REDESIGN) ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-24 bg-[#0B1E4E] text-white z-50" id="mediation" data-nav-theme="dark">
+        <section class="py-20 lg:py-24 bg-[#0B1E4E] text-white" id="mediation" data-nav-theme="dark">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -1323,7 +1279,7 @@
         </section>
 
         <!-- ══════════ ÇALIŞMA SÜRECİ ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-28 bg-[#E8F1F9] z-[60]" id="process">
+        <section class="py-20 lg:py-28 bg-[#E8F1F9]" id="process">
             <div class="max-w-content mx-auto px-6 lg:px-10">
 
                 <div class="mb-14 lg:mb-16">
@@ -1415,7 +1371,7 @@
         </section>
 
         <!-- ══════════ S.S.S. ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-28 bg-[#F4F8FC] z-[70]" id="faq">
+        <section class="py-20 lg:py-28 bg-[#F4F8FC]" id="faq">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -1539,7 +1495,7 @@
         </section>
 
         <!-- ══════════ İLETİŞİM & RANDEVU TALEBİ (INTERACTIVE CARD FORM) ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-28 bg-[#0B132B] z-[80] relative overflow-hidden" id="contact" data-nav-theme="dark">
+        <section class="py-20 lg:py-28 bg-[#0B132B] relative overflow-hidden" id="contact" data-nav-theme="dark">
             <!-- Subtle background aura -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -1665,7 +1621,7 @@
         </section>
 
         <!-- ══════════ KONUM ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-28 bg-[#E8F0F8] z-[90]" id="location">
+        <section class="py-20 lg:py-28 bg-[#E8F0F8]" id="location">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
@@ -1729,7 +1685,7 @@
         </section>
 
         <!-- ══════════ ÇALIŞMA SAATLERİ ══════════ -->
-        <section class="stack-section stack-card py-20 lg:py-28 bg-[#0F172A] text-white z-[100]" id="hours" data-nav-theme="dark">
+        <section class="py-20 lg:py-28 bg-[#0F172A] text-white" id="hours" data-nav-theme="dark">
             <div class="max-w-content mx-auto px-6 lg:px-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -2020,7 +1976,6 @@
             if (!loader) return;
 
             // Sayfa açılışında kaydırma kilidi
-            document.documentElement.style.overflow = 'hidden';
             document.body.style.overflow = 'hidden';
 
             var hasFinished = false;
@@ -2033,7 +1988,6 @@
                 document.body.classList.add('intro-complete');
 
                 setTimeout(function () {
-                    document.documentElement.style.overflow = '';
                     document.body.style.overflow = '';
                     loader.style.display = 'none';
                 }, 850);
@@ -2295,101 +2249,6 @@
                 );
             });
         }
-
-        /* Awwwards 3D Section Stacking Parallax Controller — DESKTOP ONLY */
-        (function () {
-            var cards = document.querySelectorAll('.stack-card');
-            if (!cards.length || prefersReduced) return;
-
-            function isDesktop() {
-                return window.innerWidth >= 1024;
-            }
-
-            function clearMobileStyles() {
-                cards.forEach(function (c) {
-                    c.style.transform = '';
-                    c.style.opacity = '';
-                    c.style.filter = '';
-                    c.style.top = '';
-                });
-            }
-
-            function updateParallax() {
-                // Only run 3D parallax on desktop (>= 1024px)
-                if (!isDesktop()) {
-                    clearMobileStyles();
-                    return;
-                }
-
-                var vh = window.innerHeight;
-
-                // Adjust sticky top dynamically for sections taller than viewport height
-                cards.forEach(function (c) {
-                    if (c.id === 'site-header') return;
-                    var h = c.offsetHeight;
-                    if (h > vh) {
-                        c.style.top = (vh - h - 16) + 'px';
-                    } else {
-                        c.style.top = '0px';
-                    }
-                });
-
-                for (var i = 0; i < cards.length - 1; i++) {
-                    var card = cards[i];
-                    var nextCard = cards[i + 1];
-                    var rect = nextCard.getBoundingClientRect();
-
-                    if (rect.top < vh && rect.top > 0) {
-                        var progress = 1 - (rect.top / vh);
-                        var scale = 1 - (progress * 0.12);
-                        var translateY = -(progress * 45);
-                        var opacity = 1 - (progress * 0.35);
-                        var brightness = 1 - (progress * 0.30);
-
-                        card.style.transform = 'scale(' + scale + ') translate3d(0, ' + translateY + 'px, 0)';
-                        card.style.opacity = opacity;
-                        card.style.filter = 'brightness(' + brightness + ')';
-                    } else if (rect.top <= 0) {
-                        card.style.transform = 'scale(0.88) translate3d(0, -45px, 0)';
-                        card.style.opacity = '0.65';
-                        card.style.filter = 'brightness(0.70)';
-                    } else {
-                        card.style.transform = 'none';
-                        card.style.opacity = '1';
-                        card.style.filter = 'none';
-                    }
-                }
-            }
-
-            var ticking = false;
-            window.addEventListener('scroll', function () {
-                if (!ticking) {
-                    window.requestAnimationFrame(function () {
-                        updateParallax();
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }, { passive: true });
-
-            window.addEventListener('resize', function () {
-                updateParallax();
-            }, { passive: true });
-
-            // Dynamically recalculate sticky top bounds when FAQ accordions expand/collapse
-            var faqDetails = document.querySelectorAll('details.faq');
-            faqDetails.forEach(function (details) {
-                details.addEventListener('toggle', function () {
-                    updateParallax();
-                    // Repeatedly trigger during CSS transition/animation
-                    setTimeout(updateParallax, 100);
-                    setTimeout(updateParallax, 300);
-                    setTimeout(updateParallax, 500);
-                });
-            });
-
-            updateParallax();
-        })();
 
         /* Footer yılı */
         var yearEl = document.getElementById('year');
